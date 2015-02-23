@@ -1,0 +1,785 @@
+2014/11/12 10:08:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pes/admin".' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('pes/admin')
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/index.php?r=pes/admin
+---
+2014/11/12 10:08:34 [error] [php] include(Bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbGridView.php(96): spl_autoload_call()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(147): TbGridView->init()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(172): DogController->createWidget()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\admin.php(76): DogController->widget()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require()
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): DogController->renderInternal()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): DogController->renderFile()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(782): DogController->renderPartial()
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php(143): DogController->render()
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): DogController->actionAdmin()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): DogController->filterAccessControl()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): DogController->runActionWithFilters()
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): DogController->run()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/index.php?r=dog/admin
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbGridView.php (96)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\admin.php (76)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (143)
+2014/11/12 10:40:23 [error] [php] include(Bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbGridView.php(96): spl_autoload_call()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(147): TbGridView->init()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(172): DogController->createWidget()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\admin.php(76): DogController->widget()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require()
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): DogController->renderInternal()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): DogController->renderFile()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(782): DogController->renderPartial()
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php(143): DogController->render()
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): DogController->actionAdmin()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): DogController->filterAccessControl()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): DogController->runActionWithFilters()
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): DogController->run()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/index.php?r=dog/admin
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbGridView.php (96)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\admin.php (76)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (143)
+2014/11/12 10:43:55 [error] [php] include(Bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbGridView.php(96): spl_autoload_call()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(147): TbGridView->init()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(172): DogController->createWidget()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\admin.php(76): DogController->widget()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require()
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): DogController->renderInternal()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): DogController->renderFile()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(782): DogController->renderPartial()
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php(143): DogController->render()
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): DogController->actionAdmin()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): DogController->filterAccessControl()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): DogController->runActionWithFilters()
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): DogController->run()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/index.php?r=dog/admin
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbGridView.php (96)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\admin.php (76)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (143)
+2014/11/12 10:48:02 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbGridView" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:322
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DogController), 'bootstrap.widge...', Array)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require('C:\Users\Michal...')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Michal...', Array, true)
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Michal...', Array, true)
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php(143): CController->render('admin', Array)
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): DogController->actionAdmin()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/admin')
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/pes/index.php?r=dog/admin
+---
+2014/11/12 11:11:54 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:322
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(125): CApplication->__construct('C:\Users\Michal...')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\Users\Michal...')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): YiiBase::createWebApplication('C:\Users\Michal...')
+#7 {main}
+REQUEST_URI=/pes/
+---
+2014/11/12 11:12:26 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:322
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(125): CApplication->__construct('C:\Users\Michal...')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\Users\Michal...')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): YiiBase::createWebApplication('C:\Users\Michal...')
+#7 {main}
+REQUEST_URI=/pes/
+---
+2014/11/12 11:12:57 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:322
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(125): CApplication->__construct('C:\Users\Michal...')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\Users\Michal...')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): YiiBase::createWebApplication('C:\Users\Michal...')
+#7 {main}
+REQUEST_URI=/pes/
+---
+2014/11/12 11:13:00 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:322
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(125): CApplication->__construct('C:\Users\Michal...')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\Users\Michal...')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): YiiBase::createWebApplication('C:\Users\Michal...')
+#7 {main}
+REQUEST_URI=/pes/
+---
+2014/11/12 11:13:10 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:322
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(125): CApplication->__construct('C:\Users\Michal...')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\Users\Michal...')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): YiiBase::createWebApplication('C:\Users\Michal...')
+#7 {main}
+REQUEST_URI=/pes/
+---
+2014/11/12 11:13:31 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:322
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(125): CApplication->__construct('C:\Users\Michal...')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\Users\Michal...')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): YiiBase::createWebApplication('C:\Users\Michal...')
+#7 {main}
+REQUEST_URI=/pes/
+---
+2014/11/23 13:43:53 [error] [php] Invalid argument supplied for foreach() (C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\helpers\CHtml.php:2325)
+Stack trace:
+#0 unknown(0): TbActiveForm->dropDownList()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbActiveForm.php(1188): call_user_func_array()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbActiveForm.php(1106): TbActiveForm->horizontalFieldRow()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbActiveForm.php(602): TbActiveForm->customFieldRowInternal()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\_form.php(42): TbActiveForm->dropDownListRow()
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): DogController->renderInternal()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): DogController->renderFile()
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\create.php(18): DogController->renderPartial()
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): DogController->renderInternal()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): DogController->renderFile()
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(782): DogController->renderPartial()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php(79): DogController->render()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): DogController->actionCreate()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): DogController->filterAccessControl()
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): DogController->runActionWithFilters()
+#23 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): DogController->run()
+#24 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/index.php?r=dog/create
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbActiveForm.php (1188)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbActiveForm.php (1106)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\extensions\bootstrap\widgets\TbActiveForm.php (602)
+2014/11/23 14:17:00 [warning] [application] Failed to set unsafe attribute "deathday" of "Dog".
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (72)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php (13)
+2014/11/23 14:17:00 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`vlciaky`.`tbl_dog`, CONSTRAINT `tbl_dog_ibfk_1` FOREIGN KEY (`id_health`) REFERENCES `tbl_health` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_dog` (`sex`, `id_fertilisation`, `id_old_owner`, `id_kennel_owner`, `name`, `color`, `birthday`, `death_cause`, `breed`, `old_regnumber`, `new_regnumber`, `tattoo`, `chip`, `export_import`, `breeding`, `state`, `created_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, NOW()).
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (73)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php (13)
+2014/11/23 14:17:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`vlciaky`.`tbl_dog`, CONSTRAINT `tbl_dog_ibfk_1` FOREIGN KEY (`id_health`) REFERENCES `tbl_health` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_dog` (`sex`, `id_fertilisation`, `id_old_owner`, `id_kennel_owner`, `name`, `color`, `birthday`, `death_cause`, `breed`, `old_regnumber`, `new_regnumber`, `tattoo`, `chip`, `export_import`, `breeding`, `state`, `created_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, NOW())' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php(73): CActiveRecord->save()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): DogController->actionCreate()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/create')
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/pes/index.php?r=dog/create
+HTTP_REFERER=http://localhost/pes/index.php?r=dog/create
+---
+2014/11/23 14:17:58 [warning] [application] Failed to set unsafe attribute "deathday" of "Dog".
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (72)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php (13)
+2014/11/23 14:17:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`vlciaky`.`tbl_dog`, CONSTRAINT `tbl_dog_ibfk_3` FOREIGN KEY (`id_owner`) REFERENCES `tbl_profiles` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_dog` (`sex`, `id_fertilisation`, `id_old_owner`, `id_kennel_owner`, `name`, `color`, `birthday`, `death_cause`, `breed`, `old_regnumber`, `new_regnumber`, `tattoo`, `chip`, `export_import`, `breeding`, `state`, `created_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, NOW()).
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (73)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php (13)
+2014/11/23 14:17:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`vlciaky`.`tbl_dog`, CONSTRAINT `tbl_dog_ibfk_3` FOREIGN KEY (`id_owner`) REFERENCES `tbl_profiles` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `tbl_dog` (`sex`, `id_fertilisation`, `id_old_owner`, `id_kennel_owner`, `name`, `color`, `birthday`, `death_cause`, `breed`, `old_regnumber`, `new_regnumber`, `tattoo`, `chip`, `export_import`, `breeding`, `state`, `created_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, NOW())' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php(73): CActiveRecord->save()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): DogController->actionCreate()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/create')
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/pes/index.php?r=dog/create
+HTTP_REFERER=http://localhost/pes/index.php?r=dog/create
+---
+2014/11/23 14:20:12 [error] [php] include(Users.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\_form.php(22): spl_autoload_call()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): DogController->renderInternal()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): DogController->renderFile()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\create.php(18): DogController->renderPartial()
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): DogController->renderInternal()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): DogController->renderFile()
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(782): DogController->renderPartial()
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php(79): DogController->render()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): DogController->actionCreate()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): DogController->filterAccessControl()
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): DogController->runActionWithFilters()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): DogController->run()
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/index.php?r=dog/create
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\_form.php (22)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\create.php (18)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (79)
+2014/11/23 14:20:21 [error] [php] include(Users.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\Users\Michal\Documents\PHP-projekty\pes\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\_form.php(22): spl_autoload_call()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): DogController->renderInternal()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): DogController->renderFile()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\create.php(18): DogController->renderPartial()
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(126): require()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CBaseController.php(95): DogController->renderInternal()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(869): DogController->renderFile()
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(782): DogController->renderPartial()
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php(79): DogController->render()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): DogController->actionCreate()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): DogController->filterAccessControl()
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): DogController->runActionWithFilters()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): DogController->run()
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/index.php?r=dog/create
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\_form.php (22)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\views\dog\create.php (18)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (79)
+2014/11/23 14:21:43 [warning] [application] Failed to set unsafe attribute "deathday" of "Dog".
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\DogController.php (72)
+in C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php (13)
+2014/12/01 18:44:15 [error] [exception.CException] exception 'CException' with message 'BonitationController cannot find the requested view "admin".' in C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php:878
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\web\protected\controllers\BonitationController.php(143): CController->render('admin', Array)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\actions\CInlineAction.php(49): BonitationController->actionAdmin()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(282): CController->run('admin')
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('bonitation/admi...')
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\web\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/pes/index.php?r=bonitation/admin
+---
+2015/01/23 15:17:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(450): CModule->getComponent('db')
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\db\ar\CActiveRecord.php(634): CApplication->getDb()
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\db\ar\CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(User))
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\db\ar\CActiveRecord.php(212): CActiveRecord->getMetaData()
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\modules\user\components\UserIdentity.php(27): CActiveRecord->__call('notsafe', Array)
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\modules\user\components\UserIdentity.php(27): User->notsafe()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#11 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#12 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#13 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#14 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\controllers\SiteController.php(94): CModel->validate()
+#15 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#16 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('login')
+#20 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#21 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/pes/web/index.php?r=site/login
+HTTP_REFERER=http://localhost/pes/web/index.php?r=site/login
+---
+2015/01/23 15:38:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "endurance run".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('endurance run')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=endurance%20run
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/01/23 15:38:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "endurance run".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('endurance run')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=endurance%20run
+HTTP_REFERER=http://localhost/pes/web/index.php?r=bonitation
+---
+2015/01/23 15:38:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('users')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=users
+HTTP_REFERER=http://localhost/pes/web/index.php?r=health
+---
+2015/01/23 15:38:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "endurance run".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('endurance run')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=endurance%20run
+HTTP_REFERER=http://localhost/pes/web/index.php?r=fertilisation
+---
+2015/01/23 15:38:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "endurance run".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('endurance run')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=endurance%20run
+HTTP_REFERER=http://localhost/pes/web/index.php?r=endurance%20run
+---
+2015/01/23 15:38:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "endurance_run".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('endurance_run')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=endurance_run
+HTTP_REFERER=http://localhost/pes/web/index.php?r=bonitation
+---
+2015/01/23 15:38:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "endurance_run".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('endurance_run')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=endurance_run
+HTTP_REFERER=http://localhost/pes/web/index.php?r=bonitation
+---
+2015/01/23 15:39:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('users')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=users
+HTTP_REFERER=http://localhost/pes/web/index.php?r=endurancerun
+---
+2015/01/23 15:39:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "model".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('model')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=model
+---
+2015/01/23 15:49:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users".' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('users')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/web/index.php?r=users
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/20 18:45:24 [error] [exception.CException] exception 'CException' with message 'Property "CMenu.type" is not defined.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWidgetFactory.php(161): CComponent->__set('type', 'list')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(KennelController), 'zii.widgets.CMe...', Array)
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CMe...', Array)
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\views\layouts\main.php(50): CBaseController->widget('zii.widgets.CMe...', Array)
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(126): require('C:\\Program File...')
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Program File...', Array, true)
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\Program File...', Array, true)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="spa...')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="spa...')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(206): COutputProcessor->run()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#11 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\views\layouts\column2.php(22): CBaseController->endContent()
+#12 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(126): require('C:\\Program File...')
+#13 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Program File...', Array, true)
+#14 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(784): CBaseController->renderFile('C:\\Program File...', Array, true)
+#15 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\controllers\KennelController.php(128): CController->render('index', Array)
+#16 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\actions\CInlineAction.php(49): KennelController->actionIndex()
+#17 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('')
+#26 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('kennel')
+#27 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/pes/web/index.php?r=kennel
+HTTP_REFERER=http://localhost/pes/web/index.php?r=bonitation
+---
+2015/02/20 18:45:57 [error] [exception.CException] exception 'CException' with message 'Property "CMenu.type" is not defined.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWidgetFactory.php(161): CComponent->__set('type', 'list')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(KennelController), 'zii.widgets.CMe...', Array)
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CMe...', Array)
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\views\layouts\main.php(50): CBaseController->widget('zii.widgets.CMe...', Array)
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(126): require('C:\\Program File...')
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Program File...', Array, true)
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\Program File...', Array, true)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="spa...')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="spa...')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(206): COutputProcessor->run()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#11 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\views\layouts\column2.php(22): CBaseController->endContent()
+#12 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(126): require('C:\\Program File...')
+#13 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Program File...', Array, true)
+#14 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(784): CBaseController->renderFile('C:\\Program File...', Array, true)
+#15 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\controllers\KennelController.php(128): CController->render('index', Array)
+#16 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\actions\CInlineAction.php(49): KennelController->actionIndex()
+#17 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('')
+#26 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('kennel')
+#27 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/pes/web/index.php?r=kennel
+HTTP_REFERER=http://localhost/pes/web/index.php?r=bonitation
+---
+2015/02/22 09:58:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=user/login
+---
+2015/02/22 09:59:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 09:59:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 09:59:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 10:00:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 10:00:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 10:00:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 10:04:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 10:04:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 10:04:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 10:05:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('test')
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/test')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/test
+HTTP_REFERER=http://localhost/pes/web/index.php?r=dog
+---
+2015/02/22 10:08:15 [error] [php] Undefined variable: model (C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\controllers\DogController.php:149)
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): DogController->filterAccessControl()
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): DogController->runActionWithFilters()
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): DogController->run()
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/web/index.php?r=dog/test
+in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\controllers\DogController.php (149)
+in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php (13)
+2015/02/22 10:08:45 [error] [php] Undefined variable: model (C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\controllers\DogController.php:149)
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): DogController->filterAccessControl()
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): DogController->runActionWithFilters()
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): DogController->run()
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/web/index.php?r=dog/test
+in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\protected\controllers\DogController.php (149)
+in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php (13)
+2015/02/22 10:12:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php:336
+Stack trace:
+#0 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/view')
+#10 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\Program Files\NetBeans 8.0\xampp\htdocs\pes\web\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pes/web/index.php?r=dog/view
+---
