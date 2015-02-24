@@ -1,0 +1,212 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 24, 2015, 9:17:49 AM
+    Author     : Hades
+*/
+@font-face {
+    font-family: myFont;
+    src: url(../font/Raleway-Bold.ttf);
+}
+
+#page{
+    width: inherit;
+    margin-top: 0px;
+}
+
+body{
+    margin: -5px;
+}
+
+#header{
+    border-top: 0px;
+    width: inherit;
+    height: 100px;
+    background-color: #222222;
+    margin-left: -1px;
+    margin-top: -1px;
+    margin-bottom: 1px;    
+    color: #ffffff;
+    
+    padding-left: 20px;
+    font-size: 30px;
+    line-height: 20px;
+    font-family: myFont;
+}
+
+#imageCSV{
+    height:inherit;
+    float:right;
+}
+
+#logo{
+    padding: 0 0 0 0;
+    height:inherit;
+    float:left;
+}
+
+#mainmenu
+{
+	background:#222222 repeat left top ;
+        width: 200px;
+        height: 100%;
+        float: left;
+}
+
+#mainmenu ul
+{
+	padding: 0px 0px 0px 0px;
+}
+
+#mainmenu ul li
+{
+	display: inline;
+        font-family: myFont;
+        
+
+}
+
+#mainmenu ul li a
+{
+	color:#ffffff;
+	background-color:transparent;
+	font-size:14px;
+	font-weight:bold;
+	text-decoration:none;
+	padding:8px 8px;
+        
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-color: #333333;
+}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a
+{
+	color: #ffffff;
+	background-color:#333333;
+	text-decoration:none;
+}
+
+.nav{
+    width:100%;
+    height: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+#content {
+    float: left;
+    width: 100%;
+}
+
+.myspan-center1{
+    width: calc(100% - 600px);
+    margin: 0px 0px 0px 0px;
+    padding: 20px 20px 20px 20px;
+}
+
+.myspan-center2{
+    width: calc(100% - 600px);
+    margin: 0px 0px 0px 0px;
+    padding: 20px 20px 20px 20px;
+}
+
+.myspan-last1{
+    width: 280px;
+    padding: 0px 0px 20px 20px;
+}
+
+.myspan-last2{
+    width: 200px;
+    padding: 20px 20px 20px 20px;
+}
+
+.breadcrumbs{
+    float:left;
+    width: 800px;
+    padding-left: 10px;
+}
+
+.portlet
+{
+
+}
+
+.portlet-decoration
+{
+	padding: 0px 0x;
+	background: #222222;
+	border-left: 5px solid #333333;
+}
+
+.portlet-title
+{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color: #ffffff;
+}
+
+.portlet-content
+{
+	font-size:0.9em;
+	margin: 0 0 0 0;
+	padding: 0px 0px;
+	background:#666666;
+}
+
+.portlet-content ul
+{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+
+.portlet-content li
+{
+	padding: 0px 0 0px 0px;
+}
+
+.operations
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.operations li
+{
+	padding-bottom: 0px;
+}
+
+.operations li a
+{
+	font: bold 12px Arial;
+	color: #fefefe;
+	display: block;
+	padding: 10px 10px 10px 20px;
+	line-height: 15px;
+	text-decoration: none;
+}
+
+.operations li a:visited
+{
+	color: #ffffff;
+}
+
+.operations li a:hover
+{
+	background: #AAAAAA;
+}
+
+#sidebar1{
+    padding: 10px 10px 10px 10px;
+    background-color: #222222;
+    color: #ffffff;
+}

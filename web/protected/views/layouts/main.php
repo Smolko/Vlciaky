@@ -15,6 +15,8 @@
 
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/myStyle.css" />
+
 
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     </head>
@@ -22,14 +24,15 @@
     <body>
 
         <div class="container" id="page">
-
-            <div id="header">
-                <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+            <div id="header" class="col-md-12">
+                <img id="logo" src="images/logo.png" height="10"></img>
+                <img id="imageCSV" src="images/csv.png" height="10"></img>             
+                <p><br>Klub chovateľov <br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;československého vlčiaka SR</p>
             </div><!-- header -->
 
             <div id="mainmenu">
                 <?php
-                $this->widget('zii.widgets.CMenu', array(
+                $this->widget('bootstrap.widgets.TbMenu', array(
                     'items' => array(
                         array('label' => 'Home', 'url' => array('/site/index')),
                         array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
@@ -46,6 +49,23 @@
                         array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
                     ),
                 ));
+                /*$this->widget('bootstrap.widgets.TbMenu', array(
+                    'items' => array(
+                        array('label' => 'Hlavné menu', 'url' => array('/site/index')),
+                        array('label' => 'Posledné pridané', 'url' => array('/site/page', 'view' => 'about')),
+                        array('label' => 'Výsledky klubových výstav', 'url' => array('/site/contact')),
+                        array('label' => 'Výsledky SVP', 'url' => array('/kennel')),
+                        array('label' => 'Výsledky zvodu a bonitacií', 'url' => array('/bonitation')),
+                        array('label' => 'Vyhladávanie jedincov', 'url' => array('/dog')),
+                        array('label' => 'Chovatelské stanice', 'url' => array('/endurancerun')),
+                        array('label' => 'Štatistiky', 'url' => array('/fertilisation')),
+                        array('label' => 'Chovatelský plán', 'url' => array('/health')),
+                        array('label' => 'Plemenná kniha', 'url' => array('/kennel')),
+                        array('label' => 'Členovia klubu', 'url' => array('/youthpresentation')),
+                        array('label' => 'Admin menu', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
+                        array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
+                    ),
+                ));*/
                 ?>
             </div><!-- mainmenu -->
             <?php if (isset($this->breadcrumbs)): ?>
@@ -65,7 +85,6 @@
                 All Rights Reserved.<br/>
                 <?php echo Yii::powered(); ?>
             </div><!-- footer -->
-
         </div><!-- page -->
 
     </body>
