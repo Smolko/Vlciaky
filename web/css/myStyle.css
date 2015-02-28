@@ -7,6 +7,11 @@ and open the template in the editor.
     Created on : Feb 24, 2015, 9:17:49 AM
     Author     : Hades
 */
+body{
+    margin: -5px;
+    height: 100%;
+}
+
 @font-face {
     font-family: myFont;
     src: url(../font/Raleway-Bold.ttf);
@@ -14,46 +19,70 @@ and open the template in the editor.
 
 #page{
     width: inherit;
+    height: 100%;
     margin-top: 0px;
-}
-
-body{
-    margin: -5px;
+    background-color: #F8F0E4;
 }
 
 #header{
     border-top: 0px;
     width: inherit;
-    height: 100px;
-    background-color: #222222;
+    height: available;
+    background-color: #A3712A;
     margin-left: -1px;
     margin-top: -1px;
     margin-bottom: 1px;    
     color: #ffffff;
-    
-    padding-left: 20px;
-    font-size: 30px;
-    line-height: 20px;
-    font-family: myFont;
+    padding-left: 30px;  
 }
 
-#imageCSV{
-    height:inherit;
+#title{
+    padding: 20px;
+    font-size: 30px;
+    line-height: 25px;
+    font-family: myFont;
+}
+#imageCSV, #imageCSV_on, #imageCSV_off{
+    height: 110px;
     float:right;
+}
+
+#imageCSV_off, #imageCSV:hover #imageCSV_on{
+   display:block;
+}
+#imageCSV_on, #imageCSV:hover #imageCSV_off{
+   display:none;
+}
+
+#imageCSV_off:hover {
+   display:none;
+}
+#imageCSV_on:hover{
+   display:block;
 }
 
 #logo{
     padding: 0 0 0 0;
-    height:inherit;
+    height:110px;
     float:left;
+}
+
+#login{
+    width: auto;
+    float:right;
+}
+
+#login ul li a{
+    color: black;
 }
 
 #mainmenu
 {
-	background:#222222 repeat left top ;
+	background:#A3712A repeat left top ;
         width: 200px;
         height: 100%;
         float: left;
+        margin-left: -1px;
 }
 
 #mainmenu ul
@@ -71,7 +100,7 @@ body{
 
 #mainmenu ul li a
 {
-	color:#ffffff;
+	color:#FFFFFF;
 	background-color:transparent;
 	font-size:14px;
 	font-weight:bold;
@@ -80,14 +109,19 @@ body{
         
         border-bottom-width: 1px;
         border-bottom-style: solid;
-        border-color: #333333;
+        border-color: #B4823B;
 }
 
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
 	color: #ffffff;
-	background-color:#333333;
+	background-color:#B4823B;
 	text-decoration:none;
+        font-size:16px;
+        -webkit-transition: font-size, 0.2s;
+        -moz-transition: font-size, 0.2s;
+        -o-transition: font-size, 0.2s;
+        transition: font-size, 0.2s;
 }
 
 .nav{
@@ -99,29 +133,34 @@ body{
 
 #content {
     float: left;
-    width: 100%;
+    width: available;
+    min-width: 200px;
 }
 
 .myspan-center1{
-    width: calc(100% - 600px);
-    margin: 0px 0px 0px 0px;
+    width: calc(100% - 280px - 200px - 62px);
+    margin: 10px 10px 10px 10px !important;
     padding: 20px 20px 20px 20px;
+    border: 1px solid #FFFFFF;
 }
 
 .myspan-center2{
-    width: calc(100% - 600px);
-    margin: 0px 0px 0px 0px;
+    width: calc(100% - 280px - 200px - 62px);
+    margin: 10px 10px 10px 10px !important;
     padding: 20px 20px 20px 20px;
+    border: 1px solid #FFFFFF;
 }
 
 .myspan-last1{
     width: 280px;
-    padding: 0px 0px 20px 20px;
+    margin: 0px 0px 0px 0px !important;
+    padding: 0px 0px 0px 0px;
 }
 
 .myspan-last2{
-    width: 200px;
-    padding: 20px 20px 20px 20px;
+    width: 280px;
+    margin: 00px 00px 00px 00px !important;
+    padding: 0px 0px 0px 0px;
 }
 
 .breadcrumbs{
@@ -138,7 +177,7 @@ body{
 .portlet-decoration
 {
 	padding: 0px 0x;
-	background: #222222;
+	background: #A3712A;
 	border-left: 5px solid #333333;
 }
 
@@ -156,7 +195,7 @@ body{
 	font-size:0.9em;
 	margin: 0 0 0 0;
 	padding: 0px 0px;
-	background:#666666;
+	background:#B3813A;
 }
 
 .portlet-content ul
@@ -207,6 +246,6 @@ body{
 
 #sidebar1{
     padding: 10px 10px 10px 10px;
-    background-color: #222222;
+    background-color: #A3712A;
     color: #ffffff;
 }
