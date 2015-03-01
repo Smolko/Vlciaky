@@ -40,8 +40,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'endurance-run-grid',
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
+	'id'=>'endurancerun-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(

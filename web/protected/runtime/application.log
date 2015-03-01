@@ -783,3 +783,41 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/pes/web/index.php?r=dog/view
 ---
+2015/03/01 14:18:47 [error] [exception.CException] exception 'CException' with message 'Property "Dog.id_dog" is not defined.' in C:\Users\Hades\Documents\GitHub\Vlciaky\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_dog')
+#1 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('id_dog')
+#2 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Dog), 'id_dog')
+#3 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Dog), 'id_dog', Array)
+#4 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Dog), 'id_dog', Array)
+#5 [internal function]: CActiveForm->textField(Object(Dog), 'id_dog', Array)
+#6 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\extensions\bootstrap\widgets\TbActiveForm.php(1188): call_user_func_array(Array, Array)
+#7 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\extensions\bootstrap\widgets\TbActiveForm.php(1106): TbActiveForm->horizontalFieldRow(Array, Object(Dog), 'id_dog', Array)
+#8 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\extensions\bootstrap\widgets\TbActiveForm.php(375): TbActiveForm->customFieldRowInternal(Array, Object(Dog), 'id_dog', Array)
+#9 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\views\dog\_form.php(20): TbActiveForm->textFieldRow(Object(Dog), 'id_dog')
+#10 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CBaseController.php(126): require('C:\\Users\\Hades\\...')
+#11 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Hades\\...', Array, true)
+#12 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\Hades\\...', Array, true)
+#13 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\views\dog\create.php(18): CController->renderPartial('_form', Array)
+#14 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CBaseController.php(126): require('C:\\Users\\Hades\\...')
+#15 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Hades\\...', Array, true)
+#16 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\Hades\\...', Array, true)
+#17 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#18 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\controllers\DogController.php(79): CController->render('create', Array)
+#19 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\actions\CInlineAction.php(49): DogController->actionCreate()
+#20 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#21 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#23 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CWebApplication.php(282): CController->run('create')
+#29 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/create')
+#30 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\Users\Hades\Documents\GitHub\Vlciaky\web\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/vlciaky/index.php?r=dog/create
+HTTP_REFERER=http://localhost/vlciaky/index.php?r=dog/admin
+---

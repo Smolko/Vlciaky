@@ -33,7 +33,7 @@
  * The followings are the available model relations:
  * @property Dog[] $dogs
  */
-class Health extends CActiveRecord
+class Health extends BaseModel
 {
 	/**
 	 * @return string the associated database table name
@@ -51,11 +51,12 @@ class Health extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('dlk, dbk, dwarf, dm, dna, testicles, teeth, head, eyes, ears, neck, trunk, upper_limbs, lower_limbs, tail, fur, color, movement, attachment_url, vet, date, created_at, state', 'required'),
+			array('dlk, dbk, dwarf, dm, dna, testicles, teeth, head, eyes, ears, neck, trunk, upper_limbs, lower_limbs, tail, fur, color, movement, attachment_url, vet, date, state', 'required'),
 			array('dlk, dbk, dwarf, dm, state', 'numerical', 'integerOnly'=>true),
 			array('dna, testicles, teeth, head, eyes, ears, neck, trunk, upper_limbs, lower_limbs, tail, fur, color, movement, vet', 'length', 'max'=>200),
 			array('attachment_url', 'length', 'max'=>300),
-			array('updated_at', 'safe'),
+			array('created_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
+                        array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, dlk, dbk, dwarf, dm, dna, testicles, teeth, head, eyes, ears, neck, trunk, upper_limbs, lower_limbs, tail, fur, color, movement, attachment_url, vet, date, created_at, updated_at, state', 'safe', 'on'=>'search'),

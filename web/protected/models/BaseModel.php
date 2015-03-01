@@ -24,8 +24,15 @@ class BaseModel extends CActiveRecord{
     
     public function getStateList(){
         return array(
-            self::STATE_ACTIVE=>"Aktivny",
-            self::STATE_INACTIVE=>"Neaktivny",
+            self::STATE_ACTIVE=>"Active",
+            self::STATE_INACTIVE=>"Inactive",
+        );
+    }
+    
+    public function getYesNoList(){
+        return array(
+            self::YES=>"Yes",
+            self::NO=>"No",
         );
     }
     

@@ -34,7 +34,7 @@
  * The followings are the available model relations:
  * @property Dog $idDog
  */
-class Bonitation extends CActiveRecord
+class Bonitation extends BaseModel
 {
 	/**
 	 * @return string the associated database table name
@@ -52,14 +52,15 @@ class Bonitation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_dog, bonitation_code, temperament, comment, head_length, head_width, snout_length, ear_length, oblique_length, chest_depth, chest_circle, front_leg_length, thigh_length, pastern_length, pastern_circle, tarsus_length, tibia_length, harmony, type, bonitation_place, referee, state, date, created_at', 'required'),
+			array('id_dog, bonitation_code, temperament, comment, head_length, head_width, snout_length, ear_length, oblique_length, chest_depth, chest_circle, front_leg_length, thigh_length, pastern_length, pastern_circle, tarsus_length, tibia_length, harmony, type, bonitation_place, referee, state, date', 'required'),
 			array('id_dog, harmony, type, state', 'numerical', 'integerOnly'=>true),
 			array('head_length, head_width, snout_length, ear_length, oblique_length, chest_depth, chest_circle, front_leg_length, thigh_length, pastern_length, pastern_circle, tarsus_length, tibia_length', 'numerical'),
 			array('bonitation_code', 'length', 'max'=>100),
 			array('temperament', 'length', 'max'=>50),
 			array('comment', 'length', 'max'=>1000),
 			array('bonitation_place, referee', 'length', 'max'=>200),
-			array('updated_at', 'safe'),
+			array('created_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
+                        array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_dog, bonitation_code, temperament, comment, head_length, head_width, snout_length, ear_length, oblique_length, chest_depth, chest_circle, front_leg_length, thigh_length, pastern_length, pastern_circle, tarsus_length, tibia_length, harmony, type, bonitation_place, referee, state, date, created_at, updated_at', 'safe', 'on'=>'search'),

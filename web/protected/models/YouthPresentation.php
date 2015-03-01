@@ -18,7 +18,7 @@
  * The followings are the available model relations:
  * @property Dog $idDog
  */
-class YouthPresentation extends CActiveRecord
+class YouthPresentation extends BaseModel
 {
 	/**
 	 * @return string the associated database table name
@@ -36,11 +36,12 @@ class YouthPresentation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('assessment, evaluation, youth_presentation_date, youth_presentation_place, referee, id_dog, created_at, state', 'required'),
+			array('assessment, evaluation, youth_presentation_date, youth_presentation_place, referee, id_dog, state', 'required'),
 			array('evaluation, id_dog, state', 'numerical', 'integerOnly'=>true),
 			array('assessment', 'length', 'max'=>1000),
 			array('youth_presentation_place, referee', 'length', 'max'=>200),
-			array('updated_at', 'safe'),
+			array('created_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
+                        array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, assessment, evaluation, youth_presentation_date, youth_presentation_place, referee, id_dog, created_at, updated_at, state', 'safe', 'on'=>'search'),

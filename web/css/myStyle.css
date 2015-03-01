@@ -152,13 +152,13 @@ body{
 }
 
 .myspan-last1{
-    width: 280px;
+    width: 270px;
     margin: 0px 0px 0px 0px !important;
     padding: 0px 0px 0px 0px;
 }
 
 .myspan-last2{
-    width: 280px;
+    width: 200px;
     margin: 00px 00px 00px 00px !important;
     padding: 0px 0px 0px 0px;
 }
@@ -246,6 +246,12 @@ body{
 
 #sidebar1{
     padding: 10px 10px 10px 10px;
+    background-color: #A3712A;
+    color: #ffffff;
+}
+
+#sidebar2{
+    padding: 0px 0px 0px 0px;
     background-color: #A3712A;
     color: #ffffff;
 }

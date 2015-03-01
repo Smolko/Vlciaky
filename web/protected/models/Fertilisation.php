@@ -23,7 +23,7 @@
  * @property Dog $idDogFather
  * @property Kennel $idKennel
  */
-class Fertilisation extends CActiveRecord
+class Fertilisation extends BaseModel
 {
 	/**
 	 * @return string the associated database table name
@@ -41,10 +41,11 @@ class Fertilisation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fertilisation_date, litter_date, male_count, female_count, comment, id_dog_mother, id_dog_father, id_kennel, created_at, state', 'required'),
+			array('fertilisation_date, litter_date, male_count, female_count, comment, id_dog_mother, id_dog_father, id_kennel, state', 'required'),
 			array('male_count, female_count, id_dog_mother, id_dog_father, id_kennel, state', 'numerical', 'integerOnly'=>true),
 			array('comment', 'length', 'max'=>200),
-			array('updated_at', 'safe'),
+			array('created_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
+                        array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, fertilisation_date, litter_date, male_count, female_count, comment, id_dog_mother, id_dog_father, id_kennel, created_at, updated_at, state', 'safe', 'on'=>'search'),

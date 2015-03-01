@@ -21,7 +21,7 @@
  * The followings are the available model relations:
  * @property Dog $idDog
  */
-class EnduranceRun extends CActiveRecord
+class EnduranceRun extends BaseModel
 {
 	/**
 	 * @return string the associated database table name
@@ -39,12 +39,13 @@ class EnduranceRun extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('place, order, handler, type, evaluation, andurance_run_place, date, referee, id_dog, created_at, state', 'required'),
+			array('place, order, handler, type, evaluation, andurance_run_place, date, referee, id_dog, state', 'required'),
 			array('place, order, id_dog, state', 'numerical', 'integerOnly'=>true),
 			array('handler, andurance_run_place, referee', 'length', 'max'=>200),
 			array('type', 'length', 'max'=>50),
 			array('evaluation', 'length', 'max'=>300),
-			array('updated_at', 'safe'),
+			array('created_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
+                        array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, place, order, handler, type, evaluation, andurance_run_place, date, referee, id_dog, created_at, updated_at, state', 'safe', 'on'=>'search'),
