@@ -1,6 +1,6 @@
 <?php
 
-class DogController extends Controller
+class ExhibitionDogCoupleController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,7 +28,7 @@ class DogController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','test'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -41,7 +41,7 @@ class DogController extends Controller
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
-			),                
+			),
 		);
 	}
 
@@ -62,16 +62,14 @@ class DogController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Dog;
-                // $aa = new Exhibition;
-                
+		$model=new ExhibitionDogCouple;
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Dog']))
+		if(isset($_POST['ExhibitionDogCouple']))
 		{
-			$model->attributes=$_POST['Dog'];
-                        print_r($_POST);
+			$model->attributes=$_POST['ExhibitionDogCouple'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -93,9 +91,9 @@ class DogController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Dog']))
+		if(isset($_POST['ExhibitionDogCouple']))
 		{
-			$model->attributes=$_POST['Dog'];
+			$model->attributes=$_POST['ExhibitionDogCouple'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -124,7 +122,7 @@ class DogController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Dog');
+		$dataProvider=new CActiveDataProvider('ExhibitionDogCouple');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -135,24 +133,12 @@ class DogController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Dog('search');
+		$model=new ExhibitionDogCouple('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Dog']))
-			$model->attributes=$_GET['Dog'];
+		if(isset($_GET['ExhibitionDogCouple']))
+			$model->attributes=$_GET['ExhibitionDogCouple'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-        
-        public function actionTest()
-	{
-		$model=new Dog('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Dog']))
-			$model->attributes=$_GET['Dog'];
-
-		$this->render('test',array(
 			'model'=>$model,
 		));
 	}
@@ -161,12 +147,12 @@ class DogController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Dog the loaded model
+	 * @return ExhibitionDogCouple the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Dog::model()->findByPk($id);
+		$model=ExhibitionDogCouple::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -174,11 +160,11 @@ class DogController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Dog $model the model to be validated
+	 * @param ExhibitionDogCouple $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='dog-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='exhibition-dog-couple-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

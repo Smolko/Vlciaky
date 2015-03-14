@@ -10,6 +10,7 @@
 	'id'=>'dog-form',
 	'enableAjaxValidation'=>false,
         'type'=>'horizontal',
+        //'action' => Yii::app()->createUrl("fuu"),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -17,7 +18,8 @@
 	<?php echo $form->errorSummary($model); ?>
             
         <?php 
-            echo $form->textFieldRow($model,'id_health',array('size'=>30,'maxlength'=>30));
+            //echo $form->textFieldRow($model,'id_health',array('size'=>30,'maxlength'=>30));
+            echo $form->dropDownListRow($model,'id_health', CHtml::listData(Health::model()->findAll(), 'id', 'name'), array('class' => 'span5'));
             echo $form->textFieldRow($model,'id_fertilisation',array('size'=>30,'maxlength'=>30));
             echo $form->textFieldRow($model,'id_owner',array('size'=>30,'maxlength'=>30));
             echo $form->textFieldRow($model,'id_old_owner',array('size'=>30,'maxlength'=>30));
@@ -37,9 +39,6 @@
             echo $form->textFieldRow($model,'breeding',array('size'=>30,'maxlength'=>30));
             echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5'));          
         ?>
-
-
-
 	
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(

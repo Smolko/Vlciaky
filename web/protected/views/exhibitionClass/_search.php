@@ -1,6 +1,6 @@
 <?php
-/* @var $this ExhibitionController */
-/* @var $model Exhibition */
+/* @var $this ExhibitionClassController */
+/* @var $model ExhibitionClass */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,38 +17,33 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>500)); ?>
+		<?php echo $form->label($model,'id_exhibition'); ?>
+		<?php echo $form->textField($model,'id_exhibition'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'class'); ?>
+		<?php echo $form->textField($model,'class'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'id_dog'); ?>
+		<?php echo $form->textField($model,'id_dog'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'place'); ?>
-		<?php echo $form->textField($model,'place',array('size'=>60,'maxlength'=>300)); ?>
+		<?php echo $form->textField($model,'place'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'date'); ?>
-		<?php echo $form->textField($model,'date'); ?>
+		<?php echo $form->label($model,'ranking'); ?>
+		<?php echo $form->textField($model,'ranking',array('size'=>60,'maxlength'=>200)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'referee'); ?>
-		<?php echo $form->textField($model,'referee',array('size'=>60,'maxlength'=>200)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'count_male'); ?>
-		<?php echo $form->textField($model,'count_male'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'count_female'); ?>
-		<?php echo $form->textField($model,'count_female'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'count_all'); ?>
-		<?php echo $form->textField($model,'count_all'); ?>
+		<?php echo $form->label($model,'titul'); ?>
+		<?php echo $form->textField($model,'titul',array('size'=>60,'maxlength'=>200)); ?>
 	</div>
 
 	<div class="row">

@@ -29,5 +29,8 @@ $this->menu=array(
 		'count_male',
 		'count_female',
 		'count_all',
+                'created_at',
+		'updated_at',
+		'state',
 	),
 )); ?>

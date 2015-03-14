@@ -25,6 +25,8 @@
  * @property integer $id_owner
  * @property integer $id_old_owner
  * @property integer $id_kennel_owner
+ * @property string $created_at
+ * @property string $updated_at
  * @property integer $state
  *
  * The followings are the available model relations:
@@ -36,6 +38,10 @@
  * @property Dog[] $dogs
  * @property Users $idKennelOwner
  * @property EnduranceRun[] $enduranceRuns
+ * @property ExhibitionChildDog[] $exhibitionChildDogs
+ * @property ExhibitionClass[] $exhibitionClasses
+ * @property ExhibitionDogCouple[] $exhibitionDogCouples
+ * @property ExhibitionDogCouple[] $exhibitionDogCouples1
  * @property Fertilisation[] $fertilisations
  * @property Fertilisation[] $fertilisations1
  * @property Image[] $images
@@ -43,7 +49,10 @@
  */
 class Dog extends BaseModel
 {
-        public function tableName()
+        /**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
 	{
 		return '{{dog}}';
 	}
@@ -63,13 +72,13 @@ class Dog extends BaseModel
 			array('death_cause', 'length', 'max'=>300),
 			array('breed', 'length', 'max'=>100),
 			array('chip, breeding', 'length', 'max'=>30),
-			array('updated_at', 'safe'),
+			array('birthday, deathday, export_import, created_at, updated_at', 'safe'),
                         array('created_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
                         array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
                         array('id_owner', 'default', 'value' => Yii::app()->user->getId(), 'setOnEmpty' => false, 'on' => 'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, sex, color, birthday, deathday, death_cause, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, created_at, updated_at, id_health, id_fertilisation, id_owner, id_old_owner, id_kennel_owner, state', 'safe', 'on'=>'search'),
+			array('id, name, sex, color, birthday, deathday, death_cause, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, id_health, id_fertilisation, id_owner, id_old_owner, id_kennel_owner, created_at, updated_at, state', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -89,6 +98,10 @@ class Dog extends BaseModel
 			'dogs' => array(self::HAS_MANY, 'Dog', 'id_old_owner'),
 			'idKennelOwner' => array(self::BELONGS_TO, 'Users', 'id_kennel_owner'),
 			'enduranceRuns' => array(self::HAS_MANY, 'EnduranceRun', 'id_dog'),
+                        'exhibitionChildDogs' => array(self::HAS_MANY, 'ExhibitionChildDog', 'id_dog'),
+			'exhibitionClasses' => array(self::HAS_MANY, 'ExhibitionClass', 'id_dog'),
+			'exhibitionDogCouples' => array(self::HAS_MANY, 'ExhibitionDogCouple', 'id_dog1'),
+			'exhibitionDogCouples1' => array(self::HAS_MANY, 'ExhibitionDogCouple', 'id_dog2'),
 			'fertilisations' => array(self::HAS_MANY, 'Fertilisation', 'id_dog_mother'),
 			'fertilisations1' => array(self::HAS_MANY, 'Fertilisation', 'id_dog_father'),
 			'images' => array(self::HAS_MANY, 'Image', 'id_dog'),
@@ -116,13 +129,13 @@ class Dog extends BaseModel
 			'chip' => 'Chip',
 			'export_import' => 'Export Import',
 			'breeding' => 'Breeding',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
 			'id_health' => 'Id Health',
 			'id_fertilisation' => 'Id Fertilisation',
 			'id_owner' => 'Id Owner',
 			'id_old_owner' => 'Id Old Owner',
-			'id_kennel_owner' => 'Id Kennel Owner',
+			'id_kennel_owner' => 'Id Kennel Owner',                  
+			'created_at' => 'Created At',
+			'updated_at' => 'Updated At',
 			'state' => 'State',
 		);
 	}
@@ -159,13 +172,13 @@ class Dog extends BaseModel
 		$criteria->compare('chip',$this->chip,true);
 		$criteria->compare('export_import',$this->export_import,true);
 		$criteria->compare('breeding',$this->breeding,true);
-		$criteria->compare('created_at',$this->created_at,true);
-		$criteria->compare('updated_at',$this->updated_at,true);
 		$criteria->compare('id_health',$this->id_health);
 		$criteria->compare('id_fertilisation',$this->id_fertilisation);
 		$criteria->compare('id_owner',$this->id_owner);
 		$criteria->compare('id_old_owner',$this->id_old_owner);
 		$criteria->compare('id_kennel_owner',$this->id_kennel_owner);
+                $criteria->compare('created_at',$this->created_at,true);
+		$criteria->compare('updated_at',$this->updated_at,true);
 		$criteria->compare('state',$this->state);
 
 		return new CActiveDataProvider($this, array(

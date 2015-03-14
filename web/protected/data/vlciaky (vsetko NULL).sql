@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Hostiteľ: 127.0.0.1
--- Čas generovania: Ne 01.Mar 2015, 15:53
+-- Čas generovania: St 04.Mar 2015, 13:03
 -- Verzia serveru: 5.6.20
 -- Verzia PHP: 5.5.15
 
@@ -76,13 +76,13 @@ CREATE TABLE IF NOT EXISTS `tbl_dog` (
   `chip` varchar(30) DEFAULT NULL,
   `export_import` date DEFAULT NULL,
   `breeding` varchar(30) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
   `id_health` int(11) DEFAULT NULL,
   `id_fertilisation` int(11) DEFAULT NULL,
   `id_owner` int(11) DEFAULT NULL,
   `id_old_owner` int(11) DEFAULT NULL,
   `id_kennel_owner` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   `state` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
@@ -90,8 +90,8 @@ CREATE TABLE IF NOT EXISTS `tbl_dog` (
 -- Sťahujem dáta pre tabuľku `tbl_dog`
 --
 
-INSERT INTO `tbl_dog` (`id`, `name`, `sex`, `color`, `birthday`, `deathday`, `death_cause`, `breed`, `old_regnumber`, `new_regnumber`, `tattoo`, `chip`, `export_import`, `breeding`, `created_at`, `updated_at`, `id_health`, `id_fertilisation`, `id_owner`, `id_old_owner`, `id_kennel_owner`, `state`) VALUES
-(3, 'Name1', 0, 'Color1', '2014-11-23', NULL, '', 'Breed1', 'Old1', 'New1', 0, 'Chip1', '2014-11-16', 'Breeding1', '2014-11-23 15:21:43', NULL, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO `tbl_dog` (`id`, `name`, `sex`, `color`, `birthday`, `deathday`, `death_cause`, `breed`, `old_regnumber`, `new_regnumber`, `tattoo`, `chip`, `export_import`, `breeding`, `id_health`, `id_fertilisation`, `id_owner`, `id_old_owner`, `id_kennel_owner`, `created_at`, `updated_at`, `state`) VALUES
+(3, 'Name1', 0, 'Color1', '2014-11-23', NULL, '', 'Breed1', 'Old1', 'New1', 0, 'Chip1', '2014-11-16', 'Breeding1', NULL, NULL, 1, NULL, NULL, '2014-11-23 15:21:43', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,10 @@ CREATE TABLE IF NOT EXISTS `tbl_exhibition` (
   `referee` varchar(200) DEFAULT NULL,
   `count_male` int(11) DEFAULT NULL,
   `count_female` int(11) DEFAULT NULL,
-  `count_all` int(11) DEFAULT NULL
+  `count_all` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `state` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -140,8 +143,12 @@ CREATE TABLE IF NOT EXISTS `tbl_exhibition` (
 
 CREATE TABLE IF NOT EXISTS `tbl_exhibition_best_kennel` (
 `id` int(11) NOT NULL,
+  `id_exhibition` int(11) NOT NULL,
   `id_kennel` int(11) DEFAULT NULL,
-  `place` int(11) DEFAULT NULL
+  `place` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `state` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -155,7 +162,10 @@ CREATE TABLE IF NOT EXISTS `tbl_exhibition_child_dog` (
   `id_exhibition` int(11) DEFAULT NULL,
   `id_dog` int(11) DEFAULT NULL,
   `child` varchar(300) CHARACTER SET latin1 DEFAULT NULL,
-  `place` int(11) DEFAULT NULL
+  `place` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `state` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -171,7 +181,10 @@ CREATE TABLE IF NOT EXISTS `tbl_exhibition_class` (
   `id_dog` int(11) DEFAULT NULL,
   `place` int(11) DEFAULT NULL,
   `ranking` varchar(200) DEFAULT NULL,
-  `titul` varchar(200) DEFAULT NULL
+  `titul` varchar(200) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `state` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -182,9 +195,13 @@ CREATE TABLE IF NOT EXISTS `tbl_exhibition_class` (
 
 CREATE TABLE IF NOT EXISTS `tbl_exhibition_dog_couple` (
 `id` int(11) NOT NULL,
+  `id_exhibition` int(11) NOT NULL,
   `id_dog1` int(11) DEFAULT NULL,
   `id_dog2` int(11) DEFAULT NULL,
-  `place` int(11) DEFAULT NULL
+  `place` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `state` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -277,7 +294,14 @@ CREATE TABLE IF NOT EXISTS `tbl_kennel` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `state` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Sťahujem dáta pre tabuľku `tbl_kennel`
+--
+
+INSERT INTO `tbl_kennel` (`id`, `name`, `reg_number`, `registered_at`, `id_user`, `created_at`, `updated_at`, `state`) VALUES
+(1, 'U Smolka', '65412657', '2015-02-03', 1, '2015-03-01 19:54:46', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -405,7 +429,7 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `username`, `password`, `email`, `activkey`, `superuser`, `status`, `create_at`, `lastvisit_at`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '1eb7633a3bae0e9f1bfc69560937ccdb', 1, 1, '2014-11-10 16:35:45', '2015-03-01 12:40:16');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '1eb7633a3bae0e9f1bfc69560937ccdb', 1, 1, '2014-11-10 16:35:45', '2015-03-04 11:55:39');
 
 -- --------------------------------------------------------
 
@@ -458,7 +482,7 @@ ALTER TABLE `tbl_exhibition`
 -- Indexes for table `tbl_exhibition_best_kennel`
 --
 ALTER TABLE `tbl_exhibition_best_kennel`
- ADD PRIMARY KEY (`id`), ADD KEY `id_kennel` (`id_kennel`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id_kennel` (`id_kennel`), ADD KEY `id_exhibition` (`id_exhibition`);
 
 --
 -- Indexes for table `tbl_exhibition_child_dog`
@@ -476,7 +500,7 @@ ALTER TABLE `tbl_exhibition_class`
 -- Indexes for table `tbl_exhibition_dog_couple`
 --
 ALTER TABLE `tbl_exhibition_dog_couple`
- ADD PRIMARY KEY (`id`), ADD KEY `id_dog1` (`id_dog1`,`id_dog2`), ADD KEY `id_dog2` (`id_dog2`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id_dog1` (`id_dog1`,`id_dog2`), ADD KEY `id_dog2` (`id_dog2`), ADD KEY `id_exhibition` (`id_exhibition`);
 
 --
 -- Indexes for table `tbl_fertilisation`
@@ -601,7 +625,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `tbl_kennel`
 --
 ALTER TABLE `tbl_kennel`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_profiles`
 --
@@ -657,7 +681,8 @@ ADD CONSTRAINT `tbl_endurance_run_ibfk_1` FOREIGN KEY (`id_dog`) REFERENCES `tbl
 -- Obmedzenie pre tabuľku `tbl_exhibition_best_kennel`
 --
 ALTER TABLE `tbl_exhibition_best_kennel`
-ADD CONSTRAINT `tbl_exhibition_best_kennel_ibfk_1` FOREIGN KEY (`id_kennel`) REFERENCES `tbl_kennel` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `tbl_exhibition_best_kennel_ibfk_1` FOREIGN KEY (`id_kennel`) REFERENCES `tbl_kennel` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `tbl_exhibition_best_kennel_ibfk_2` FOREIGN KEY (`id_exhibition`) REFERENCES `tbl_exhibition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Obmedzenie pre tabuľku `tbl_exhibition_child_dog`
@@ -678,7 +703,8 @@ ADD CONSTRAINT `tbl_exhibition_class_ibfk_2` FOREIGN KEY (`id_dog`) REFERENCES `
 --
 ALTER TABLE `tbl_exhibition_dog_couple`
 ADD CONSTRAINT `tbl_exhibition_dog_couple_ibfk_1` FOREIGN KEY (`id_dog1`) REFERENCES `tbl_dog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `tbl_exhibition_dog_couple_ibfk_2` FOREIGN KEY (`id_dog2`) REFERENCES `tbl_dog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `tbl_exhibition_dog_couple_ibfk_2` FOREIGN KEY (`id_dog2`) REFERENCES `tbl_dog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `tbl_exhibition_dog_couple_ibfk_3` FOREIGN KEY (`id_exhibition`) REFERENCES `tbl_exhibition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Obmedzenie pre tabuľku `tbl_fertilisation`

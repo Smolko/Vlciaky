@@ -1,35 +1,32 @@
 <?php
 
 /**
- * This is the model class for table "{{exhibition}}".
+ * This is the model class for table "{{exhibition_class}}".
  *
- * The followings are the available columns in table '{{exhibition}}':
+ * The followings are the available columns in table '{{exhibition_class}}':
  * @property integer $id
- * @property string $name
- * @property string $place
- * @property string $date
- * @property string $referee
- * @property integer $count_male
- * @property integer $count_female
- * @property integer $count_all
+ * @property integer $id_exhibition
+ * @property integer $class
+ * @property integer $id_dog
+ * @property integer $place
+ * @property string $ranking
+ * @property string $titul
  * @property string $created_at
  * @property string $updated_at
  * @property integer $state
- * 
+ *
  * The followings are the available model relations:
- * @property ExhibitionBestKennel[] $exhibitionBestKennels
- * @property ExhibitionChildDog[] $exhibitionChildDogs
- * @property ExhibitionClass[] $exhibitionClasses
- * @property ExhibitionDogCouple[] $exhibitionDogCouples
+ * @property Exhibition $idExhibition
+ * @property Dog $idDog
  */
-class Exhibition extends BaseModel
+class ExhibitionClass extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{exhibition}}';
+		return '{{exhibition_class}}';
 	}
 
 	/**
@@ -40,16 +37,14 @@ class Exhibition extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('count_male, count_female, count_all, state', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>500),
-			array('place', 'length', 'max'=>300),
-			array('referee', 'length', 'max'=>200),
-			array('date, created_at, updated_at', 'safe'),
+			array('id_exhibition, class, id_dog, place, state', 'numerical', 'integerOnly'=>true),
+			array('ranking, titul', 'length', 'max'=>200),
+			array('created_at, updated_at', 'safe'),
                         array('created_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
                         array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, place, date, referee, count_male, count_female, count_all, created_at, updated_at, state', 'safe', 'on'=>'search'),
+			array('id, id_exhibition, class, id_dog, place, ranking, titul, created_at, updated_at, state', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,10 +56,8 @@ class Exhibition extends BaseModel
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'exhibitionBestKennels' => array(self::HAS_MANY, 'ExhibitionBestKennel', 'id_exhibition'),
-			'exhibitionChildDogs' => array(self::HAS_MANY, 'ExhibitionChildDog', 'id_exhibition'),
-			'exhibitionClasses' => array(self::HAS_MANY, 'ExhibitionClass', 'id_exhibition'),
-			'exhibitionDogCouples' => array(self::HAS_MANY, 'ExhibitionDogCouple', 'id_exhibition'),
+			'idExhibition' => array(self::BELONGS_TO, 'Exhibition', 'id_exhibition'),
+			'idDog' => array(self::BELONGS_TO, 'Dog', 'id_dog'),
 		);
 	}
 
@@ -75,13 +68,12 @@ class Exhibition extends BaseModel
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
+			'id_exhibition' => 'Id Exhibition',
+			'class' => 'Class',
+			'id_dog' => 'Id Dog',
 			'place' => 'Place',
-			'date' => 'Date',
-			'referee' => 'Referee',
-			'count_male' => 'Count Male',
-			'count_female' => 'Count Female',
-			'count_all' => 'Count All',
+			'ranking' => 'Ranking',
+			'titul' => 'Titul',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
 			'state' => 'State',
@@ -107,13 +99,12 @@ class Exhibition extends BaseModel
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('place',$this->place,true);
-		$criteria->compare('date',$this->date,true);
-		$criteria->compare('referee',$this->referee,true);
-		$criteria->compare('count_male',$this->count_male);
-		$criteria->compare('count_female',$this->count_female);
-		$criteria->compare('count_all',$this->count_all);
+		$criteria->compare('id_exhibition',$this->id_exhibition);
+		$criteria->compare('class',$this->class);
+		$criteria->compare('id_dog',$this->id_dog);
+		$criteria->compare('place',$this->place);
+		$criteria->compare('ranking',$this->ranking,true);
+		$criteria->compare('titul',$this->titul,true);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
 		$criteria->compare('state',$this->state);
@@ -127,7 +118,7 @@ class Exhibition extends BaseModel
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Exhibition the static model class
+	 * @return ExhibitionClass the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -25,6 +25,7 @@
 		echo $form->textFieldRow($model,'count_male'); 
 		echo $form->textFieldRow($model,'count_female'); 
 		echo $form->textFieldRow($model,'count_all'); 
+		echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5'));   
             ?>
 
 	<div class="form-actions">

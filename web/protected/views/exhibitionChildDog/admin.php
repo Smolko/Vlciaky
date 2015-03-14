@@ -1,15 +1,15 @@
 <?php
-/* @var $this ExhibitionController */
-/* @var $model Exhibition */
+/* @var $this ExhibitionChildDogController */
+/* @var $model ExhibitionChildDog */
 
 $this->breadcrumbs=array(
-	'Exhibitions'=>array('index'),
+	'Exhibition Child Dogs'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Exhibition', 'url'=>array('index')),
-	array('label'=>'Create Exhibition', 'url'=>array('create')),
+	array('label'=>'List ExhibitionChildDog', 'url'=>array('index')),
+	array('label'=>'Create ExhibitionChildDog', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#exhibition-grid').yiiGridView('update', {
+	$('#exhibition-child-dog-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Exhibitions</h1>
+<h1>Manage Exhibition Child Dogs</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -40,21 +40,18 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView', array(
-	'id'=>'exhibition-grid',
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'exhibition-child-dog-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		//'id',
-		'name',
+		'id',
+		'id_exhibition',
+		'id_dog',
+		'child',
 		'place',
-		'date',
-		'referee',
-                /*
-		'count_male',
-		'count_female',
-		'count_all',
 		'created_at',
+		/*
 		'updated_at',
 		'state',
 		*/

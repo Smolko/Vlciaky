@@ -32,12 +32,21 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('count_female')); ?>:</b>
 	<?php echo CHtml::encode($data->count_female); ?>
 	<br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('count_all')); ?>:</b>
+        
+        <b><?php echo CHtml::encode($data->getAttributeLabel('count_all')); ?>:</b>
 	<?php echo CHtml::encode($data->count_all); ?>
 	<br />
 
-	*/ ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('created_at')); ?>:</b>
+	<?php echo CHtml::encode($data->created_at); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('updated_at')); ?>:</b>
+	<?php echo CHtml::encode($data->updated_at); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('state')); ?>:</b>
+	<?php echo CHtml::encode($data->state); ?>
+        <br />
 
 </div>
