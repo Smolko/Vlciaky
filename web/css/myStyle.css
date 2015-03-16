@@ -133,7 +133,7 @@ body{
 
 #content {
     float: left;
-    width: available;
+    width: calc(100% - 40px);
     min-width: 200px;
 }
 

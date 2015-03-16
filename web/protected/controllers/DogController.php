@@ -147,7 +147,9 @@ class DogController extends Controller
         
         public function actionTest()
 	{
-		$model=new Dog('search');
+            if (isset($_POST['ppp']))
+                var_dump($_POST['ppp']);
+		$model=new Dog();
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Dog']))
 			$model->attributes=$_GET['Dog'];

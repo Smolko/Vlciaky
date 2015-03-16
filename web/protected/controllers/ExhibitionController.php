@@ -28,7 +28,7 @@ class ExhibitionController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','test'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -142,7 +142,7 @@ class ExhibitionController extends Controller
 			'model'=>$model,
 		));
 	}
-
+        
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -170,4 +170,19 @@ class ExhibitionController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        public function actionTest(){
+                       
+            $dataProvider = new CActiveDataProvider(
+                        'Exhibition', 
+                        array('criteria' => Exhibition::model()->getCriteria(), 
+                            'pagination'=>array(
+                                'pageSize'=>5,
+                            ),
+                        ));
+           
+            $this->render('test',array(
+                    'dataProvider'=>$dataProvider,
+            ));
+        }
 }

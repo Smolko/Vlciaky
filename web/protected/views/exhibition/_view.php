@@ -25,6 +25,7 @@
 	<?php echo CHtml::encode($data->referee); ?>
 	<br />
 
+        <?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('count_male')); ?>:</b>
 	<?php echo CHtml::encode($data->count_male); ?>
 	<br />
@@ -48,5 +49,6 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('state')); ?>:</b>
 	<?php echo CHtml::encode($data->state); ?>
         <br />
-
+        */ 
+        ?>
 </div>
