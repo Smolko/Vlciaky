@@ -50,11 +50,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'place',
 		'date',
 		'referee',
-                /*
-		'count_male',
+                'count_male',
 		'count_female',
 		'count_all',
-		'created_at',
+          //      'pocet',
+		/*'created_at',
 		'updated_at',
 		'state',
 		*/

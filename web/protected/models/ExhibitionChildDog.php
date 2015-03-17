@@ -17,7 +17,7 @@
  * @property Exhibition $idExhibition
  * @property Dog $idDog
  */
-class ExhibitionChildDog extends CActiveRecord
+class ExhibitionChildDog extends BaseModel
 {
 	/**
 	 * @return string the associated database table name

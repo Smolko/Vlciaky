@@ -7,6 +7,7 @@
 Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
+    'language'=>'sk',
     'name' => 'Československý vlčiak',
     'theme' => 'classic',
     // preloading 'log' component
@@ -72,9 +73,9 @@ return array(
           ),
          */
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=dog_test',
+            'connectionString' => 'mysql:host=localhost;dbname=vlciaky',
             'username' => 'root',
-            'password' => '',
+            'password' => 'vertrigo',
             'emulatePrepare' => true,
             'charset' => 'utf8',
             'tablePrefix' => 'tbl_',

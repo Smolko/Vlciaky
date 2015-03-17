@@ -42,4 +42,16 @@ class BaseModel extends CActiveRecord{
             self::FEMALE=>"Female",
         );
     }
+    
+   protected function generateAttributeLabels($valuesToTransalte){
+        $return = array();
+        foreach($valuesToTransalte as $valueToTranslate){
+            $return[$valueToTranslate] = $this->getOneAttributeLabel($valueToTranslate);
+        }
+        return $return;
+    }
+    
+    protected function getOneAttributeLabel($valueToTranslate){
+        return Yii::t('model', strtolower(get_class($this)).".".$valueToTranslate);
+    }
 }

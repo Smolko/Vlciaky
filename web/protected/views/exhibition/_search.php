@@ -65,6 +65,11 @@
 		<?php echo $form->label($model,'state'); ?>
 		<?php echo $form->textField($model,'state'); ?>
 	</div>
+    
+        <div class="row">
+		<?php  echo CHtml::label("pocet", "pocet", array ());
+		 echo CHtml::textField("pocet", NULL, array ('id'=>'pocet' )); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

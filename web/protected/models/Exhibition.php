@@ -47,7 +47,7 @@ class Exhibition extends BaseModel {
             array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, name, place, date, referee, count_male, count_female, count_all, created_at, updated_at, state', 'safe', 'on' => 'search'),
+            array('id, name, place, date, pocet, referee, count_male, count_female, count_all, created_at, updated_at, state', 'safe', 'on' => 'search'),
         );
     }
 
@@ -68,20 +68,26 @@ class Exhibition extends BaseModel {
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels() {
-        return array(
-            'id' => 'ID',
-            'name' => 'Name',
-            'place' => 'Place',
-            'date' => 'Date',
-            'referee' => 'Referee',
-            'count_male' => 'Count Male',
-            'count_female' => 'Count Female',
-            'count_all' => 'Count All',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'state' => 'State',
-        );
+//    public function attributeLabels() {
+//        return array(
+//            'id' => 'ID',
+//            'name' => 'Name',
+//            'place' => 'Place',
+//            'date' => 'Date',
+//            'referee' => 'Referee',
+//            'count_male' => 'Count Male',
+//            'count_female' => 'Count Female',
+//            'count_all' => 'Count All',
+//            'created_at' => 'Created At',
+//            'updated_at' => 'Updated At',
+//            'state' => 'State',
+//        );
+//    }
+    
+     public function attributeLabels(){
+        return $this->generateAttributeLabels(array(
+            'id','name','state','created_at','updated_at','products','reps'
+        ));    
     }
 
     /**
@@ -100,9 +106,11 @@ class Exhibition extends BaseModel {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
-
+//        var_dump($_GET['pocet']);
+   
         $criteria->compare('id', $this->id);
         $criteria->compare('name', $this->name, true);
+        
         $criteria->compare('place', $this->place, true);
         $criteria->compare('date', $this->date, true);
         $criteria->compare('referee', $this->referee, true);
