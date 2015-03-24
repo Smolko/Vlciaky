@@ -46,6 +46,6 @@ Temporary Items
 /web/nbproject/private/
 
 /web/assets/
-/web/extensions/assets/
+/web/protected/extensions/bootstrap/assets/
 /web/protected/config/
 
