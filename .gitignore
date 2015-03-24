@@ -45,6 +45,7 @@ Temporary Items
 
 /web/nbproject/private/
 
-
-# GACKO je gej
+/web/assets/
+/web/extensions/assets/
+/web/protected/config/
 
