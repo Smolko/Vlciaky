@@ -235,3 +235,27 @@ Stack trace:
 REQUEST_URI=/pes/index.php?r=exhibition/create
 HTTP_REFERER=http://localhost/pes/index.php?r=exhibition/admin
 ---
+2015/03/22 16:25:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nepodarilo sa spracovať požiadavku "auth".' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('auth')
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/index.php?r=auth
+---
+2015/03/22 16:25:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nepodarilo sa spracovať požiadavku "user/auth".' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('user/auth')
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/index.php?r=user/auth
+---
+2015/03/22 16:36:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nepodarilo sa spracovať požiadavku "auth".' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('auth')
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pes/index.php?r=auth
+---

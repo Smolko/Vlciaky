@@ -7,4 +7,5 @@ return array(
     'exhibition.name'=>'Názov',
     'exhibition.state'=>'Stav',
     'exhibition.title'=>"Výstava",
+    'exhibition.newdogchil'=>'daco nove',
 );
