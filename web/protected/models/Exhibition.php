@@ -154,5 +154,60 @@ class Exhibition extends BaseModel {
         
         return $criteria;
     }
+    
+    public function setDogChildParameters($dogs,$children){
+     $params = array();
+        foreach ($dogs as $key => $dogID) {
+            if (is_numeric($key) && isset($children[$key])) {
+                $model = $this->_findOrNew($dogID);
+                $model->child=$children[$key];
+                $params[$dogID]=$model;
+            }
+        }
+        $this->exhibitionChildDogs = $params;
+    }
 
+    private function _findOrNew($dogID) {
+        $model = NULL;
+        if (!$this->isNewRecord)
+            $model = ExhibitionChildDog::model()->findByAttributes(array("id_dog" => $dogID, 'id_exhibition' => $this->id));
+
+        if ($model === NULL) {
+            $model = new ExhibitionChildDog();
+            $model->id_dog =  $dogID;
+        }
+        return $model;
+    }
+    
+    public function save($runValidation = true, $attributes = array()) {
+        if (!empty($attributes)) {
+            return parent::save($runValidation, $attributes);
+        }
+        return $this->withRelated->save(
+                    $runValidation, CMap::mergeArray($attributes, array('exhibitionChildDogs'))
+        );
+    }
+        
+    public function getErrors($attribute = null) {
+        $errors = parent::getErrors($attribute);
+        if ($attribute === null) {
+            foreach($this->exhibitionChildDogs as $param){
+                $errors = CMap::mergeArray($errors, $param->errors);
+            }
+        }
+        return $errors;
+    }
+    
+    public function behaviors(){
+        return array(
+            /*'activerecord-relation'=>array(
+                'class'=>'application.components.behaviors..EActiveRecordRelationBehavior',
+            ),*/
+            'withRelated'=>array(
+                'class'=>'application.components.WithRelatedBehavior',
+            ),
+            
+      //      'LoggableBehavior'=> 'application.components.behaviors.ExtLoggableBehavior',
+        ); 
+    }
 }

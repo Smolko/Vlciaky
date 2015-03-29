@@ -54,4 +54,10 @@ class BaseModel extends CActiveRecord{
     protected function getOneAttributeLabel($valueToTranslate){
         return Yii::t('model', strtolower(get_class($this)).".".$valueToTranslate);
     }
+    
+    public function getList(){
+        $models = $this->findAll(array('order' => 'name'));
+        return CHtml::listData($models, 'id', 'name');
+    }
+    
 }

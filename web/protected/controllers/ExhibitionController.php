@@ -70,6 +70,7 @@ class ExhibitionController extends Controller
 		if(isset($_POST['Exhibition']))
 		{
 			$model->attributes=$_POST['Exhibition'];
+                        $model->setDogChildParameters($_POST['Dog'],$_POST['Child']);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

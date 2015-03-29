@@ -22,7 +22,7 @@
                 <td>
 	<?php
            echo CHtml::label("Dog", "dog_counter", array ( ));
-           echo CHtml::textField('Dog[counter]', NULL, array('class' => 'span5', 'maxlength' => 6));
+           echo CHtml::dropDownList('Dog[counter]',NULL ,Dog::model()->list, array('class' => 'span5', 'maxlength' => 6));
            echo CHtml::label("Child", "child_counter", array ( ));
            echo CHtml::textField('Child[counter]', NULL, array('class' => 'span5', 'maxlength' => 6));
      
