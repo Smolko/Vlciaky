@@ -35,6 +35,7 @@ class ExhibitionChildDog extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+                        array('id_dog, child','required'),
 			array('id_exhibition, id_dog, place, state', 'numerical', 'integerOnly'=>true),
 			array('child', 'length', 'max'=>300),
 			array('created_at, updated_at', 'safe'),

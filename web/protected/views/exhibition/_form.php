@@ -4,7 +4,9 @@
 /* @var $form CActiveForm */
 ?>
 
-
+<?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibition.js?v='.Yii::app()->params['version'], CClientScript::POS_END); 
+?>
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'id'=>'exhibition-form',
@@ -26,7 +28,11 @@
 		echo $form->textFieldRow($model,'count_female'); 
 		echo $form->textFieldRow($model,'count_all'); 
 		echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5'));
-                echo $this->renderPartial('_formDetails', array()); 
+                
+                echo $this->renderPartial('_form_DogClass', array('model'=>$model));
+                echo $this->renderPartial('_form_ChildDog', array('model'=>$model)); 
+                echo $this->renderPartial('_form_DogCouple', array('model'=>$model)); 
+                echo $this->renderPartial('_form_BestKennel', array('model'=>$model));                  
             ?>
 
 	<div class="form-actions">
@@ -40,9 +46,4 @@
 
 <?php $this->endWidget();
 
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibition.js?v='.Yii::app()->params['version'], CClientScript::POS_END); 
-Yii::app()->clientScript->registerScript("QBuilder", 
-    "var ExhibitionCreate = new ExhibitionForm({
-        form_elem : $('#exhibition-form')})", 
-    CClientScript::POS_END
-);
+

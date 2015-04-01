@@ -28,7 +28,7 @@ class ExhibitionController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','test'),
+				'actions'=>array('index','view','list'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -69,8 +69,15 @@ class ExhibitionController extends Controller
 
 		if(isset($_POST['Exhibition']))
 		{
-			$model->attributes=$_POST['Exhibition'];
-                        $model->setDogChildParameters($_POST['Dog'],$_POST['Child']);
+			$model->attributes=$_POST['Exhibition'];                     
+                        $model->setDogChildParameters($_POST['ChildDog_Dog'],$_POST['ChildDog_Child'],$_POST['ChildDog_Place']);
+                        $model->setDogCoupleParameters($_POST['DogCouple_Dog1'],$_POST['DogCouple_Dog2'],$_POST['DogCouple_Place']);
+                        $model->setBestKennelParameters($_POST['BestKennel_Kennel'],$_POST['BestKennel_Place']);
+                        
+                        $classes = Dog::model()->getExhibitionClasses();
+                        foreach ($classes as $key => $class)
+                            $model->setDogClassParameters($key, $_POST['Class'.$key.'_Dog'],$_POST['Class'.$key.'_Ranking'],$_POST['Class'.$key.'_Titul'],$_POST['Class'.$key.'_Place']);
+                        
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -95,10 +102,18 @@ class ExhibitionController extends Controller
 		if(isset($_POST['Exhibition']))
 		{
 			$model->attributes=$_POST['Exhibition'];
+                        $model->setDogChildParameters($_POST['ChildDog_Dog'],$_POST['ChildDog_Child'],$_POST['ChildDog_Place']);
+                        $model->setDogCoupleParameters($_POST['DogCouple_Dog1'],$_POST['DogCouple_Dog2'],$_POST['DogCouple_Place']);
+                        $model->setBestKennelParameters($_POST['BestKennel_Kennel'],$_POST['BestKennel_Place']);
+                        
+                        $classes = Dog::model()->getExhibitionClasses();
+                        foreach ($classes as $key => $class)
+                            $model->setDogClassParameters($key, $_POST['Class'.$key.'_Dog'],$_POST['Class'.$key.'_Ranking'],$_POST['Class'.$key.'_Titul'],$_POST['Class'.$key.'_Place']);
+                        
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
+                
 		$this->render('update',array(
 			'model'=>$model,
 		));
@@ -123,12 +138,22 @@ class ExhibitionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Exhibition');
+                $model=new Exhibition('searchIndex');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Exhibition']))
+			$model->attributes=$_GET['Exhibition'];
+                
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                        'model'=>$model,
 		));
 	}
 
+        public function actionList(){
+                $dataProvider=new CActiveDataProvider('Exhibition');
+		$this->render('list',array(
+			'dataProvider'=>$dataProvider,
+		));
+        }
 	/**
 	 * Manages all models.
 	 */
@@ -153,7 +178,7 @@ class ExhibitionController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Exhibition::model()->findByPk($id);
+		$model=Exhibition::model()->with('exhibitionChildDogs','exhibitionDogCouples','exhibitionClasses','exhibitionBestKennels')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -171,19 +196,4 @@ class ExhibitionController extends Controller
 			Yii::app()->end();
 		}
 	}
-        
-        public function actionTest(){
-                       
-            $dataProvider = new CActiveDataProvider(
-                        'Exhibition', 
-                        array('criteria' => Exhibition::model()->getCriteria(), 
-                            'pagination'=>array(
-                                'pageSize'=>5,
-                            ),
-                        ));
-           
-            $this->render('test',array(
-                    'dataProvider'=>$dataProvider,
-            ));
-        }
 }

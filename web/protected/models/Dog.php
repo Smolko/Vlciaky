@@ -216,4 +216,12 @@ class Dog extends BaseModel
         public function getDogCount(){
             return count($this->findAll()); 
         }
+        
+        public function getMaleList(){
+            return CHtml::listData($this->findAllByAttributes(array('sex'=>1)), 'id', 'name');
+        }
+        
+        public function getFemaleList(){
+            return CHtml::listData($this->findAllByAttributes(array('sex'=>0)), 'id', 'name');
+        }
 }

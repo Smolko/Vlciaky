@@ -1,20 +1,38 @@
 <?php
 /* @var $this ExhibitionController */
-/* @var $dataProvider CActiveDataProvider */
+/* @var $model Exhibition */
 
 $this->breadcrumbs=array(
-	'Exhibitions',
+	'Exhibitions'=>array('index'),
+	'Manage',
 );
 
 $this->menu=array(
+	array('label'=>'List Exhibition', 'url'=>array('list')),
 	array('label'=>'Create Exhibition', 'url'=>array('create')),
-	array('label'=>'Manage Exhibition', 'url'=>array('admin')),
 );
+
+Yii::app()->clientScript->registerScript('search', "
+$('.search-form form').submit(function(){
+        $.fn.yiiListView.update(
+                'exhibition-grid',
+                {data: $(this).serialize()}
+            );
+	return false;
+});
+");
 ?>
 
-<h1>Exhibitions</h1>
+<div class="search-form">
+<?php $this->renderPartial('_searchIndex',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+
+<?php $this->widget('bootstrap.widgets.TbListView', array(
+	'id'=>'exhibition-grid',
+	'dataProvider'=>$model->searchIndex(),
+	'itemView'=>'_viewIndex',
+        'summaryText'=>"",
 )); ?>

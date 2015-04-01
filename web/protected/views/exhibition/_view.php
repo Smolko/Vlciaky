@@ -25,7 +25,6 @@
 	<?php echo CHtml::encode($data->referee); ?>
 	<br />
 
-        <?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('count_male')); ?>:</b>
 	<?php echo CHtml::encode($data->count_male); ?>
 	<br />
@@ -38,6 +37,7 @@
 	<?php echo CHtml::encode($data->count_all); ?>
 	<br />
 
+        <!--
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_at')); ?>:</b>
 	<?php echo CHtml::encode($data->created_at); ?>
 	<br />
@@ -45,10 +45,9 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('updated_at')); ?>:</b>
 	<?php echo CHtml::encode($data->updated_at); ?>
 	<br />
-
+        -->
 	<b><?php echo CHtml::encode($data->getAttributeLabel('state')); ?>:</b>
 	<?php echo CHtml::encode($data->state); ?>
         <br />
-        */ 
-        ?>
+
 </div>

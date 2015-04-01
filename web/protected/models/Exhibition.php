@@ -38,6 +38,7 @@ class Exhibition extends BaseModel {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
+            array('name', 'required'),
             array('count_male, count_female, count_all, state', 'numerical', 'integerOnly' => true),
             array('name', 'length', 'max' => 500),
             array('place', 'length', 'max' => 300),
@@ -106,7 +107,6 @@ class Exhibition extends BaseModel {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
-//        var_dump($_GET['pocet']);
    
         $criteria->compare('id', $this->id);
         $criteria->compare('name', $this->name, true);
@@ -120,6 +120,60 @@ class Exhibition extends BaseModel {
         $criteria->compare('created_at', $this->created_at, true);
         $criteria->compare('updated_at', $this->updated_at, true);
         $criteria->compare('state', $this->state);
+        
+        // COUNT
+        if (isset($_GET['count_min']) && !empty($_GET['count_min'])){
+            $count_min = intval($_GET['count_min']);
+            $criteria->addCondition('count_all >= '. $count_min);
+        }
+        if (isset($_GET['count_max']) && !empty($_GET['count_max'])){
+            $count_max = intval($_GET['count_max']);
+            $criteria->addCondition('count_all <= '. $count_max);
+        }
+        
+        // YEAR
+        if (isset($_GET['year_min']) && !empty($_GET['year_min'])){
+            $year_min = intval($_GET['year_min']);
+            $criteria->addCondition('year(date) >= '. $year_min);
+        }
+        if (isset($_GET['year_max']) && !empty($_GET['year_max'])){
+            $year_max = intval($_GET['year_max']);
+            $criteria->addCondition('year(date) <= '. $year_max);
+        }
+
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+        ));
+    }
+    
+    public function searchIndex() {
+        // @todo Please modify the following code to remove attributes that should not be searched.
+
+        $criteria = new CDbCriteria;
+        
+        $criteria->compare('place', $this->place, true);
+        $criteria->compare('referee', $this->referee, true);
+        $criteria->compare('state', 1, true);
+        
+        // COUNT
+        if (isset($_GET['count_min']) && !empty($_GET['count_min'])){
+            $count_min = intval($_GET['count_min']);
+            $criteria->addCondition('count_all >= '. $count_min);
+        }
+        if (isset($_GET['count_max']) && !empty($_GET['count_max'])){
+            $count_max = intval($_GET['count_max']);
+            $criteria->addCondition('count_all <= '. $count_max);
+        }
+        
+        // YEAR
+        if (isset($_GET['year_min']) && !empty($_GET['year_min'])){
+            $year_min = intval($_GET['year_min']);
+            $criteria->addCondition('year(date) >= '. $year_min);
+        }
+        if (isset($_GET['year_max']) && !empty($_GET['year_max'])){
+            $year_max = intval($_GET['year_max']);
+            $criteria->addCondition('year(date) <= '. $year_max);
+        }
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -135,47 +189,89 @@ class Exhibition extends BaseModel {
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
-
-    public function getCriteria() {
-        $criteria = new CDbCriteria();
-        
-        if (isset($_POST['rozhodca']) && !empty($_POST['rozhodca']))
-            $criteria->compare('referee', $_POST['rozhodca'], true);
-        if (isset($_POST['miestokonania']) && !empty($_POST['miestokonania']))
-            $criteria->compare('place', $_POST['miestokonania'], true);
-        if (isset($_POST['pocetpsovod']) && !empty($_POST['pocetpsovod']))
-            $criteria->addCondition('count_all >= '. $_POST['pocetpsovod']);
-        if (isset($_POST['pocetpsovdo']) && !empty($_POST['pocetpsovdo']))
-            $criteria->addCondition('count_all <= '. $_POST['pocetpsovdo']);
-        if (isset($_POST['rokkonaniaod']) && !empty($_POST['rokkonaniaod']))
-            $criteria->addCondition('date >= '. $_POST['rokkonaniaod']);
-        if (isset($_POST['rokkonaniado']) && !empty($_POST['rokkonaniado']))
-            $criteria->addCondition('date >= '. $_POST['rokkonaniado']);
-        
-        return $criteria;
-    }
     
-    public function setDogChildParameters($dogs,$children){
-     $params = array();
+    
+    // DOG CHILD
+    public function setDogChildParameters($dogs,$children,$place){
+        $params = array();
         foreach ($dogs as $key => $dogID) {
-            if (is_numeric($key) && isset($children[$key])) {
-                $model = $this->_findOrNew($dogID);
-                $model->child=$children[$key];
-                $params[$dogID]=$model;
+            if (is_numeric($key) && isset($children[$key]) && isset($place[$key])) {
+                $model = $this->_newDogChild($dogID,$children[$key],$place[$key]);
+                $params[$key]=$model;
             }
         }
         $this->exhibitionChildDogs = $params;
     }
 
-    private function _findOrNew($dogID) {
-        $model = NULL;
-        if (!$this->isNewRecord)
-            $model = ExhibitionChildDog::model()->findByAttributes(array("id_dog" => $dogID, 'id_exhibition' => $this->id));
-
-        if ($model === NULL) {
-            $model = new ExhibitionChildDog();
-            $model->id_dog =  $dogID;
+    private function _newDogChild($dogID,$child,$place) {    
+        $model = new ExhibitionChildDog();
+        $model->id_dog =  $dogID;
+        $model->child = $child;
+        $model->place = $place;
+        return $model;
+    }
+    
+    
+    // DOG COUPLE
+    public function setDogCoupleParameters($dogsMale,$dogsFemale,$place){
+        $params = array();
+        foreach ($dogsMale as $key => $dogMaleID) {
+            if (is_numeric($key) && isset($dogsFemale[$key]) && isset($place[$key])) {
+                $model = $this->_newDogCouple($dogMaleID,$dogsFemale[$key],$place[$key]);               
+                $params[$key]=$model;
+            }
         }
+        $this->exhibitionDogCouples = $params;
+    }
+
+    private function _newDogCouple($dogMaleID,$dogFemaleID,$place) {
+        $model = new ExhibitionDogCouple();
+        $model->id_dog1 = $dogMaleID;
+        $model->id_dog2 = $dogFemaleID;
+        $model->place = $place;      
+        return $model;
+    }
+    
+    
+    // BEST KENNEL
+    public function setBestKennelParameters($bestKennel,$place){
+        $params = array();
+        foreach ($bestKennel as $key => $bestKennelID) {
+            if (is_numeric($key) && isset($place[$key])) {
+                $model = $this->_newBestKennel($bestKennelID,$place[$key]);               
+                $params[$key]=$model;
+            }
+        }
+        $this->exhibitionBestKennels = $params;
+    }
+
+    private function _newBestKennel($bestKennel,$place) {
+        $model = new ExhibitionBestKennel();
+        $model->id_kennel = $bestKennel;
+        $model->place = $place;      
+        return $model;
+    }
+    
+    // DOG CLASS
+    public function setDogClassParameters($class,$dogs,$rankings,$tituls,$place){
+        $models = array();
+        foreach ($dogs as $key => $dogID) {
+            if (is_numeric($key) && isset($place[$key])) {
+                $model = $this->_newDogClass($class,$dogID,$rankings[$key],$tituls[$key],$place[$key]);  
+                $models[]=$model;
+            }
+        }
+        $this->exhibitionBestKennels = array_merge($this->exhibitionBestKennels,$models);
+        
+    }
+
+    private function _newDogClass($class,$dogID,$ranking,$titul,$place) {
+        $model = new ExhibitionClass();
+        $model->class = $class;
+        $model->id_dog = $dogID;
+        $model->ranking = $ranking;      
+        $model->titul = $titul;      
+        $model->place = $place;      
         return $model;
     }
     
@@ -183,15 +279,57 @@ class Exhibition extends BaseModel {
         if (!empty($attributes)) {
             return parent::save($runValidation, $attributes);
         }
-        return $this->withRelated->save(
-                    $runValidation, CMap::mergeArray($attributes, array('exhibitionChildDogs'))
+        
+        // SAVE OLD
+        $exhibitionChildDogs = $exhibitionDogCouples = $exhibitionBestKennels = $exhibitionClasses = null;
+        if (!$this->isNewRecord){
+            $exhibitionChildDogs = ExhibitionChildDog::model()->findAllByAttributes(array('id_exhibition'=>$this->id));
+            $exhibitionDogCouples = ExhibitionDogCouple::model()->findAllByAttributes(array('id_exhibition'=>$this->id));
+            $exhibitionBestKennels = ExhibitionBestKennel::model()->findAllByAttributes(array('id_exhibition'=>$this->id));
+            $exhibitionClasses = ExhibitionClass::model()->findAllByAttributes(array('id_exhibition'=>$this->id));
+        }
+        
+        $result = $this->withRelated->save(
+                    $runValidation, CMap::mergeArray($attributes, 
+                            array('exhibitionChildDogs'), 
+                            array('exhibitionDogCouples'),
+                            array('exhibitionBestKennels'),
+                            array('exhibitionClasses')
+                            )
         );
+        
+        // DELETE OLD IF SAVED NEW
+        if ($result){
+            foreach ($exhibitionChildDogs as $exhibitionChildDog){
+                ExhibitionChildDog::model()->deleteByPk($exhibitionChildDog->id);
+            }
+            foreach ($exhibitionDogCouples as $exhibitionDogCouple){
+                ExhibitionDogCouple::model()->deleteByPk($exhibitionDogCouple->id);
+            }
+            foreach ($exhibitionBestKennels as $exhibitionBestKennel){
+                ExhibitionBestKennel::model()->deleteByPk($exhibitionBestKennel->id);
+            }
+            foreach ($exhibitionClasses as $exhibitionClass){
+                ExhibitionClass::model()->deleteByPk($exhibitionClass->id);
+            }
+        }
+        
+        return $result;
     }
         
     public function getErrors($attribute = null) {
         $errors = parent::getErrors($attribute);
         if ($attribute === null) {
             foreach($this->exhibitionChildDogs as $param){
+                $errors = CMap::mergeArray($errors, $param->errors);
+            }
+            foreach($this->exhibitionDogCouples as $param){
+                $errors = CMap::mergeArray($errors, $param->errors);
+            }
+            foreach($this->exhibitionBestKennels as $param){
+                $errors = CMap::mergeArray($errors, $param->errors);
+            }
+            foreach($this->exhibitionClasses as $param){
                 $errors = CMap::mergeArray($errors, $param->errors);
             }
         }
