@@ -281,7 +281,7 @@ class Exhibition extends BaseModel {
         }
         
         // SAVE OLD
-        $exhibitionChildDogs = $exhibitionDogCouples = $exhibitionBestKennels = $exhibitionClasses = null;
+        $exhibitionChildDogs = $exhibitionDogCouples = $exhibitionBestKennels = $exhibitionClasses = array();
         if (!$this->isNewRecord){
             $exhibitionChildDogs = ExhibitionChildDog::model()->findAllByAttributes(array('id_exhibition'=>$this->id));
             $exhibitionDogCouples = ExhibitionDogCouple::model()->findAllByAttributes(array('id_exhibition'=>$this->id));
