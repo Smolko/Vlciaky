@@ -26,7 +26,7 @@
             <?php 
                 foreach ($model->exhibitionDogCouples as $key=>$m){
                     echo '<tr>';
-                    echo '<td>'.CHtml::numberField('DogCouple_Place['.$key.']', $m->place, array()).'</td>'; 
+                    echo '<td>'.CHtml::numberField('DogCouple_Place['.$key.']', $m->place, array('class'=>'place_input')).'</td>'; 
                     echo '<td>'.CHtml::dropDownList('DogCouple_Dog1['.$key.']', $m->id_dog1, Dog::model()->maleList, array()).'</td>'; 
                     echo '<td>'.CHtml::dropDownList('DogCouple_Dog2['.$key.']', $m->id_dog2, Dog::model()->femaleList, array()).'</td>'; 
                     echo '<td class="delete"></td>';
@@ -38,7 +38,7 @@
                     <?php echo CHtml::numberField('DogCouple_Place[XCounter]', NULL, array('class'=>'place_input')); ?>
                 </td>
                 <td>
-                    <?php echo CHtml::dropDownList('DogCouple_Dog1[XCounter]',NULL ,Dog::model()->maleList, array()); ?>
+                    <?php echo CHtml::dropDownList('DogCouple_Dog1[XCounter]',NULL ,Dog::model()->maleList, array('width'=>'30px')); ?>
                 </td>
                 <td>
                     <?php echo CHtml::dropDownList('DogCouple_Dog2[XCounter]',NULL ,Dog::model()->femaleList, array()); ?>

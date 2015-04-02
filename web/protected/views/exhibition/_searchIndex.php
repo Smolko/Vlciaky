@@ -41,7 +41,14 @@
 	</div>
     
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('SearchExhibitions', array(
+                            'name'=>'searchExhibitions')
+                        ); ?>
+	</div>
+        <div class="row buttons">
+		<?php echo CHtml::submitButton('SearchWinners', array(
+                            'name'=>'searchWinners')
+                        ); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

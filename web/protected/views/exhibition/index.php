@@ -14,7 +14,7 @@ $this->menu=array(
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-form form').submit(function(){
-        $.fn.yiiListView.update(
+        $.fn.yiiGridView.update(
                 'exhibition-grid',
                 {data: $(this).serialize()}
             );
@@ -29,10 +29,27 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
-
-<?php $this->widget('bootstrap.widgets.TbListView', array(
+<div>
+<?php
+    Yii::import('bootstrap.helpers.TbHtml');
+?>
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'exhibition-grid',
+        'type' => TbHtml::GRID_TYPE_STRIPED,
 	'dataProvider'=>$model->searchIndex(),
-	'itemView'=>'_viewIndex',
-        'summaryText'=>"",
+	//'itemView'=>'_viewIndex',
+        'filter' => null,
+        'template'=>"{items}",
+        'columns'=>array(
+		'name',
+		'place',
+		'date',
+		'referee',
+		/*array(
+			'class'=>'CButtonColumn',
+		),*/
+	),
 )); ?>
+    
+
+</div>

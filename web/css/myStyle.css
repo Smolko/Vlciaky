@@ -11,6 +11,7 @@ body{
     margin: -5px;
     height: 100%;
     min-width: 1060px;
+    padding: 0 0 0 0 !important;
 }
 
 @font-face {
@@ -265,8 +266,20 @@ body{
     width: 10px;
     height: 10px;
     background-image: url(/images/X.png);
-    background-size: contain;
+    background-size: 10px 10px;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 5px 5px 0 0;
+    padding: 4px 6px 4px 6px;
+}
+
+select{
+    width: auto !important;
+}
+
+.bootstrap-widget-table input{
+    width: content-box;
+}
+
+.bootstrap-widget-table table{
+    width: inherit;
 }
