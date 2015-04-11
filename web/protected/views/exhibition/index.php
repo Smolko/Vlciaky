@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Exhibition', 'url'=>array('list')),
+	array('label'=>'Manage Exhibition', 'url'=>array('admin')),
 	array('label'=>'Create Exhibition', 'url'=>array('create')),
 );
 
@@ -33,23 +33,28 @@ $('.search-form form').submit(function(){
 <?php
     Yii::import('bootstrap.helpers.TbHtml');
 ?>
-<?php $this->widget('bootstrap.widgets.TbGridView', array(
-	'id'=>'exhibition-grid',
-        'type' => TbHtml::GRID_TYPE_STRIPED,
-	'dataProvider'=>$model->searchIndex(),
-	//'itemView'=>'_viewIndex',
-        'filter' => null,
-        'template'=>"{items}",
-        'columns'=>array(
-		'name',
-		'place',
-		'date',
-		'referee',
-		/*array(
-			'class'=>'CButtonColumn',
-		),*/
-	),
-)); ?>
+    
+<?php 
+    $this->widget('bootstrap.widgets.TbGridView', array(
+            'id'=>'exhibition-grid',
+            'type' => TbHtml::GRID_TYPE_STRIPED,
+            'dataProvider'=>$model->searchIndex(),
+            //'itemView'=>'_viewIndex',
+            'filter' => null,
+            'template'=>"{items}",
+            'columns'=>array(
+                    array(
+                        'type'=>'raw',
+                        'name'=>'Name',
+                        'value'=>'CHtml::link($data->name,array("exhibition/view&id=$data->id"))'
+                    ),
+                    'place',
+                    'date',
+                    'referee',
+            ),
+    )); 
+
+?>
     
 
 </div>

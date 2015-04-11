@@ -70,6 +70,19 @@ class EnduranceRunController extends Controller
 		if(isset($_POST['EnduranceRun']))
 		{
 			$model->attributes=$_POST['EnduranceRun'];
+                        
+                        $svpList = EnduranceRun::model()->getSVPList();
+                        foreach ($svpList as $key => $svp){
+                            $model->setEnduranceRunDogParameters(
+                                $_POST['EnduranceRun_Dog'.$key],
+                                $_POST['EnduranceRun_Order'.$key],
+                                $_POST['EnduranceRun_Handler'.$key],
+                                $_POST['EnduranceRun_Duration'.$key],
+                                $_POST['EnduranceRun_Evaluation'.$key],
+                                $_POST['EnduranceRun_Type'.$key],
+                                $_POST['EnduranceRun_Place'.$key]
+                            );
+                        }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -94,6 +107,19 @@ class EnduranceRunController extends Controller
 		if(isset($_POST['EnduranceRun']))
 		{
 			$model->attributes=$_POST['EnduranceRun'];
+                        
+                        $svpList = EnduranceRun::model()->getSVPList();
+                        foreach ($svpList as $key => $svp){
+                            $model->setEnduranceRunDogParameters(
+                                $_POST['EnduranceRun_Dog'.$key],
+                                $_POST['EnduranceRun_Order'.$key],
+                                $_POST['EnduranceRun_Handler'.$key],
+                                $_POST['EnduranceRun_Duration'.$key],
+                                $_POST['EnduranceRun_Evaluation'.$key],
+                                $_POST['EnduranceRun_Type'.$key],
+                                $_POST['EnduranceRun_Place'.$key]
+                            );
+                        }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,9 +148,13 @@ class EnduranceRunController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('EnduranceRun');
+		$model = new EnduranceRun('searchIndex');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['EnduranceRun']))
+			$model->attributes=$_GET['EnduranceRun'];
+                
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                        'model'=>$model,
 		));
 	}
 
@@ -152,7 +182,7 @@ class EnduranceRunController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=EnduranceRun::model()->findByPk($id);
+		$model=EnduranceRun::model()->with('enduranceRunDogs')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

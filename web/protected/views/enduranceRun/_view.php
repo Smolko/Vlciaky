@@ -13,27 +13,6 @@
 	<?php echo CHtml::encode($data->place); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('order')); ?>:</b>
-	<?php echo CHtml::encode($data->order); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('handler')); ?>:</b>
-	<?php echo CHtml::encode($data->handler); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
-	<?php echo CHtml::encode($data->type); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('evaluation')); ?>:</b>
-	<?php echo CHtml::encode($data->evaluation); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('andurance_run_place')); ?>:</b>
-	<?php echo CHtml::encode($data->andurance_run_place); ?>
-	<br />
-
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
 	<?php echo CHtml::encode($data->date); ?>
 	<br />
@@ -42,8 +21,29 @@
 	<?php echo CHtml::encode($data->referee); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id_dog')); ?>:</b>
-	<?php echo CHtml::encode($data->id_dog); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('count_male_svp1')); ?>:</b>
+	<?php echo CHtml::encode($data->count_male_svp1); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('count_female_svp1')); ?>:</b>
+	<?php echo CHtml::encode($data->count_female_svp1); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('count_male_svp2')); ?>:</b>
+	<?php echo CHtml::encode($data->count_male_svp2); ?>
+	<br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('count_female_svp2')); ?>:</b>
+	<?php echo CHtml::encode($data->count_female_svp2); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('count_male_svp3')); ?>:</b>
+	<?php echo CHtml::encode($data->count_male_svp3); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('count_female_svp3')); ?>:</b>
+	<?php echo CHtml::encode($data->count_female_svp3); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_at')); ?>:</b>

@@ -41,8 +41,8 @@
 	</div>
     
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('searchExhibitions', array(
-                            'name'=>'searchExhibitions')
+		<?php echo CHtml::submitButton('searchEnduranceRuns', array(
+                            'name'=>'searchEnduranceRuns')
                         ); ?>
 	</div>
 

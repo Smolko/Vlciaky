@@ -32,6 +32,10 @@ class BaseModel extends CActiveRecord{
     const EXHIBITIONCLASS_MALE_TRIEDAVETERANOV = 7;
     const EXHIBITIONCLASS_MALE_TRIEDACESTNA = 8;
     
+    const ENDURANCERUN_SVP1 = 1;
+    const ENDURANCERUN_SVP2 = 2;
+    const ENDURANCERUN_SVP3 = 3;
+    
     public function getStateList(){
         return array(
             self::STATE_ACTIVE=>"Active",
@@ -81,6 +85,14 @@ class BaseModel extends CActiveRecord{
             self::EXHIBITIONCLASS_MALE_TRIEDASAMPIONOV => "Trieda_šampiónov",
             self::EXHIBITIONCLASS_MALE_TRIEDAVETERANOV => "Trieda_veteránov",
             self::EXHIBITIONCLASS_MALE_TRIEDACESTNA => "Trieda_čestná"        
+        );
+    }
+    
+    public function getSVPList(){
+        return array(
+            self::ENDURANCERUN_SVP1 => 'SVP1',
+            self::ENDURANCERUN_SVP2 => 'SVP2',
+            self::ENDURANCERUN_SVP3 => 'SVP3'
         );
     }
     
