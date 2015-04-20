@@ -36,6 +36,16 @@ class BaseModel extends CActiveRecord{
     const ENDURANCERUN_SVP2 = 2;
     const ENDURANCERUN_SVP3 = 3;
     
+    const BONITATIONDOG_SUCHY = 0;
+    const BONITATIONDOG_PEVNY = 1;
+    const BONITATIONDOG_JEMNY = 2;
+    const BONITATIONDOG_LYMFATICKY = 3;
+    
+    const BONITATIONDOG_VYBORNY = 0;
+    const BONITATIONDOG_VELMIDOBRY = 1;
+    const BONITATIONDOG_DOBRY = 2;
+    const BONITATIONDOG_NEDOSTATOCNY = 3;
+    
     public function getStateList(){
         return array(
             self::STATE_ACTIVE=>"Active",
@@ -93,6 +103,24 @@ class BaseModel extends CActiveRecord{
             self::ENDURANCERUN_SVP1 => 'SVP1',
             self::ENDURANCERUN_SVP2 => 'SVP2',
             self::ENDURANCERUN_SVP3 => 'SVP3'
+        );
+    }
+    
+    public function getBonitationDogType(){
+        return array(
+            self::BONITATIONDOG_SUCHY => 'Suchý',
+            self::BONITATIONDOG_PEVNY => 'Pevný',
+            self::BONITATIONDOG_JEMNY => 'Jemný',
+            self::BONITATIONDOG_LYMFATICKY => 'Lymfatický',
+        );
+    }
+    
+    public function getBonitationDogHarmony(){
+        return array(
+            self::BONITATIONDOG_VYBORNY => 'Výborný',
+            self::BONITATIONDOG_VELMIDOBRY => 'Veľmi dobrý',
+            self::BONITATIONDOG_DOBRY => 'Dobrý',
+            self::BONITATIONDOG_NEDOSTATOCNY => 'Nedostatočný',
         );
     }
     

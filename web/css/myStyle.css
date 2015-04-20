@@ -95,9 +95,7 @@ body{
 #mainmenu ul li
 {
 	display: inline;
-        font-family: myFont;
-        
-
+        font-family: myFont;        
 }
 
 #mainmenu ul li a
