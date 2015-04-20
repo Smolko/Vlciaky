@@ -1,6 +1,6 @@
 <?php
-/* @var $this YouthPresentationController */
-/* @var $model YouthPresentation */
+/* @var $this YouthPresentationDogController */
+/* @var $model YouthPresentationDog */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,33 +17,23 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'id_bonitation_and_youth_presentation'); ?>
+		<?php echo $form->textField($model,'id_bonitation_and_youth_presentation'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'id_dog'); ?>
+		<?php echo $form->textField($model,'id_dog'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'assessment'); ?>
 		<?php echo $form->textField($model,'assessment',array('size'=>60,'maxlength'=>1000)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'evaluation'); ?>
-		<?php echo $form->textField($model,'evaluation'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'youth_presentation_date'); ?>
-		<?php echo $form->textField($model,'youth_presentation_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'youth_presentation_place'); ?>
-		<?php echo $form->textField($model,'youth_presentation_place',array('size'=>60,'maxlength'=>200)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'referee'); ?>
-		<?php echo $form->textField($model,'referee',array('size'=>60,'maxlength'=>200)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'id_dog'); ?>
-		<?php echo $form->textField($model,'id_dog'); ?>
+		<?php echo $form->textField($model,'evaluation',array('size'=>60,'maxlength'=>200)); ?>
 	</div>
 
 	<div class="row">

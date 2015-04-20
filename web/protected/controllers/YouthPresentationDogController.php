@@ -1,6 +1,6 @@
 <?php
 
-class BonitationController extends Controller
+class YouthPresentationDogController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class BonitationController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Bonitation;
+		$model=new YouthPresentationDog;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Bonitation']))
+		if(isset($_POST['YouthPresentationDog']))
 		{
-			$model->attributes=$_POST['Bonitation'];
+			$model->attributes=$_POST['YouthPresentationDog'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class BonitationController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Bonitation']))
+		if(isset($_POST['YouthPresentationDog']))
 		{
-			$model->attributes=$_POST['Bonitation'];
+			$model->attributes=$_POST['YouthPresentationDog'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class BonitationController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Bonitation');
+		$dataProvider=new CActiveDataProvider('YouthPresentationDog');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class BonitationController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Bonitation('search');
+		$model=new YouthPresentationDog('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Bonitation']))
-			$model->attributes=$_GET['Bonitation'];
+		if(isset($_GET['YouthPresentationDog']))
+			$model->attributes=$_GET['YouthPresentationDog'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class BonitationController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Bonitation the loaded model
+	 * @return YouthPresentationDog the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Bonitation::model()->findByPk($id);
+		$model=YouthPresentationDog::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +160,11 @@ class BonitationController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Bonitation $model the model to be validated
+	 * @param YouthPresentationDog $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='bonitation-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='youth-presentation-dog-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

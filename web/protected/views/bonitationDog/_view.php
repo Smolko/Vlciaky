@@ -1,6 +1,6 @@
 <?php
-/* @var $this BonitationController */
-/* @var $data Bonitation */
+/* @var $this BonitationDogController */
+/* @var $data BonitationDog */
 ?>
 
 <div class="view">
@@ -9,8 +9,16 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('id_bonitation_and_youth_presentation')); ?>:</b>
+	<?php echo CHtml::encode($data->id_bonitation_and_youth_presentation); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id_dog')); ?>:</b>
 	<?php echo CHtml::encode($data->id_dog); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('evaluation')); ?>:</b>
+	<?php echo CHtml::encode($data->evaluation); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('bonitation_code')); ?>:</b>
@@ -21,8 +29,13 @@
 	<?php echo CHtml::encode($data->temperament); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('comment')); ?>:</b>
-	<?php echo CHtml::encode($data->comment); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
+	<?php echo CHtml::encode($data->type); ?>
+	<br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('harmony')); ?>:</b>
+	<?php echo CHtml::encode($data->harmony); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('head_length')); ?>:</b>
@@ -33,7 +46,6 @@
 	<?php echo CHtml::encode($data->head_width); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('snout_length')); ?>:</b>
 	<?php echo CHtml::encode($data->snout_length); ?>
 	<br />
@@ -78,28 +90,8 @@
 	<?php echo CHtml::encode($data->tibia_length); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('harmony')); ?>:</b>
-	<?php echo CHtml::encode($data->harmony); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
-	<?php echo CHtml::encode($data->type); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('bonitation_place')); ?>:</b>
-	<?php echo CHtml::encode($data->bonitation_place); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('referee')); ?>:</b>
-	<?php echo CHtml::encode($data->referee); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('state')); ?>:</b>
-	<?php echo CHtml::encode($data->state); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
-	<?php echo CHtml::encode($data->date); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('comment')); ?>:</b>
+	<?php echo CHtml::encode($data->comment); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_at')); ?>:</b>
@@ -108,6 +100,10 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('updated_at')); ?>:</b>
 	<?php echo CHtml::encode($data->updated_at); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('state')); ?>:</b>
+	<?php echo CHtml::encode($data->state); ?>
 	<br />
 
 	*/ ?>

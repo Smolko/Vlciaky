@@ -158,11 +158,11 @@ class Exhibition extends BaseModel {
         // COUNT
         if (isset($_GET['count_min']) && !empty($_GET['count_min'])){
             $count_min = intval($_GET['count_min']);
-            $criteria->addCondition('count_all >= '. $count_min);
+            $criteria->addCondition('(count_male+count_female) >= '. $count_min);
         }
         if (isset($_GET['count_max']) && !empty($_GET['count_max'])){
             $count_max = intval($_GET['count_max']);
-            $criteria->addCondition('count_all <= '. $count_max);
+            $criteria->addCondition('(count_male+count_female) <= '. $count_max);
         }
 
         // YEAR

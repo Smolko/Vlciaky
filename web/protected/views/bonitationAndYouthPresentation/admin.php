@@ -1,15 +1,15 @@
 <?php
-/* @var $this BonitationController */
-/* @var $model Bonitation */
+/* @var $this BonitationAndYouthPresentationController */
+/* @var $model BonitationAndYouthPresentation */
 
 $this->breadcrumbs=array(
-	'Bonitations'=>array('index'),
+	'Bonitation And Youth Presentations'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Bonitation', 'url'=>array('index')),
-	array('label'=>'Create Bonitation', 'url'=>array('create')),
+	array('label'=>'List BonitationAndYouthPresentation', 'url'=>array('index')),
+	array('label'=>'Create BonitationAndYouthPresentation', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#bonitation-grid').yiiGridView('update', {
+	$('#bonitation-and-youth-presentation-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Bonitations</h1>
+<h1>Manage Bonitation And Youth Presentations</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -40,38 +40,23 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView', array(
-	'id'=>'bonitation-grid',
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'bonitation-and-youth-presentation-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		//'id',
-		'id_dog',
-		'bonitation_code',
-		'temperament',
-		'comment',
-		'head_length',
-		/*
-		'head_width',
-		'snout_length',
-		'ear_length',
-		'oblique_length',
-		'chest_depth',
-		'chest_circle',
-		'front_leg_length',
-		'thigh_length',
-		'pastern_length',
-		'pastern_circle',
-		'tarsus_length',
-		'tibia_length',
-		'harmony',
-		'type',
-		'bonitation_place',
-		'referee',
-		'state',
+		'id',
+		'place',
 		'date',
+		'referee',
+                /*
+		'youth_presentation_male_count',
+		'youth_presentation_female_count',
+		'bonitation_male_count',
+		'bonitation_female_count',
 		'created_at',
 		'updated_at',
+		'state',
 		*/
 		array(
 			'class'=>'CButtonColumn',

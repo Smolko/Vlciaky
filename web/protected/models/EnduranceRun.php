@@ -133,11 +133,11 @@ class EnduranceRun extends BaseModel
             // COUNT
             if (isset($_GET['count_min']) && !empty($_GET['count_min'])){
                 $count_min = intval($_GET['count_min']);
-                $criteria->addCondition('count_all >= '. $count_min);
+                $criteria->addCondition('(count_male_svp1+count_female_svp1+count_male_svp2+count_female_svp2+count_male_svp3+count_female_svp3) >= '. $count_min);
             }
             if (isset($_GET['count_max']) && !empty($_GET['count_max'])){
                 $count_max = intval($_GET['count_max']);
-                $criteria->addCondition('count_all <= '. $count_max);
+                $criteria->addCondition('(count_male_svp1+count_female_svp1+count_male_svp2+count_female_svp2+count_male_svp3+count_female_svp3) <= '. $count_max);
             }
 
             // YEAR

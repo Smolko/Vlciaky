@@ -1,31 +1,30 @@
 <?php
 
 /**
- * This is the model class for table "{{youth_presentation}}".
+ * This is the model class for table "{{youth_presentation_dog}}".
  *
- * The followings are the available columns in table '{{youth_presentation}}':
+ * The followings are the available columns in table '{{youth_presentation_dog}}':
  * @property integer $id
- * @property string $assessment
- * @property integer $evaluation
- * @property string $youth_presentation_date
- * @property string $youth_presentation_place
- * @property string $referee
+ * @property integer $id_bonitation_and_youth_presentation
  * @property integer $id_dog
+ * @property string $assessment
+ * @property string $evaluation
  * @property string $created_at
  * @property string $updated_at
  * @property integer $state
  *
  * The followings are the available model relations:
  * @property Dog $idDog
+ * @property BonitationAndYouthPresentation $idBonitationAndYouthPresentation
  */
-class YouthPresentation extends BaseModel
+class YouthPresentationDog extends BaseModel
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{youth_presentation}}';
+		return '{{youth_presentation_dog}}';
 	}
 
 	/**
@@ -36,15 +35,13 @@ class YouthPresentation extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('assessment, evaluation, youth_presentation_date, youth_presentation_place, referee, id_dog, state', 'required'),
-			array('evaluation, id_dog, state', 'numerical', 'integerOnly'=>true),
+			array('id_bonitation_and_youth_presentation, id_dog, state', 'numerical', 'integerOnly'=>true),
 			array('assessment', 'length', 'max'=>1000),
-			array('youth_presentation_place, referee', 'length', 'max'=>200),
-			array('created_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
-                        array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
+			array('evaluation', 'length', 'max'=>200),
+			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, assessment, evaluation, youth_presentation_date, youth_presentation_place, referee, id_dog, created_at, updated_at, state', 'safe', 'on'=>'search'),
+			array('id, id_bonitation_and_youth_presentation, id_dog, assessment, evaluation, created_at, updated_at, state', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,6 +54,7 @@ class YouthPresentation extends BaseModel
 		// class name for the relations automatically generated below.
 		return array(
 			'idDog' => array(self::BELONGS_TO, 'Dog', 'id_dog'),
+			'idBonitationAndYouthPresentation' => array(self::BELONGS_TO, 'BonitationAndYouthPresentation', 'id_bonitation_and_youth_presentation'),
 		);
 	}
 
@@ -67,12 +65,10 @@ class YouthPresentation extends BaseModel
 	{
 		return array(
 			'id' => 'ID',
+			'id_bonitation_and_youth_presentation' => 'Id Bonitation And Youth Presentation',
+			'id_dog' => 'Id Dog',
 			'assessment' => 'Assessment',
 			'evaluation' => 'Evaluation',
-			'youth_presentation_date' => 'Youth Presentation Date',
-			'youth_presentation_place' => 'Youth Presentation Place',
-			'referee' => 'Referee',
-			'id_dog' => 'Id Dog',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
 			'state' => 'State',
@@ -98,12 +94,10 @@ class YouthPresentation extends BaseModel
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('assessment',$this->assessment,true);
-		$criteria->compare('evaluation',$this->evaluation);
-		$criteria->compare('youth_presentation_date',$this->youth_presentation_date,true);
-		$criteria->compare('youth_presentation_place',$this->youth_presentation_place,true);
-		$criteria->compare('referee',$this->referee,true);
+		$criteria->compare('id_bonitation_and_youth_presentation',$this->id_bonitation_and_youth_presentation);
 		$criteria->compare('id_dog',$this->id_dog);
+		$criteria->compare('assessment',$this->assessment,true);
+		$criteria->compare('evaluation',$this->evaluation,true);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
 		$criteria->compare('state',$this->state);
@@ -117,7 +111,7 @@ class YouthPresentation extends BaseModel
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return YouthPresentation the static model class
+	 * @return YouthPresentationDog the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -1,6 +1,6 @@
 <?php
-/* @var $this BonitationController */
-/* @var $model Bonitation */
+/* @var $this BonitationDogController */
+/* @var $model BonitationDog */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,8 +17,18 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'id_bonitation_and_youth_presentation'); ?>
+		<?php echo $form->textField($model,'id_bonitation_and_youth_presentation'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'id_dog'); ?>
 		<?php echo $form->textField($model,'id_dog'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'evaluation'); ?>
+		<?php echo $form->textField($model,'evaluation',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
@@ -32,8 +42,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'comment'); ?>
-		<?php echo $form->textField($model,'comment',array('size'=>60,'maxlength'=>1000)); ?>
+		<?php echo $form->label($model,'type'); ?>
+		<?php echo $form->textField($model,'type',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'harmony'); ?>
+		<?php echo $form->textField($model,'harmony'); ?>
 	</div>
 
 	<div class="row">
@@ -102,33 +117,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'harmony'); ?>
-		<?php echo $form->textField($model,'harmony'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'type'); ?>
-		<?php echo $form->textField($model,'type'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'bonitation_place'); ?>
-		<?php echo $form->textField($model,'bonitation_place',array('size'=>60,'maxlength'=>200)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'referee'); ?>
-		<?php echo $form->textField($model,'referee',array('size'=>60,'maxlength'=>200)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'state'); ?>
-		<?php echo $form->textField($model,'state'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'date'); ?>
-		<?php echo $form->textField($model,'date'); ?>
+		<?php echo $form->label($model,'comment'); ?>
+		<?php echo $form->textField($model,'comment',array('size'=>60,'maxlength'=>1000)); ?>
 	</div>
 
 	<div class="row">
@@ -139,6 +129,11 @@
 	<div class="row">
 		<?php echo $form->label($model,'updated_at'); ?>
 		<?php echo $form->textField($model,'updated_at'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'state'); ?>
+		<?php echo $form->textField($model,'state'); ?>
 	</div>
 
 	<div class="row buttons">

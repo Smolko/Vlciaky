@@ -1,6 +1,6 @@
 <?php
 
-class YouthPresentationController extends Controller
+class BonitationDogController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class YouthPresentationController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new YouthPresentation;
+		$model=new BonitationDog;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['YouthPresentation']))
+		if(isset($_POST['BonitationDog']))
 		{
-			$model->attributes=$_POST['YouthPresentation'];
+			$model->attributes=$_POST['BonitationDog'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class YouthPresentationController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['YouthPresentation']))
+		if(isset($_POST['BonitationDog']))
 		{
-			$model->attributes=$_POST['YouthPresentation'];
+			$model->attributes=$_POST['BonitationDog'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class YouthPresentationController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('YouthPresentation');
+		$dataProvider=new CActiveDataProvider('BonitationDog');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class YouthPresentationController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new YouthPresentation('search');
+		$model=new BonitationDog('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['YouthPresentation']))
-			$model->attributes=$_GET['YouthPresentation'];
+		if(isset($_GET['BonitationDog']))
+			$model->attributes=$_GET['BonitationDog'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class YouthPresentationController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return YouthPresentation the loaded model
+	 * @return BonitationDog the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=YouthPresentation::model()->findByPk($id);
+		$model=BonitationDog::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +160,11 @@ class YouthPresentationController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param YouthPresentation $model the model to be validated
+	 * @param BonitationDog $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='youth-presentation-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='bonitation-dog-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

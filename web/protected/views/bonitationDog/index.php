@@ -1,18 +1,18 @@
 <?php
-/* @var $this BonitationController */
+/* @var $this BonitationDogController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Bonitations',
+	'Bonitation Dogs',
 );
 
 $this->menu=array(
-	array('label'=>'Create Bonitation', 'url'=>array('create')),
-	array('label'=>'Manage Bonitation', 'url'=>array('admin')),
+	array('label'=>'Create BonitationDog', 'url'=>array('create')),
+	array('label'=>'Manage BonitationDog', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Bonitations</h1>
+<h1>Bonitation Dogs</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
