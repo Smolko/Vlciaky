@@ -32,10 +32,6 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('count_female')); ?>:</b>
 	<?php echo CHtml::encode($data->count_female); ?>
 	<br />
-        
-        <b><?php echo CHtml::encode($data->getAttributeLabel('count_all')); ?>:</b>
-	<?php echo CHtml::encode($data->count_all); ?>
-	<br />
 
         <!--
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_at')); ?>:</b>

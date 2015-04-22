@@ -11,7 +11,6 @@
  * @property string $referee
  * @property integer $count_male
  * @property integer $count_female
- * @property integer $count_all
  * @property string $created_at
  * @property string $updated_at
  * @property integer $state
@@ -39,7 +38,7 @@ class Exhibition extends BaseModel {
         // will receive user inputs.
         return array(
             array('name', 'required'),
-            array('count_male, count_female, count_all, state', 'numerical', 'integerOnly' => true),
+            array('count_male, count_female, state', 'numerical', 'integerOnly' => true),
             array('name', 'length', 'max' => 500),
             array('place', 'length', 'max' => 300),
             array('referee', 'length', 'max' => 200),
@@ -48,7 +47,7 @@ class Exhibition extends BaseModel {
             array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, name, place, date, pocet, referee, count_male, count_female, count_all, created_at, updated_at, state', 'safe', 'on' => 'search'),
+            array('id, name, place, date, pocet, referee, count_male, count_female, created_at, updated_at, state', 'safe', 'on' => 'search'),
         );
     }
 
@@ -78,7 +77,6 @@ class Exhibition extends BaseModel {
 //            'referee' => 'Referee',
 //            'count_male' => 'Count Male',
 //            'count_female' => 'Count Female',
-//            'count_all' => 'Count All',
 //            'created_at' => 'Created At',
 //            'updated_at' => 'Updated At',
 //            'state' => 'State',
@@ -116,7 +114,6 @@ class Exhibition extends BaseModel {
         $criteria->compare('referee', $this->referee, true);
         $criteria->compare('count_male', $this->count_male);
         $criteria->compare('count_female', $this->count_female);
-        $criteria->compare('count_all', $this->count_all);
         $criteria->compare('created_at', $this->created_at, true);
         $criteria->compare('updated_at', $this->updated_at, true);
         $criteria->compare('state', $this->state);
@@ -124,11 +121,11 @@ class Exhibition extends BaseModel {
         // COUNT
         if (isset($_GET['count_min']) && !empty($_GET['count_min'])){
             $count_min = intval($_GET['count_min']);
-            $criteria->addCondition('count_all >= '. $count_min);
+            $criteria->addCondition('(count_male + count_female) >= '. $count_min);
         }
         if (isset($_GET['count_max']) && !empty($_GET['count_max'])){
             $count_max = intval($_GET['count_max']);
-            $criteria->addCondition('count_all <= '. $count_max);
+            $criteria->addCondition('(count_male + count_female) <= '. $count_max);
         }
         
         // YEAR

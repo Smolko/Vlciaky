@@ -82,21 +82,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'created_at'); ?>
-		<?php echo $form->textField($model,'created_at'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'updated_at'); ?>
-		<?php echo $form->textField($model,'updated_at'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'id_health'); ?>
-		<?php echo $form->textField($model,'id_health'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'id_fertilisation'); ?>
 		<?php echo $form->textField($model,'id_fertilisation'); ?>
 	</div>
@@ -114,6 +99,81 @@
 	<div class="row">
 		<?php echo $form->label($model,'id_kennel_owner'); ?>
 		<?php echo $form->textField($model,'id_kennel_owner'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dlk'); ?>
+		<?php echo $form->textField($model,'dlk'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dbk'); ?>
+		<?php echo $form->textField($model,'dbk'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dwarf'); ?>
+		<?php echo $form->textField($model,'dwarf'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dm'); ?>
+		<?php echo $form->textField($model,'dm'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dna'); ?>
+		<?php echo $form->textField($model,'dna',array('size'=>60,'maxlength'=>200)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dlk_vet'); ?>
+		<?php echo $form->textField($model,'dlk_vet',array('size'=>60,'maxlength'=>200)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dlk_date'); ?>
+		<?php echo $form->textField($model,'dlk_date'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dbk_vet'); ?>
+		<?php echo $form->textField($model,'dbk_vet',array('size'=>60,'maxlength'=>200)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dbk_date'); ?>
+		<?php echo $form->textField($model,'dbk_date'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dwarf_vet'); ?>
+		<?php echo $form->textField($model,'dwarf_vet',array('size'=>60,'maxlength'=>200)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dwarf_date'); ?>
+		<?php echo $form->textField($model,'dwarf_date'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dm_vet'); ?>
+		<?php echo $form->textField($model,'dm_vet',array('size'=>60,'maxlength'=>200)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'dm_date'); ?>
+		<?php echo $form->textField($model,'dm_date'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'created_at'); ?>
+		<?php echo $form->textField($model,'created_at'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'updated_at'); ?>
+		<?php echo $form->textField($model,'updated_at'); ?>
 	</div>
 
 	<div class="row">

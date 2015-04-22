@@ -9,7 +9,6 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Create Dog', 'url'=>array('create')),
 	array('label'=>'Manage Dog', 'url'=>array('admin')),
-        array('label'=>'Test Dog', 'url'=>array('test')),
 );
 ?>
 

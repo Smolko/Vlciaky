@@ -28,7 +28,7 @@ class DogController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','test'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -41,7 +41,7 @@ class DogController extends Controller
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
-			),                
+			),
 		);
 	}
 
@@ -63,15 +63,13 @@ class DogController extends Controller
 	public function actionCreate()
 	{
 		$model=new Dog;
-                // $aa = new Exhibition;
-                
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Dog']))
 		{
 			$model->attributes=$_POST['Dog'];
-                        print_r($_POST);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -141,20 +139,6 @@ class DogController extends Controller
 			$model->attributes=$_GET['Dog'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-        
-        public function actionTest()
-	{
-            if (isset($_POST['ppp']))
-                var_dump($_POST['ppp']);
-		$model=new Dog();
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Dog']))
-			$model->attributes=$_GET['Dog'];
-
-		$this->render('test',array(
 			'model'=>$model,
 		));
 	}

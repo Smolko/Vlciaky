@@ -10,7 +10,6 @@
 	'id'=>'dog-form',
 	'enableAjaxValidation'=>false,
         'type'=>'horizontal',
-        //'action' => Yii::app()->createUrl("fuu"),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -19,7 +18,6 @@
             
         <?php 
             //echo $form->textFieldRow($model,'id_health',array('size'=>30,'maxlength'=>30));
-            echo $form->dropDownListRow($model,'id_health', CHtml::listData(Health::model()->findAll(), 'id', 'name'), array('class' => 'span5'));
             echo $form->textFieldRow($model,'id_fertilisation',array('size'=>30,'maxlength'=>30));
             echo $form->textFieldRow($model,'id_owner',array('size'=>30,'maxlength'=>30));
             echo $form->textFieldRow($model,'id_old_owner',array('size'=>30,'maxlength'=>30));
@@ -37,9 +35,23 @@
             echo $form->textFieldRow($model,'chip',array('size'=>30,'maxlength'=>30));
             echo $form->datepickerRow($model, 'export_import', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>'));
             echo $form->textFieldRow($model,'breeding',array('size'=>30,'maxlength'=>30));
-            echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5'));          
+            echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5'));         
+            echo $form->dropDownListRow($model,'dlk', $model->yesNoList, array('class' => 'span5')); 
+            echo $form->dropDownListRow($model,'dbk', $model->yesNoList, array('class' => 'span5')); 
+            echo $form->dropDownListRow($model,'dwarf', $model->yesNoList, array('class' => 'span5')); 
+            echo $form->dropDownListRow($model,'dm', $model->yesNoList, array('class' => 'span5')); 
+            echo $form->textFieldRow($model,'dna',array('size'=>60,'maxlength'=>200)); 
+            echo $form->textFieldRow($model,'dlk_vet',array('size'=>60,'maxlength'=>200)); 
+            echo $form->datepickerRow($model,'dlk_date', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>')); 
+            echo $form->textFieldRow($model,'dbk_vet',array('size'=>60,'maxlength'=>200)); 
+            echo $form->datepickerRow($model,'dbk_date', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>')); 
+            echo $form->textFieldRow($model,'dwarf_vet',array('size'=>60,'maxlength'=>200)); 
+            echo $form->datepickerRow($model,'dwarf_date', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>')); 
+            echo $form->textFieldRow($model,'dm_vet',array('size'=>60,'maxlength'=>200)); 
+            echo $form->datepickerRow($model,'dm_date', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>')); 
+            echo $form->textFieldRow($model,'state'); 
         ?>
-	
+
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(
 			'buttonType'=>'submit',

@@ -40,33 +40,45 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView', array(
+<?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'dog-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		//'id',
+		'id',
 		'name',
-		//'sex',
-		//'color',
+		'sex',
+		'color',
 		'birthday',
-		//'deathday',
-		
-		//'death_cause',
-		//'breed',
+		'deathday',
+		/*
+		'death_cause',
+		'breed',
 		'old_regnumber',
 		'new_regnumber',
-		//'tattoo',
+		'tattoo',
 		'chip',
-		/*'export_import',
+		'export_import',
 		'breeding',
-		'created_at',
-		'updated_at',
-		'id_health',
 		'id_fertilisation',
 		'id_owner',
 		'id_old_owner',
 		'id_kennel_owner',
+		'dlk',
+		'dbk',
+		'dwarf',
+		'dm',
+		'dna',
+		'dlk_vet',
+		'dlk_date',
+		'dbk_vet',
+		'dbk_date',
+		'dwarf_vet',
+		'dwarf_date',
+		'dm_vet',
+		'dm_date',
+		'created_at',
+		'updated_at',
 		'state',
 		*/
 		array(

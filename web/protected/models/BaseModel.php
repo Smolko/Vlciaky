@@ -55,8 +55,8 @@ class BaseModel extends CActiveRecord{
     
     public function getYesNoList(){
         return array(
-            self::YES=>"Yes",
             self::NO=>"No",
+            self::YES=>"Yes",
         );
     }
     

@@ -47,11 +47,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'count_all'); ?>
-		<?php echo $form->textField($model,'count_all'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'created_at'); ?>
 		<?php echo $form->textField($model,'created_at'); ?>
 	</div>

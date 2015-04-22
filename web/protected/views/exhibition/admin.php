@@ -52,7 +52,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'referee',
                 'count_male',
 		'count_female',
-		'count_all',
           //      'pocet',
 		/*'created_at',
 		'updated_at',
