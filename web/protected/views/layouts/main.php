@@ -41,7 +41,6 @@
                 $this->widget('bootstrap.widgets.TbMenu', array(
                     'items' => array(
                         array('label' => 'Home', 'url' => array('/site/index')),
-                        array('label' => 'Home', 'url' => array('/site/index')),
                         array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
                         array('label' => 'Contact', 'url' => array('/site/contact')),
                         array('label' => 'Kennel', 'url' => array('/kennel')),
@@ -54,6 +53,8 @@
                         array('label' => 'Youth presentation', 'url' => array('/youthpresentation')),
                         array('label' => Yii::t("model","exhibition.title"), 'url' => array('/exhibition/index')),
                         array('label' => 'Exhibition test', 'url' => array('/exhibition/test')),
+                                                array('label' => 'Statistics', 'url' => array('/statistics/index')),
+
                     //array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
                     //array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
                     ),

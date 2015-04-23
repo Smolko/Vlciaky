@@ -65,7 +65,7 @@ class Dog extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, color, birthday, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, state', 'required'),
+			array('name, color, birthday, breed, old_regnumber, new_regnumber, tattoo, chip, breeding, state', 'required'),
 			array('sex, tattoo, id_health, id_fertilisation, id_owner, id_old_owner, id_kennel_owner, state', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>200),
 			array('color, old_regnumber, new_regnumber', 'length', 'max'=>50),
@@ -185,6 +185,7 @@ class Dog extends BaseModel
 			'criteria'=>$criteria,
 		));
 	}
+        
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -223,5 +224,18 @@ class Dog extends BaseModel
         
         public function getFemaleList(){
             return CHtml::listData($this->findAllByAttributes(array('sex'=>0)), 'id', 'name');
+        }
+        
+        // export import
+        //1 - export
+        //2 - import
+        //0 - SVK
+        public function getExportDogCount(){
+           return count($this->findAll(array('condition'=>'export_import=1'))); 
+        }
+        
+        
+        public function getImportDogCount(){
+           return count($this->findAll(array('condition'=>'export_import=2'))); 
         }
 }
