@@ -41,7 +41,7 @@
                 $this->widget('bootstrap.widgets.TbMenu', array(
                     'items' => array(
                         array('label' => 'Home', 'url' => array('/site/index')),
-                        array('label' => 'Home', 'url' => array('/site/index')),
+                        array('label' => 'Registration', 'url' => array('/user/admin/create')),
                         array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
                         array('label' => 'Contact', 'url' => array('/site/contact')),
                         array('label' => 'Kennel', 'url' => array('/kennel')),

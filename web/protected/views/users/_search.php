@@ -1,0 +1,64 @@
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
+	'action'=>Yii::app()->createUrl($this->route),
+	'method'=>'get',
+)); ?>
+
+		<?php echo $form->textFieldRow($model,'id',array('class'=>'span5')); ?>
+
+		<?php echo $form->textFieldRow($model,'username',array('class'=>'span5','maxlength'=>20)); ?>
+
+			<?php echo $form->textFieldRow($model,'email',array('class'=>'span5','maxlength'=>128)); ?>
+
+		<?php echo $form->textFieldRow($model,'activkey',array('class'=>'span5','maxlength'=>128)); ?>
+
+		<?php echo $form->textFieldRow($model,'superuser',array('class'=>'span5')); ?>
+
+		<?php echo $form->textFieldRow($model,'status',array('class'=>'span5')); ?>
+
+		<?php echo $form->textFieldRow($model,'create_at',array('class'=>'span5')); ?>
+
+		<?php echo $form->textFieldRow($model,'lastvisit_at',array('class'=>'span5')); ?>
+
+		<?php echo $form->textFieldRow($model,'user_type',array('class'=>'span5','maxlength'=>10)); ?>
+
+		<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>50)); ?>
+
+		<?php echo $form->textFieldRow($model,'surname',array('class'=>'span5','maxlength'=>100)); ?>
+
+		<?php echo $form->textFieldRow($model,'title',array('class'=>'span5','maxlength'=>20)); ?>
+
+		<?php echo $form->datepickerRow($model,'born_date',array('options'=>array(),'htmlOptions'=>array('class'=>'span5')),array('prepend'=>'<i class="icon-calendar"></i>','append'=>'Click on Month/Year at top to select a different year or type in (mm/dd/yyyy).')); ?>
+
+		<?php echo $form->textFieldRow($model,'street',array('class'=>'span5','maxlength'=>100)); ?>
+
+		<?php echo $form->textFieldRow($model,'address_number',array('class'=>'span5','maxlength'=>50)); ?>
+
+		<?php echo $form->textFieldRow($model,'city',array('class'=>'span5','maxlength'=>100)); ?>
+
+		<?php echo $form->textFieldRow($model,'psc',array('class'=>'span5','maxlength'=>5)); ?>
+
+		<?php echo $form->textFieldRow($model,'web_site',array('class'=>'span5','maxlength'=>100)); ?>
+
+		<?php echo $form->textFieldRow($model,'phone_number',array('class'=>'span5')); ?>
+
+		<?php echo $form->textFieldRow($model,'club_member',array('class'=>'span5')); ?>
+
+		<?php echo $form->textFieldRow($model,'request_member',array('class'=>'span5')); ?>
+
+		<?php echo $form->textFieldRow($model,'chs_owner',array('class'=>'span5','maxlength'=>200)); ?>
+
+		<?php echo $form->datepickerRow($model,'chs_registred',array('options'=>array(),'htmlOptions'=>array('class'=>'span5')),array('prepend'=>'<i class="icon-calendar"></i>','append'=>'Click on Month/Year at top to select a different year or type in (mm/dd/yyyy).')); ?>
+
+		<?php echo $form->textFieldRow($model,'chs_number',array('class'=>'span5','maxlength'=>50)); ?>
+
+		<?php echo $form->textFieldRow($model,'rank',array('class'=>'span5')); ?>
+
+	<div class="form-actions">
+		<?php $this->widget('bootstrap.widgets.TbButton', array(
+			'buttonType' => 'submit',
+			'type'=>'primary',
+			'label'=>'Search',
+		)); ?>
+	</div>
+
+<?php $this->endWidget(); ?>

@@ -21,4 +21,22 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+        
+        public function filters(){
+        return array(
+         //   array('auth.components.AuthFilter'),
+  //          array('ext.bootstrap.filters.BootstrapFilter - delete, suggest'),
+/*            array(
+                    'application.components.filters.HttpsFilter',
+                    'bypass' => !Yii::app()->params['force_https'],
+                ),*/
+            );
+        }
+        
+        public function filterEtoAllowed($filterChain){
+        if(!RightsHelper::getEtoAllowed()){
+            throw new CHttpException(401, Yii::t('AuthModule.main', 'Access denied.'));
+        }
+        $filterChain->run();
+    }
 }

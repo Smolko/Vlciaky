@@ -18,6 +18,9 @@ return array(
         'application.components.*',
         'application.modules.user.models.*',
         'application.modules.user.components.*',
+        'application.modules.auth.*',
+        'application.modules.auth.components.*',
+        'ext.authWebService.*',
     ),
     'modules' => array(
         'gii' => array(
@@ -49,7 +52,17 @@ return array(
             # page after logout
             'returnLogoutUrl' => array('/user/login'),
         ),
+            'auth' => array(
+            'strictMode' => false, // when enabled authorization items cannot be assigned children of the same type.
+            'userClass' => 'User', // the name of the user model class.
+            'userIdColumn' => 'id', // the name of the user id column.
+            'userNameColumn' => 'username', // the name of the user name column.
+            'appLayout' => 'application.views.layouts.main', // the layout used by the module.
+            'viewDir' => null, // the path to view files to use with this module.
+        ),
     ),
+    
+    
     // application components
     'components' => array(
         'user' => array(
@@ -60,6 +73,21 @@ return array(
         ),
         'bootstrap' => array(
             'class' => 'bootstrap.components.Bootstrap',
+        ),
+        
+           'authManager' => array(
+            'defaultRoles'=>array('Guest'),
+            'class'=>'CDbAuthManager',
+            //'connectionID'=>'db',
+            'defaultRoles'=>array('Guest'),
+            'assignmentTable' => 'authassignment',
+            'itemTable' => 'authitem',
+            'itemChildTable'=>'authitemchild',
+            'behaviors' => array(
+                'auth.components.AuthBehavior',
+//                'class'=> 'auth.components.AuthBehavior',
+//               'admins'=>array('admin'),
+            ),
         ),
         // uncomment the following to enable URLs in path-format
         /*
@@ -73,9 +101,9 @@ return array(
           ),
          */
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=dog_test',
+            'connectionString' => 'mysql:host=localhost;dbname=vlciaky',
             'username' => 'root',
-            'password' => '',
+            'password' => 'vertrigo',
             'emulatePrepare' => true,
             'charset' => 'utf8',
             'tablePrefix' => 'tbl_',

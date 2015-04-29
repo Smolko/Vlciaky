@@ -30,9 +30,9 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibiti
 		echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5'));
                 
                 echo $this->renderPartial('_form_DogClass', array('model'=>$model));
-                echo $this->renderPartial('_form_ChildDog', array('model'=>$model)); 
-                echo $this->renderPartial('_form_DogCouple', array('model'=>$model)); 
-                echo $this->renderPartial('_form_BestKennel', array('model'=>$model));                  
+//                echo $this->renderPartial('_form_ChildDog', array('model'=>$model)); 
+//                echo $this->renderPartial('_form_DogCouple', array('model'=>$model)); 
+//                echo $this->renderPartial('_form_BestKennel', array('model'=>$model));                  
             ?>
 
 	<div class="form-actions">

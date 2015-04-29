@@ -18,8 +18,10 @@
         ));?>
         <table>
             <tr>
-                <th>Place</th>
-                <th>Kennel</th>
+                <?php 
+                    echo "<th>".Yii::t('model','exhibition.place')."<span class='required'>*</span></th>";
+                    echo "<th>".Yii::t('model','exhibition.kennel')."<span class='required'>*</span></th>";
+                ?>
             </tr>
             <?php 
                 foreach ($model->exhibitionBestKennels as $key=>$m){
