@@ -147,13 +147,7 @@ class ExhibitionController extends Controller
                         'model'=>$model,
 		));
 	}
-
-        public function actionList(){
-                $dataProvider=new CActiveDataProvider('Exhibition');
-		$this->render('list',array(
-			'dataProvider'=>$dataProvider,
-		));
-        }
+        
 	/**
 	 * Manages all models.
 	 */

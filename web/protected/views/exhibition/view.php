@@ -34,3 +34,101 @@ $this->menu=array(
 		'state',
 	),
 )); ?>
+
+<?php 
+
+// DOG CLASS
+$dataprovider = new CActiveDataProvider('ExhibitionClass');
+$dataprovider->setData($model->exhibitionClasses);
+$classes = Dog::model()->getExhibitionClasses();
+
+Yii::import('bootstrap.helpers.TbHtml');
+$this->widget('bootstrap.widgets.TbGridView', array(
+	'id'=>'dog-class-grid',
+        'type' => TbHtml::GRID_TYPE_STRIPED,
+	'dataProvider'=>$dataprovider,
+        'filter' => null,
+        'template'=>"{items}",
+        'columns'=>array(
+		'place',
+                array(
+                    'name'=>'Dog',
+                    'value'=>'Dog::model()->findByPk($data->id_dog)->name'
+                ),
+                array(
+                    'name'=>'Class',
+                    'value'=>'Dog::model()->getExhibitionClasses()[$data->class]'
+                ),
+                'ranking',
+                'titul',
+	),
+)); 
+
+
+// CHILD DOG
+$dataprovider = new CActiveDataProvider('ExhibitionChildDog');
+$dataprovider->setData($model->exhibitionChildDogs);
+
+Yii::import('bootstrap.helpers.TbHtml');
+$this->widget('bootstrap.widgets.TbGridView', array(
+	'id'=>'child-dog-grid',
+        'type' => TbHtml::GRID_TYPE_STRIPED,
+	'dataProvider'=>$dataprovider,
+        'filter' => null,
+        'template'=>"{items}",
+        'columns'=>array(
+		'place',
+                array(
+                    'name'=>'Dog',
+                    'value'=>'Dog::model()->findByPk($data->id_dog)->name'
+                ),
+		'child',
+	),
+)); 
+
+// DOG COUPLE
+$dataprovider = new CActiveDataProvider('ExhibitionDogCouple');
+$dataprovider->setData($model->exhibitionDogCouples);
+
+Yii::import('bootstrap.helpers.TbHtml');
+$this->widget('bootstrap.widgets.TbGridView', array(
+	'id'=>'dog-couple-grid',
+        'type' => TbHtml::GRID_TYPE_STRIPED,
+	'dataProvider'=>$dataprovider,
+        'filter' => null,
+        'template'=>"{items}",
+        'columns'=>array(
+		'place',
+                array(
+                    'name'=>'Dog1',
+                    'value'=>'Dog::model()->findByPk($data->id_dog1)->name'
+                ),
+                array(
+                    'name'=>'Dog2',
+                    'value'=>'Dog::model()->findByPk($data->id_dog2)->name'
+                ),
+	),
+)); 
+
+// BEST KENNEL
+$dataprovider = new CActiveDataProvider('ExhibitionBestKennel');
+$dataprovider->setData($model->exhibitionBestKennels);
+
+Yii::import('bootstrap.helpers.TbHtml');
+$this->widget('bootstrap.widgets.TbGridView', array(
+	'id'=>'best-kennel-grid',
+        'type' => TbHtml::GRID_TYPE_STRIPED,
+	'dataProvider'=>$dataprovider,
+        'filter' => null,
+        'template'=>"{items}",
+        'columns'=>array(
+		'place',
+                array(
+                    'name'=>'Kennel',
+                    'value'=>'Kennel::model()->findByPk($data->id_kennel)->name'
+                ),
+	),
+)); 
+
+?>
+

@@ -134,4 +134,33 @@ class Fertilisation extends BaseModel
 	{
 		return parent::model($className);
 	}
+        
+       public function getPuppyStatisticsY($year){
+            
+            $criteria=new CDbCriteria;
+                $criteria->select = 'count(id) AS id, sum(male_count) AS male_count, sum(female_count) AS female_count';
+                $criteria->addBetweenCondition('litter_date', date($year.'-01-01'), date($year.'-12-12'));
+              //  $criteria->condition = "litter_date BETWEEN '".date($year.'-01-01')."' AND '" . date($year.'-12-31') . "'";
+            // var_dump($this->findAll($criteria))[0];
+           //     exit;
+                 return $this->findAll($criteria)[0];
+        }
+        
+         public function getPuppyCount($yearStart=0, $yearEnd=0){
+             
+             $criteria=new CDbCriteria;
+                $criteria->select = 'count(id) AS id, sum(male_count) AS male_count, sum(female_count) AS female_count';
+            if($yearStart!=0 && $yearEnd!=0){
+                   $criteria->condition = "litter_date BETWEEN '".date($yearStart.'-01-01')."' AND '" . date($yearEnd.'-12-31') . "'";       
+            }
+            else if($yearStart==0 && $yearEnd!=0){
+                   $criteria->condition = "litter_date < '".date($yearEnd.'-01-01')."'";       
+            }
+            else if($yearStart!=0 && $yearEnd==0){
+                   $criteria->condition = "litter_date > '".date($yearStart.'-01-01')."'";        
+            }
+               // var_dump($this->findAll($criteria)[0]->male_count);
+               // exit;
+                 return $this->findAll($criteria)[0];
+        }
 }

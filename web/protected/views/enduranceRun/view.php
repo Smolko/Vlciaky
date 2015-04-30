@@ -23,16 +23,50 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'place',
-		'order',
-		'handler',
-		'type',
-		'evaluation',
-		'andurance_run_place',
 		'date',
 		'referee',
-		'id_dog',
+		'count_male_svp1',
+		'count_female_svp1',
+		'count_male_svp2',
+		'count_female_svp2',
+		'count_male_svp3',
+		'count_female_svp3',
 		'created_at',
 		'updated_at',
 		'state',
 	),
 )); ?>
+
+<?php
+
+$dataprovider = new CActiveDataProvider('EnduranceRun');
+$dataprovider->setData($model->enduranceRunDogs);
+
+Yii::import('bootstrap.helpers.TbHtml');
+$this->widget('bootstrap.widgets.TbGridView', array(
+	'id'=>'dog-class-grid',
+        'type' => TbHtml::GRID_TYPE_STRIPED,
+	'dataProvider'=>$dataprovider,
+        'filter' => null,
+        'template'=>"{items}",
+        'columns'=>array(
+		'place',
+                'order',
+                array(
+                    'name'=>'Dog',
+                    'value'=>'Dog::model()->findByPk($data->id_dog)->name'
+                ),
+                /*array(
+                    'name'=>'Class',
+                    'value'=>'Dog::model()->getExhibitionClasses()[$data->class]'
+                ),*/
+                'evaluation',
+                'duration',
+                array(
+                    'type'=>'raw',
+                    'name'=>'Type',
+                    'value'=>'EnduranceRun::model()->getSVPList()[$data->type]'
+                )
+	),
+)); 
+?>
