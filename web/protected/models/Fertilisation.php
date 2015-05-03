@@ -41,9 +41,10 @@ class Fertilisation extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fertilisation_date, litter_date, male_count, female_count, comment, id_dog_mother, id_dog_father, id_kennel, state', 'required'),
+			/*array('fertilisation_date, litter_date, male_count, female_count, comment, id_dog_mother, id_dog_father, id_kennel, state', 'required'),*/
 			array('male_count, female_count, id_dog_mother, id_dog_father, id_kennel, state', 'numerical', 'integerOnly'=>true),
 			array('comment', 'length', 'max'=>200),
+                        array('fertilisation_date, litter_date, created_at, updated_at', 'safe'),
 			array('created_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
                         array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
 			// The following rule is used by search().

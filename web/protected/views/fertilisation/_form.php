@@ -18,14 +18,14 @@
 	<?php echo $form->errorSummary($model); ?>
 
             <?php 
-                echo $form->textFieldRow($model,'fertilisation_date'); 
-		echo $form->textFieldRow($model,'litter_date'); 
-		echo $form->textFieldRow($model,'male_count'); 
-		echo $form->textFieldRow($model,'female_count'); 
+		echo $form->datepickerRow($model,'fertilisation_date', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>'));
+		echo $form->datepickerRow($model,'litter_date', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>')); 
+		echo $form->numberFieldRow($model,'male_count'); 
+		echo $form->numberFieldRow($model,'female_count'); 
 		echo $form->textFieldRow($model,'comment',array('size'=>60,'maxlength'=>200)); 
-		echo $form->textFieldRow($model,'id_dog_mother'); 
-		echo $form->textFieldRow($model,'id_dog_father'); 
-		echo $form->textFieldRow($model,'id_kennel');
+		echo $form->dropDownListRow($model, 'id_dog_mother', Dog::model()->femaleList, array('class'=>'span5'));
+                echo $form->dropDownListRow($model, 'id_dog_father', Dog::model()->maleList, array('class'=>'span5'));
+                echo $form->dropDownListRow($model, 'id_kennel', Kennel::model()->list, array());
                 echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5')); 
             ?>
 

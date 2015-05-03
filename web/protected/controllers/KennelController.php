@@ -37,7 +37,7 @@ class KennelController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('hades'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -70,6 +70,15 @@ class KennelController extends Controller
 		if(isset($_POST['Kennel']))
 		{
 			$model->attributes=$_POST['Kennel'];
+                        $model->setFertilisationParameters(
+                                $_POST['Fertilisation_FertilisationDate'],
+                                $_POST['Fertilisation_LitterDate'],
+                                $_POST['Fertilisation_MaleCount'],
+                                $_POST['Fertilisation_FemaleCount'],
+                                $_POST['Fertilisation_DogFather'],
+                                $_POST['Fertilisation_DogMother'],
+                                $_POST['Fertilisation_Comment']
+                                );
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -94,6 +103,15 @@ class KennelController extends Controller
 		if(isset($_POST['Kennel']))
 		{
 			$model->attributes=$_POST['Kennel'];
+                        $model->setFertilisationParameters(
+                                $_POST['Fertilisation_FertilisationDate'],
+                                $_POST['Fertilisation_LitterDate'],
+                                $_POST['Fertilisation_MaleCount'],
+                                $_POST['Fertilisation_FemaleCount'],
+                                $_POST['Fertilisation_DogFather'],
+                                $_POST['Fertilisation_DogMother'],
+                                $_POST['Fertilisation_Comment']
+                                );
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,9 +140,13 @@ class KennelController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Kennel');
+                $model=new Kennel('searchIndex');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Kennel']))
+			$model->attributes=$_GET['Kennel'];
+                
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                        'model'=>$model,
 		));
 	}
 
@@ -152,7 +174,7 @@ class KennelController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Kennel::model()->findByPk($id);
+		$model=Kennel::model()->with("fertilisations",'dogs')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

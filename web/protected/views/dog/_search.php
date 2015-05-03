@@ -97,8 +97,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'id_kennel_owner'); ?>
-		<?php echo $form->textField($model,'id_kennel_owner'); ?>
+		<?php echo $form->label($model,'id_kennel'); ?>
+		<?php echo $form->textField($model,'id_kennel'); ?>
 	</div>
 
 	<div class="row">

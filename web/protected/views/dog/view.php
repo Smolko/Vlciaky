@@ -38,7 +38,7 @@ $this->menu=array(
 		'id_fertilisation',
 		'id_owner',
 		'id_old_owner',
-		'id_kennel_owner',
+		'id_kennel',
 		'dlk',
 		'dbk',
 		'dwarf',

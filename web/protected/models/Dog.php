@@ -21,7 +21,7 @@
  * @property integer $id_fertilisation
  * @property integer $id_owner
  * @property integer $id_old_owner
- * @property integer $id_kennel_owner
+ * @property integer $id_kennel
  * @property integer $dlk
  * @property integer $dbk
  * @property integer $dwarf
@@ -74,7 +74,7 @@ class Dog extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('sex, tattoo, id_fertilisation, id_owner, id_old_owner, id_kennel_owner, dlk, dbk, dwarf, dm, state', 'numerical', 'integerOnly'=>true),
+			array('sex, tattoo, id_fertilisation, id_owner, id_old_owner, id_kennel, dlk, dbk, dwarf, dm, state', 'numerical', 'integerOnly'=>true),
 			array('name, dna, dlk_vet, dbk_vet, dwarf_vet, dm_vet', 'length', 'max'=>200),
 			array('color, old_regnumber, new_regnumber', 'length', 'max'=>50),
 			array('death_cause', 'length', 'max'=>300),
@@ -85,7 +85,7 @@ class Dog extends BaseModel
                         array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, sex, color, birthday, deathday, death_cause, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, id_fertilisation, id_owner, id_old_owner, id_kennel_owner, dlk, dbk, dwarf, dm, dna, dlk_vet, dlk_date, dbk_vet, dbk_date, dwarf_vet, dwarf_date, dm_vet, dm_date, created_at, updated_at, state', 'safe', 'on'=>'search'),
+			array('id, name, sex, color, birthday, deathday, death_cause, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, id_fertilisation, id_owner, id_old_owner, id_kennel, dlk, dbk, dwarf, dm, dna, dlk_vet, dlk_date, dbk_vet, dbk_date, dwarf_vet, dwarf_date, dm_vet, dm_date, created_at, updated_at, state', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -102,7 +102,7 @@ class Dog extends BaseModel
 			'idOwner' => array(self::BELONGS_TO, 'Profiles', 'id_owner'),
 			'idOldOwner' => array(self::BELONGS_TO, 'Dog', 'id_old_owner'),
 			'dogs' => array(self::HAS_MANY, 'Dog', 'id_old_owner'),
-			'idKennelOwner' => array(self::BELONGS_TO, 'Users', 'id_kennel_owner'),
+			'idKennel' => array(self::BELONGS_TO, 'Users', 'id_kennel'),
 			'enduranceRunDogs' => array(self::HAS_MANY, 'EnduranceRunDog', 'id_dog'),
 			'exhibitionChildDogs' => array(self::HAS_MANY, 'ExhibitionChildDog', 'id_dog'),
 			'exhibitionClasses' => array(self::HAS_MANY, 'ExhibitionClass', 'id_dog'),
@@ -138,7 +138,7 @@ class Dog extends BaseModel
 			'id_fertilisation' => 'Id Fertilisation',
 			'id_owner' => 'Id Owner',
 			'id_old_owner' => 'Id Old Owner',
-			'id_kennel_owner' => 'Id Kennel Owner',
+			'id_kennel' => 'Id Kennel',
 			'dlk' => 'Dlk',
 			'dbk' => 'Dbk',
 			'dwarf' => 'Dwarf',
@@ -193,7 +193,7 @@ class Dog extends BaseModel
 		$criteria->compare('id_fertilisation',$this->id_fertilisation);
 		$criteria->compare('id_owner',$this->id_owner);
 		$criteria->compare('id_old_owner',$this->id_old_owner);
-		$criteria->compare('id_kennel_owner',$this->id_kennel_owner);
+		$criteria->compare('id_kennel',$this->id_kennel);
 		$criteria->compare('dlk',$this->dlk);
 		$criteria->compare('dbk',$this->dbk);
 		$criteria->compare('dwarf',$this->dwarf);

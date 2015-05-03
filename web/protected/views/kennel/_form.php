@@ -4,6 +4,10 @@
 /* @var $form CActiveForm */
 ?>
 
+<?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibition.js?v='.Yii::app()->params['version'], CClientScript::POS_END); 
+?>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
@@ -22,6 +26,8 @@
 		echo $form->datepickerRow($model,'registered_at', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>'));
 		echo $form->textFieldRow($model,'id_user'); 
 		echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5')); 
+                
+                echo $this->renderPartial('_form_Fertilisation', array('model'=>$model));
             ?>
 
 	<div class="form-actions">

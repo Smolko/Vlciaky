@@ -84,6 +84,11 @@ class BaseModel extends CActiveRecord{
         return CHtml::listData($models, 'id', 'name');
     }
     
+    public function getFertilisationList(){
+        $models = $this->findAll(array('order' => 'fertilisation_date'));
+        return CHtml::listData($models, 'id', 'fertilisation_date');
+    }
+    
     public function getExhibitionClasses(){
         return array(
             self::EXHIBITIONCLASS_MALE_TRIEDASTENIAT => "Trieda_šteniat",

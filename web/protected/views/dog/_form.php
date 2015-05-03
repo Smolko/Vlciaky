@@ -18,10 +18,10 @@
             
         <?php 
             //echo $form->textFieldRow($model,'id_health',array('size'=>30,'maxlength'=>30));
-            echo $form->textFieldRow($model,'id_fertilisation',array('size'=>30,'maxlength'=>30));
+            echo $form->dropDownListRow($model, 'id_fertilisation', Fertilisation::model()->fertilisationList, array('class' => 'span5'));
             echo $form->textFieldRow($model,'id_owner',array('size'=>30,'maxlength'=>30));
             echo $form->textFieldRow($model,'id_old_owner',array('size'=>30,'maxlength'=>30));
-            echo $form->textFieldRow($model,'id_kennel_owner',array('size'=>30,'maxlength'=>30));
+            echo $form->dropDownListRow($model, 'id_kennel', Kennel::model()->list, array('class' => 'span5'));
             echo $form->textFieldRow($model,'name',array('size'=>60,'maxlength'=>200));
             echo $form->dropDownListRow($model, 'sex', $model->sexList, array('class' => 'span5'));
             echo $form->textFieldRow($model,'color',array('size'=>50,'maxlength'=>50));
