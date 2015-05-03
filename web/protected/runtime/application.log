@@ -7690,6 +7690,7 @@ in C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\views\layouts\main.php 
 in C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\views\layouts\column2.php (24)
 in C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\controllers\DogController.php (130)
 <<<<<<< HEAD
+<<<<<<< HEAD
 2015/04/22 09:32:51 [error] [exception.CException] exception 'CException' with message 'Vlastnosť "CActiveForm.type" nie je definovaná.' in C:\Users\Hades\Documents\GitHub\Vlciaky\framework\base\CComponent.php:173
 Stack trace:
 #0 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CWidgetFactory.php(161): CComponent->__set('type', 'horizontal')
@@ -8888,3 +8889,6 @@ Stack trace:
 REQUEST_URI=/index.php?r=kennel/view&id=1
 HTTP_REFERER=http://vlciaky.xampp.com/index.php?r=kennel
 ---
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
