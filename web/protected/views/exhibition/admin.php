@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Exhibition', 'url'=>array('index')),
-	array('label'=>'Create Exhibition', 'url'=>array('create')),
+	array('label'=>'List Exhibition', 'url'=>array('index'),'visible'=>RightsHelper::can("Exhibition.index")),
+	array('label'=>'Create Exhibition', 'url'=>array('create'),'visible'=>RightsHelper::can("Exhibition.create")),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -52,7 +52,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'referee',
                 'count_male',
 		'count_female',
-		'count_all',
           //      'pocet',
 		/*'created_at',
 		'updated_at',

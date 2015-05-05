@@ -39,7 +39,7 @@ class Exhibition extends BaseModel {
         // will receive user inputs.
         return array(
             array('name', 'required'),
-            array('count_male, count_female, count_all, state', 'numerical', 'integerOnly' => true),
+            array('count_male, count_female, state', 'numerical', 'integerOnly' => true),
             array('name', 'length', 'max' => 500),
             array('place', 'length', 'max' => 300),
             array('referee', 'length', 'max' => 200),
@@ -48,7 +48,7 @@ class Exhibition extends BaseModel {
             array('updated_at', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'update'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, name, place, date, pocet, referee, count_male, count_female, count_all, created_at, updated_at, state', 'safe', 'on' => 'search'),
+            array('id, name, place, date, pocet, referee, count_male, count_female, created_at, updated_at, state', 'safe', 'on' => 'search'),
         );
     }
 
@@ -116,7 +116,6 @@ class Exhibition extends BaseModel {
         $criteria->compare('referee', $this->referee, true);
         $criteria->compare('count_male', $this->count_male);
         $criteria->compare('count_female', $this->count_female);
-        $criteria->compare('count_all', $this->count_all);
         $criteria->compare('created_at', $this->created_at, true);
         $criteria->compare('updated_at', $this->updated_at, true);
         $criteria->compare('state', $this->state);
@@ -124,11 +123,11 @@ class Exhibition extends BaseModel {
         // COUNT
         if (isset($_GET['count_min']) && !empty($_GET['count_min'])){
             $count_min = intval($_GET['count_min']);
-            $criteria->addCondition('count_all >= '. $count_min);
+            $criteria->addCondition('(count_male + count_female) >= '. $count_min);
         }
         if (isset($_GET['count_max']) && !empty($_GET['count_max'])){
             $count_max = intval($_GET['count_max']);
-            $criteria->addCondition('count_all <= '. $count_max);
+            $criteria->addCondition('(count_male + count_female) <= '. $count_max);
         }
         
         // YEAR
@@ -151,20 +150,20 @@ class Exhibition extends BaseModel {
 
         $criteria = new CDbCriteria;
         
-        $criteria->compare('place', $this->place, true);
-        $criteria->compare('referee', $this->referee, true);
-        $criteria->compare('state', 1, true);
-        
+        $criteria->compare('t.place', $this->place, true);
+        $criteria->compare('t.referee', $this->referee, true);
+        $criteria->compare('t.state', 1, true);
+
         // COUNT
         if (isset($_GET['count_min']) && !empty($_GET['count_min'])){
             $count_min = intval($_GET['count_min']);
-            $criteria->addCondition('count_all >= '. $count_min);
+            $criteria->addCondition('(count_male+count_female) >= '. $count_min);
         }
         if (isset($_GET['count_max']) && !empty($_GET['count_max'])){
             $count_max = intval($_GET['count_max']);
-            $criteria->addCondition('count_all <= '. $count_max);
+            $criteria->addCondition('(count_male+count_female) <= '. $count_max);
         }
-        
+
         // YEAR
         if (isset($_GET['year_min']) && !empty($_GET['year_min'])){
             $year_min = intval($_GET['year_min']);
@@ -174,6 +173,7 @@ class Exhibition extends BaseModel {
             $year_max = intval($_GET['year_max']);
             $criteria->addCondition('year(date) <= '. $year_max);
         }
+        
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -190,6 +190,13 @@ class Exhibition extends BaseModel {
         return parent::model($className);
     }
     
+    ///////////////VIEW/////////////////
+    public function getDataProviderFromModels($models){
+        
+    }   
+    
+    //////////////CREATE////////////////
+    //////////////UPDATE////////////////
     
     // DOG CHILD
     public function setDogChildParameters($dogs,$children,$place){
@@ -261,7 +268,7 @@ class Exhibition extends BaseModel {
                 $models[]=$model;
             }
         }
-        $this->exhibitionBestKennels = array_merge($this->exhibitionBestKennels,$models);
+        $this->exhibitionClasses = array_merge($this->exhibitionClasses,$models);
         
     }
 

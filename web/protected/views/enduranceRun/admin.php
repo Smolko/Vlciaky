@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List EnduranceRun', 'url'=>array('index')),
-	array('label'=>'Create EnduranceRun', 'url'=>array('create')),
+	array('label'=>'List EnduranceRun', 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),
+	array('label'=>'Create EnduranceRun', 'url'=>array('create'),'visible'=>RightsHelper::can("Endurancerun.create")),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -40,22 +40,22 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView', array(
-	'id'=>'endurancerun-grid',
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'endurance-run-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
 		'place',
-		'order',
-		'handler',
-		'type',
-		'evaluation',
-		/*
-		'andurance_run_place',
 		'date',
 		'referee',
-		'id_dog',
+		'count_male_svp1',
+		'count_female_svp1',
+		/*
+		'count_male_svp2',
+		'count_female_svp2',
+		'count_male_svp3',
+		'count_female_svp3',
 		'created_at',
 		'updated_at',
 		'state',

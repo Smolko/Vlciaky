@@ -24,7 +24,7 @@ class Controller extends CController
         
         public function filters(){
         return array(
-         //   array('auth.components.AuthFilter'),
+            array('auth.components.AuthFilter'),
   //          array('ext.bootstrap.filters.BootstrapFilter - delete, suggest'),
 /*            array(
                     'application.components.filters.HttpsFilter',

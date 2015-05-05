@@ -9,10 +9,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Exhibition', 'url'=>array('index')),
-	array('label'=>'Create Exhibition', 'url'=>array('create')),
-	array('label'=>'View Exhibition', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Exhibition', 'url'=>array('admin')),
+	    
+        array('label'=>'List Exhibition', 'url'=>array('index'),'visible'=>RightsHelper::can("Exhibition.index")),
+	array('label'=>'Create Exhibition', 'url'=>array('create'),'visible'=>RightsHelper::can("Exhibition.create")),
+        array('label'=>'View Exhibition', 'url'=>array('view', 'id'=>$model->id),'visible'=>RightsHelper::can("Exhibition.view")),
+	array('label'=>'Manage Exhibition', 'url'=>array('admin'),'visible'=>RightsHelper::can("Exhibition.admin")),
 );
 ?>
 

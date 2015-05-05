@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Kennel', 'url'=>array('index')),
-	array('label'=>'Create Kennel', 'url'=>array('create')),
-	array('label'=>'Update Kennel', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Kennel', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Kennel', 'url'=>array('admin')),
+	array('label'=>'List Kennel', 'url'=>array('index'),'visible'=>RightsHelper::can("Kennel.index")),
+	array('label'=>'Create Kennel', 'url'=>array('create'),'visible'=>RightsHelper::can("Kennel.create")),
+	array('label'=>'Update Kennel', 'url'=>array('update', 'id'=>$model->id),'visible'=>RightsHelper::can("Kennel.update")&&$model->canUpdate()),
+	array('label'=>'Delete Kennel', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),'visible'=>RightsHelper::can("Kennel.delete")),
+	array('label'=>'Manage Kennel', 'url'=>array('admin'),'visible'=>RightsHelper::can("Kennel.admin")),
 );
 ?>
 

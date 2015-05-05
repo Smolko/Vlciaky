@@ -5,9 +5,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-    array('label'=>UserModule::t('Manage Users'), 'url'=>array('admin')),
-    array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin')),
-    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
+    array('label'=>UserModule::t('Manage Users'), 'url'=>array('admin'),'visible'=>RightsHelper::can("User.Admin.*")),
+    array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin'),'visible'=>RightsHelper::can("User.Admin.*")),
+    array('label'=>UserModule::t('List User'), 'url'=>array('/user'),'visible'=>RightsHelper::can("User.Admin.*")),
 );
 ?>
 <h1><?php echo UserModule::t("Create User"); ?></h1>

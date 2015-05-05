@@ -9,10 +9,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Kennel', 'url'=>array('index')),
-	array('label'=>'Create Kennel', 'url'=>array('create')),
-	array('label'=>'View Kennel', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Kennel', 'url'=>array('admin')),
+	   
+        array('label'=>'List Kennel', 'url'=>array('index'),'visible'=>RightsHelper::can("Kennel.index")),
+	array('label'=>'Create Kennel', 'url'=>array('create'),'visible'=>RightsHelper::can("Kennel.create")),
+	array('label'=>'View Kennel', 'url'=>array('view', 'id'=>$model->id),'visible'=>RightsHelper::can("Kennel.view")),
+        array('label'=>'Manage Kennel', 'url'=>array('admin'),'visible'=>RightsHelper::can("Kennel.admin")),
 );
 ?>
 

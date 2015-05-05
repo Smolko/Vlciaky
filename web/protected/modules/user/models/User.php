@@ -1,6 +1,6 @@
 <?php
 
-class User extends CActiveRecord
+class User extends BaseModel
 {
 	const STATUS_NOACTIVE=0;
 	const STATUS_ACTIVE=1;
@@ -59,11 +59,11 @@ class User extends CActiveRecord
 			array('superuser', 'in', 'range'=>array(0,1)),
             array('create_at', 'default', 'value' => date('Y-m-d H:i:s'), 'setOnEmpty' => true, 'on' => 'insert'),
             array('lastvisit_at', 'default', 'value' => '0000-00-00 00:00:00', 'setOnEmpty' => true, 'on' => 'insert'),
-			array('username, email, superuser, status', 'required'),
+		//	array('username, email, superuser, status,name', 'required'),
 			array('superuser, status', 'numerical', 'integerOnly'=>true),
-			array('id, username, password, email, activkey, create_at, lastvisit_at, superuser, status', 'safe', 'on'=>'search'),
+			array('id, username, password,  email, activkey, create_at, lastvisit_at, superuser, status, name, surname, title', 'safe', 'on'=>'search'),
 		):((Yii::app()->user->id==$this->id)?array(
-			array('username, email', 'required'),
+			array('username, password, email, name, surname', 'required'),
 			array('username', 'length', 'max'=>20, 'min' => 3,'message' => UserModule::t("Incorrect username (length between 3 and 20 characters).")),
 			array('email', 'email'),
 			array('username', 'unique', 'message' => UserModule::t("This user's name already exists.")),
@@ -86,25 +86,34 @@ class User extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => UserModule::t("Id"),
-			'username'=>UserModule::t("username"),
-			'password'=>UserModule::t("password"),
-			'verifyPassword'=>UserModule::t("Retype Password"),
-			'email'=>UserModule::t("E-mail"),
-			'verifyCode'=>UserModule::t("Verification Code"),
-			'activkey' => UserModule::t("activation key"),
-			'createtime' => UserModule::t("Registration date"),
-			'create_at' => UserModule::t("Registration date"),
-			
-			'lastvisit_at' => UserModule::t("Last visit"),
-			'superuser' => UserModule::t("Superuser"),
-			'status' => UserModule::t("Status"),
-		);
-	}
-	
+//	public function attributeLabels()
+//	{
+//		return array(
+//			'id' => UserModule::t("Id"),
+//			'username'=>UserModule::t("username"),
+//			'password'=>UserModule::t("password"),
+//			'verifyPassword'=>UserModule::t("Retype Password"),
+//			'email'=>UserModule::t("E-mail"),
+//			'verifyCode'=>UserModule::t("Verification Code"),
+//			'activkey' => UserModule::t("activation key"),
+//			'createtime' => UserModule::t("Registration date"),
+//			'create_at' => UserModule::t("Registration date"),
+//			
+//			'lastvisit_at' => UserModule::t("Last visit"),
+//			'superuser' => UserModule::t("Superuser"),
+//			'status' => UserModule::t("Status"),
+//		);
+//	}
+        
+        
+        public function attributeLabels(){
+            return $this->generateAttributeLabels(array(
+                'username', 'password', 'email', 'name', 'surname','street','address_number','city','born_date','title','psc','web_site','phone_number',
+                'chs_owner','chs_registred','chs_number'
+            ));    
+        
+        }
+        
 	public function scopes()
     {
         return array(
@@ -121,7 +130,8 @@ class User extends CActiveRecord
                 'condition'=>'superuser=1',
             ),
             'notsafe'=>array(
-            	'select' => 'id, username, password, email, activkey, create_at, lastvisit_at, superuser, status',
+            	'select' => 'id, name,surname,street,address_number,city,born_date,title,psc,web_site,phone_number,
+                chs_owner,chs_registred,chs_number, username, password, email, activkey, create_at, lastvisit_at, superuser, status',
             ),
         );
     }
@@ -165,6 +175,7 @@ class User extends CActiveRecord
         
         $criteria->compare('id',$this->id);
         $criteria->compare('username',$this->username,true);
+        $criteria->compare('name',$this->name,true);
         $criteria->compare('password',$this->password);
         $criteria->compare('email',$this->email,true);
         $criteria->compare('activkey',$this->activkey);
@@ -195,5 +206,29 @@ class User extends CActiveRecord
 
     public function setLastvisit($value) {
         $this->lastvisit_at=date('Y-m-d H:i:s',$value);
+    }
+    
+      public function afterSave() {
+        $this->_assignRoles();
+        return parent::afterSave();
+    }
+
+    private function _assignRoles() {
+        $role="Rep";
+        if($this->chs_owner)
+            $role="chsOwner";
+        if($this->club_member)
+            $role="clubMember";
+        if ($this->isNewRecord) 
+            Yii::app()->authManager->assign($role, $this->id);
+//        } else {
+//            $roles = Yii::app()->authManager->getAuthItems(2, $this->id);
+//            if (!isset($roles[$this->role])) {
+//                Yii::app()->authManager->assign($this->role, $this->id);
+//                foreach ($roles as $role => $roleObject) {
+//                    Yii::app()->authManager->revoke($role, $this->id);
+//                }
+//            }
+//        }
     }
 }

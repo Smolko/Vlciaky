@@ -10,29 +10,29 @@ class AdminController extends Controller
 	/**
 	 * @return array action filters
 	 */
-	public function filters()
-	{
-		return CMap::mergeArray(parent::filters(),array(
-			'accessControl', // perform access control for CRUD operations
-		));
-	}
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create','update','view'),
-				'users'=>UserModule::getAdmins(),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+//	public function filters()
+//	{
+//		return CMap::mergeArray(parent::filters(),array(
+//			'accessControl', // perform access control for CRUD operations
+//		));
+//	}
+//	/**
+//	 * Specifies the access control rules.
+//	 * This method is used by the 'accessControl' filter.
+//	 * @return array access control rules
+//	 */
+//	public function accessRules()
+//	{
+//		return array(
+//			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+//				'actions'=>array('admin','delete','create','update','view'),
+//				'users'=>UserModule::getAdmins(),
+//			),
+//			array('deny',  // deny all users
+//				'users'=>array('*'),
+//			),
+//		);
+//	}
 	/**
 	 * Manages all models.
 	 */
@@ -80,9 +80,33 @@ class AdminController extends Controller
 		$this->performAjaxValidation(array($model,$profile));
 		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['User'];
+                    
+               //     var_dump($_POST['User']);
+                        $model->attributes=$_POST['User'];
+                        $model->password=$_POST['User']['password'];
+                        $model->name=$_POST['User']['name'];
+                        $model->surname=$_POST['User']['surname'];
+                        $model->street=$_POST['User']['street'];
+                        $model->address_number=$_POST['User']['address_number'];
+                        $model->city=$_POST['User']['city'];
+                        $model->born_date=$_POST['User']['born_date'];
+                    //    $model->user_type=$_POST['User']['user_type'];
+                        $model->title=$_POST['User']['title'];
+                        $model->psc=$_POST['User']['psc'];
+                        $model->web_site=$_POST['User']['web_site'];
+                        $model->phone_number=$_POST['User']['phone_number'];
+                        $model->chs_owner=$_POST['User']['chs_owner'];
+                        $model->chs_registred=$_POST['User']['chs_registred'];
+                        $model->chs_number=$_POST['User']['chs_number'];
+                        $model->rank=$_POST['User']['rank'];
+                        $model->club_member=$_POST['User']['club_member'];
+               //         var_dump($model->attributes);
+                   
 			$model->activkey=Yii::app()->controller->module->encrypting(microtime().$model->password);
 		//	$profile->attributes=$_POST['Profile'];
+             //           var_dump($_POST['Profile']);
+                        $profile->first_name=$model->name;
+                        $profile->last_name= $model->surname;
 			$profile->user_id=0;
 			if($model->validate()&&$profile->validate()) {
 				$model->password=Yii::app()->controller->module->encrypting($model->password);
@@ -90,7 +114,7 @@ class AdminController extends Controller
 					$profile->user_id=$model->id;
 					$profile->save();
 				}
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('create'));
 			} else $profile->validate();
 		}
 
@@ -107,12 +131,33 @@ class AdminController extends Controller
 	public function actionUpdate()
 	{
 		$model=$this->loadModel();
+//                var_dump($model);
+//                exit;
 		$profile=$model->profile;
 		$this->performAjaxValidation(array($model,$profile));
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
-			$profile->attributes=$_POST['Profile'];
+                  //         $model->password=$_POST['User']['password'];
+                        $model->name=$_POST['User']['name'];
+                        $model->surname=$_POST['User']['surname'];
+                        $model->street=$_POST['User']['street'];
+                        $model->address_number=$_POST['User']['address_number'];
+                        $model->city=$_POST['User']['city'];
+                        $model->born_date=$_POST['User']['born_date'];
+                    //    $model->user_type=$_POST['User']['user_type'];
+                        $model->title=$_POST['User']['title'];
+                        $model->psc=$_POST['User']['psc'];
+                        $model->web_site=$_POST['User']['web_site'];
+                        $model->phone_number=$_POST['User']['phone_number'];
+                        $model->chs_owner=$_POST['User']['chs_owner'];
+                        $model->chs_registred=$_POST['User']['chs_registred'];
+                        $model->chs_number=$_POST['User']['chs_number'];
+                        $model->rank=$_POST['User']['rank'];
+                        $model->club_member=$_POST['User']['club_member'];
+			//$profile->attributes=$_POST['Profile'];
+                        $profile->first_name=$model->name;
+                        $profile->last_name= $model->surname;
 			
 			if($model->validate()&&$profile->validate()) {
 				$old_password = User::model()->notsafe()->findByPk($model->id);

@@ -11,39 +11,39 @@ class EnduranceRunController extends Controller
 	/**
 	 * @return array action filters
 	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
-		);
-	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+//	public function filters()
+//	{
+//		return array(
+//			'accessControl', // perform access control for CRUD operations
+//			'postOnly + delete', // we only allow deletion via POST request
+//		);
+//	}
+//
+//	/**
+//	 * Specifies the access control rules.
+//	 * This method is used by the 'accessControl' filter.
+//	 * @return array access control rules
+//	 */
+//	public function accessRules()
+//	{
+//		return array(
+//			array('allow',  // allow all users to perform 'index' and 'view' actions
+//				'actions'=>array('index','view'),
+//				'users'=>array('*'),
+//			),
+//			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+//				'actions'=>array('create','update'),
+//				'users'=>array('@'),
+//			),
+//			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+//				'actions'=>array('admin','delete'),
+//				'users'=>array('admin'),
+//			),
+//			array('deny',  // deny all users
+//				'users'=>array('*'),
+//			),
+//		);
+//	}
 
 	/**
 	 * Displays a particular model.
@@ -70,6 +70,19 @@ class EnduranceRunController extends Controller
 		if(isset($_POST['EnduranceRun']))
 		{
 			$model->attributes=$_POST['EnduranceRun'];
+                        
+                        $svpList = EnduranceRun::model()->getSVPList();
+                        foreach ($svpList as $key => $svp){
+                            $model->setEnduranceRunDogParameters(
+                                $_POST['EnduranceRun_Dog'.$key],
+                                $_POST['EnduranceRun_Order'.$key],
+                                $_POST['EnduranceRun_Handler'.$key],
+                                $_POST['EnduranceRun_Duration'.$key],
+                                $_POST['EnduranceRun_Evaluation'.$key],
+                                $_POST['EnduranceRun_Type'.$key],
+                                $_POST['EnduranceRun_Place'.$key]
+                            );
+                        }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -94,6 +107,19 @@ class EnduranceRunController extends Controller
 		if(isset($_POST['EnduranceRun']))
 		{
 			$model->attributes=$_POST['EnduranceRun'];
+                        
+                        $svpList = EnduranceRun::model()->getSVPList();
+                        foreach ($svpList as $key => $svp){
+                            $model->setEnduranceRunDogParameters(
+                                $_POST['EnduranceRun_Dog'.$key],
+                                $_POST['EnduranceRun_Order'.$key],
+                                $_POST['EnduranceRun_Handler'.$key],
+                                $_POST['EnduranceRun_Duration'.$key],
+                                $_POST['EnduranceRun_Evaluation'.$key],
+                                $_POST['EnduranceRun_Type'.$key],
+                                $_POST['EnduranceRun_Place'.$key]
+                            );
+                        }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,9 +148,13 @@ class EnduranceRunController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('EnduranceRun');
+		$model = new EnduranceRun('searchIndex');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['EnduranceRun']))
+			$model->attributes=$_GET['EnduranceRun'];
+                
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                        'model'=>$model,
 		));
 	}
 
@@ -152,7 +182,7 @@ class EnduranceRunController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=EnduranceRun::model()->findByPk($id);
+		$model=EnduranceRun::model()->with('enduranceRunDogs')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

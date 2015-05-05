@@ -18,32 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'place'); ?>
-		<?php echo $form->textField($model,'place'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'order'); ?>
-		<?php echo $form->textField($model,'order'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'handler'); ?>
-		<?php echo $form->textField($model,'handler',array('size'=>60,'maxlength'=>200)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>50,'maxlength'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'evaluation'); ?>
-		<?php echo $form->textField($model,'evaluation',array('size'=>60,'maxlength'=>300)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'andurance_run_place'); ?>
-		<?php echo $form->textField($model,'andurance_run_place',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'place',array('size'=>60,'maxlength'=>200)); ?>
 	</div>
 
 	<div class="row">
@@ -57,8 +32,33 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'id_dog'); ?>
-		<?php echo $form->textField($model,'id_dog'); ?>
+		<?php echo $form->label($model,'count_male_svp1'); ?>
+		<?php echo $form->textField($model,'count_male_svp1'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'count_female_svp1'); ?>
+		<?php echo $form->textField($model,'count_female_svp1'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'count_male_svp2'); ?>
+		<?php echo $form->textField($model,'count_male_svp2'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'count_female_svp2'); ?>
+		<?php echo $form->textField($model,'count_female_svp2'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'count_male_svp3'); ?>
+		<?php echo $form->textField($model,'count_male_svp3'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'count_female_svp3'); ?>
+		<?php echo $form->textField($model,'count_female_svp3'); ?>
 	</div>
 
 	<div class="row">

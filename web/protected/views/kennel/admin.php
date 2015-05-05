@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Kennel', 'url'=>array('index')),
-	array('label'=>'Create Kennel', 'url'=>array('create')),
+	array('label'=>'List Kennel', 'url'=>array('index'),'visible'=>RightsHelper::can("Kennel.index")),
+	array('label'=>'Create Kennel', 'url'=>array('create'),'visible'=>RightsHelper::can("Kennel.create")),
 );
 
 Yii::app()->clientScript->registerScript('search', "

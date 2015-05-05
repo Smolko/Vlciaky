@@ -121,4 +121,11 @@ class Kennel extends BaseModel
         public function getKennelCount(){
             return count($this->findAll());
         }
+        
+        public function canUpdate(){
+            $model=Kennel::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+            if($model===NULL)
+                return false;
+            return true;
+        }
 }

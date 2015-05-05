@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List EnduranceRun', 'url'=>array('index')),
-	array('label'=>'Create EnduranceRun', 'url'=>array('create')),
-	array('label'=>'View EnduranceRun', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage EnduranceRun', 'url'=>array('admin')),
+	array('label'=>'List EnduranceRun', 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),
+	array('label'=>'Create EnduranceRun', 'url'=>array('create'),'visible'=>RightsHelper::can("Endurancerun.create")),
+	array('label'=>'View EnduranceRun', 'url'=>array('view', 'id'=>$model->id),'visible'=>RightsHelper::can("Endurancerun.view")),
+    	array('label'=>'Manage EnduranceRun', 'url'=>array('admin'),'visible'=>RightsHelper::can("Endurancerun.admin")),
 );
 ?>
 
