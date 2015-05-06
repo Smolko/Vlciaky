@@ -11,6 +11,7 @@ return array(
     'sourceLanguage'=>'en',
     'name' => 'Československý vlčiak',
     'theme' => 'classic',
+    //'theme' => 'doggy',
     // preloading 'log' component
     'preload' => array('log','bootstrap'),
     // autoloading model and component classes

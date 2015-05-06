@@ -55,8 +55,8 @@ class BaseModel extends CActiveRecord{
     
     public function getYesNoList(){
         return array(
-            self::YES=>"Yes",
             self::NO=>"No",
+            self::YES=>"Yes",
         );
     }
     
@@ -82,6 +82,11 @@ class BaseModel extends CActiveRecord{
     public function getList(){
         $models = $this->findAll(array('order' => 'name'));
         return CHtml::listData($models, 'id', 'name');
+    }
+    
+    public function getFertilisationList(){
+        $models = $this->findAll(array('order' => 'fertilisation_date'));
+        return CHtml::listData($models, 'id', 'fertilisation_date');
     }
     
     public function getExhibitionClasses(){

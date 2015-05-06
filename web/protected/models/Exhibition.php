@@ -11,7 +11,6 @@
  * @property string $referee
  * @property integer $count_male
  * @property integer $count_female
- * @property integer $count_all
  * @property string $created_at
  * @property string $updated_at
  * @property integer $state
@@ -78,7 +77,6 @@ class Exhibition extends BaseModel {
 //            'referee' => 'Referee',
 //            'count_male' => 'Count Male',
 //            'count_female' => 'Count Female',
-//            'count_all' => 'Count All',
 //            'created_at' => 'Created At',
 //            'updated_at' => 'Updated At',
 //            'state' => 'State',

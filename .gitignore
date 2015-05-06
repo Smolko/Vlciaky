@@ -43,7 +43,11 @@ Temporary Items
 .apdisk
 /nbproject
 
+<<<<<<< HEAD
+/web/nbproject/
+=======
 /web/nbproject
+>>>>>>> origin/master
 
 /web/assets/
 /web/protected/extensions/bootstrap/assets/
