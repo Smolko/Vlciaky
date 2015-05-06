@@ -26,13 +26,16 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibiti
 		echo $form->textFieldRow($model,'referee',array('size'=>60,'maxlength'=>200)); 
 		echo $form->textFieldRow($model,'count_male'); 
 		echo $form->textFieldRow($model,'count_female'); 
-		echo $form->textFieldRow($model,'count_all'); 
 		echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5'));
                 
                 echo $this->renderPartial('_form_DogClass', array('model'=>$model));
-//                echo $this->renderPartial('_form_ChildDog', array('model'=>$model)); 
-//                echo $this->renderPartial('_form_DogCouple', array('model'=>$model)); 
-//                echo $this->renderPartial('_form_BestKennel', array('model'=>$model));                  
+
+
+                echo "<h3>Súťaže</h3>";
+                echo $this->renderPartial('_form_ChildDog', array('model'=>$model)); 
+                echo $this->renderPartial('_form_DogCouple', array('model'=>$model)); 
+                echo $this->renderPartial('_form_BestKennel', array('model'=>$model));                  
+
             ?>
 
 	<div class="form-actions">

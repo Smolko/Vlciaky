@@ -9,7 +9,7 @@
 
 	<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>200)); ?>
 
-	<?php echo $form->dropDownList($model,'sex',array('class'=>'span5')); ?>
+	<?php echo $form->dropDownListRow($model,'sex',  Dog::model()->sexList,array('class'=>'span5')); ?>
 
 	<?php echo $form->textFieldRow($model,'color',array('class'=>'span5','maxlength'=>50)); ?>
 
@@ -34,11 +34,11 @@
 	<?php echo $form->textFieldRow($model,'breeding',array('class'=>'span5','maxlength'=>30)); ?>
 
 
-	<?php echo $form->dropDownList($model,'id_owner', User::model()->list,array('class'=>'span5')); ?>
+	<?php echo $form->dropDownListRow($model,'id_owner', User::model()->list,array('class'=>'span5')); ?>
 
-	<?php echo $form->dropDownList($model,'id_old_owner', User::model()->list,array('class'=>'span5')); ?>
+	<?php echo $form->dropDownListRow($model,'id_old_owner', User::model()->list,array('class'=>'span5')); ?>
 
-	<?php echo $form->dropDownList($model,'id_kennel_owner', Kennel::model()->list,array('class'=>'span5')); 
+	<?php echo $form->dropDownListRow($model,'id_kennel_owner', Kennel::model()->list,array('class'=>'span5')); 
         echo $form->textFieldRow($model,'state',array('class'=>'span5'));
 
 
