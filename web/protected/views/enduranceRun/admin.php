@@ -2,10 +2,10 @@
 /* @var $this EnduranceRunController */
 /* @var $model EnduranceRun */
 
-$this->breadcrumbs=array(
-	'Endurance Runs'=>array('index'),
-	'Manage',
-);
+//$this->breadcrumbs=array(
+//	'Endurance Runs'=>array('index'),
+//	'Manage',
+//);
 
 $this->menu=array(
 	array('label'=>'List EnduranceRun', 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),

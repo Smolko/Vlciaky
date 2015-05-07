@@ -2,21 +2,21 @@
 /* @var $this ExhibitionController */
 /* @var $model Exhibition */
 
-$this->breadcrumbs=array(
-	'Exhibitions'=>array('index'),
-	$model->name,
-);
+//$this->breadcrumbs=array(
+//	'Exhibitions'=>array('index'),
+//	$model->name,
+//);
 
 $this->menu=array(
-	array('label'=>'List Exhibition', 'url'=>array('index'),'visible'=>RightsHelper::can("Exhibition.index")),
-	array('label'=>'Create Exhibition', 'url'=>array('create'),'visible'=>RightsHelper::can("Exhibition.create")),
-	array('label'=>'Update Exhibition', 'url'=>array('update', 'id'=>$model->id),'visible'=>RightsHelper::can("Exhibition.update")),
-	array('label'=>'Delete Exhibition', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),'visible'=>RightsHelper::can("Exhibition.delete")),
-	array('label'=>'Manage Exhibition', 'url'=>array('admin'),'visible'=>RightsHelper::can("Exhibition.admin")),
+	array('label'=>Yii::t('model','exhibition.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("Exhibition.index")),
+	array('label'=>Yii::t('model','exhibition.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("Exhibition.create")),
+	array('label'=>Yii::t('model','exhibition.update'), 'url'=>array('update', 'id'=>$model->id),'visible'=>RightsHelper::can("Exhibition.update")),
+	array('label'=>Yii::t('model','exhibition.delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),'visible'=>RightsHelper::can("Exhibition.delete")),
+	array('label'=>Yii::t('model','exhibition.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Exhibition.admin")),
 );
 ?>
 
-<h1>View Exhibition #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -28,9 +28,11 @@ $this->menu=array(
 		'referee',
 		'count_male',
 		'count_female',
+
 //                'created_at',
 //		'updated_at',
 //		'state',
+
 	),
 )); ?>
 

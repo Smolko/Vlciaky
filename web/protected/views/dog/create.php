@@ -5,8 +5,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-array('label'=>'List Dog','url'=>array('index')),
-array('label'=>'Manage Dog','url'=>array('admin')),
+    array('label'=>Yii::t('model','dog.list'),'url'=>array('index'),'visible'=>RightsHelper::can("Dog.index")),
+    array('label'=>Yii::t('model','dog.admin'),'url'=>array('admin'),'visible'=>RightsHelper::can("Dog.admin")),
 );
 ?>
 

@@ -18,11 +18,27 @@
  * @property string $chip
  * @property string $export_import
  * @property string $breeding
+<<<<<<< HEAD
  * @property integer $id_health
+=======
+>>>>>>> 7ea905f843ff9914d2f8ea27231a5d2ab4461b2c
  * @property integer $id_fertilisation
  * @property integer $id_owner
  * @property integer $id_old_owner
- * @property integer $id_kennel_owner
+ * @property integer $id_kennel
+ * @property integer $dlk
+ * @property integer $dbk
+ * @property integer $dwarf
+ * @property integer $dm
+ * @property string $dna
+ * @property string $dlk_vet
+ * @property string $dlk_date
+ * @property string $dbk_vet
+ * @property string $dbk_date
+ * @property string $dwarf_vet
+ * @property string $dwarf_date
+ * @property string $dm_vet
+ * @property string $dm_date
  * @property string $created_at
  * @property string $updated_at
  * @property integer $state
@@ -42,7 +58,10 @@
  *
  * The followings are the available model relations:
  * @property BonitationDog[] $bonitationDogs
+<<<<<<< HEAD
  * @property Health $idHealth
+=======
+>>>>>>> 7ea905f843ff9914d2f8ea27231a5d2ab4461b2c
  * @property Fertilisation $idFertilisation
  * @property Profiles $idOwner
  * @property Dog $idOldOwner
@@ -76,18 +95,23 @@ class Dog extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+
 			array('sex, tattoo, id_health, id_fertilisation, id_owner, id_old_owner, id_kennel_owner, state, dlk, dbk, dwarf, dm', 'numerical', 'integerOnly'=>true),
+
 			array('name, dna, dlk_vet, dbk_vet, dwarf_vet, dm_vet', 'length', 'max'=>200),
 			array('color, old_regnumber, new_regnumber', 'length', 'max'=>50),
 			array('death_cause', 'length', 'max'=>300),
 			array('breed', 'length', 'max'=>100),
 			array('chip, breeding', 'length', 'max'=>30),
+
 			array('birthday, deathday, export_import, created_at, updated_at, dlk_date, dbk_date, dwarf_date, dm_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, sex, color, birthday, deathday, death_cause, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, id_health, id_fertilisation, id_owner, id_old_owner, id_kennel_owner, created_at, updated_at, state, dlk, dbk, dwarf, dm, dna, dlk_vet, dlk_date, dbk_vet, dbk_date, dwarf_vet, dwarf_date, dm_vet, dm_date', 'safe', 'on'=>'search'),
-		);
-	}
+
+                        );
+                        
+        }
 
 	/**
 	 * @return array relational rules.
@@ -98,12 +122,16 @@ class Dog extends BaseModel
 		// class name for the relations automatically generated below.
 		return array(
 			'bonitationDogs' => array(self::HAS_MANY, 'BonitationDog', 'id_dog'),
+
 			'idHealth' => array(self::BELONGS_TO, 'Health', 'id_health'),
+
 			'idFertilisation' => array(self::BELONGS_TO, 'Fertilisation', 'id_fertilisation'),
-			'idOwner' => array(self::BELONGS_TO, 'Profiles', 'id_owner'),
+			'idOwner' => array(self::BELONGS_TO, 'Users', 'id_owner'),
 			'idOldOwner' => array(self::BELONGS_TO, 'Dog', 'id_old_owner'),
 			'dogs' => array(self::HAS_MANY, 'Dog', 'id_old_owner'),
+
 			'idKennelOwner' => array(self::BELONGS_TO, 'Users', 'id_kennel_owner'),
+
 			'enduranceRunDogs' => array(self::HAS_MANY, 'EnduranceRunDog', 'id_dog'),
 			'exhibitionChildDogs' => array(self::HAS_MANY, 'ExhibitionChildDog', 'id_dog'),
 			'exhibitionClasses' => array(self::HAS_MANY, 'ExhibitionClass', 'id_dog'),
@@ -121,43 +149,68 @@ class Dog extends BaseModel
 	 */
 	public function attributeLabels()
 	{
-		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'sex' => 'Sex',
-			'color' => 'Color',
-			'birthday' => 'Birthday',
-			'deathday' => 'Deathday',
-			'death_cause' => 'Death Cause',
-			'breed' => 'Breed',
-			'old_regnumber' => 'Old Regnumber',
-			'new_regnumber' => 'New Regnumber',
-			'tattoo' => 'Tattoo',
-			'chip' => 'Chip',
-			'export_import' => 'Export Import',
-			'breeding' => 'Breeding',
-			'id_health' => 'Id Health',
-			'id_fertilisation' => 'Id Fertilisation',
-			'id_owner' => 'Id Owner',
-			'id_old_owner' => 'Id Old Owner',
-			'id_kennel_owner' => 'Id Kennel Owner',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'state' => 'State',
-			'dlk' => 'Dlk',
-			'dbk' => 'Dbk',
-			'dwarf' => 'Dwarf',
-			'dm' => 'Dm',
-			'dna' => 'Dna',
-			'dlk_vet' => 'Dlk Vet',
-			'dlk_date' => 'Dlk Date',
-			'dbk_vet' => 'Dbk Vet',
-			'dbk_date' => 'Dbk Date',
-			'dwarf_vet' => 'Dwarf Vet',
-			'dwarf_date' => 'Dwarf Date',
-			'dm_vet' => 'Dm Vet',
-			'dm_date' => 'Dm Date',
-		);
+//		return array(
+//			'id' => 'ID',
+//			'name' => 'Name',
+//			'sex' => 'Sex',
+//			'color' => 'Color',
+//			'birthday' => 'Birthday',
+//			'deathday' => 'Deathday',
+//			'death_cause' => 'Death Cause',
+//			'breed' => 'Breed',
+//			'old_regnumber' => 'Old Regnumber',
+//			'new_regnumber' => 'New Regnumber',
+//			'tattoo' => 'Tattoo',
+//			'chip' => 'Chip',
+//			'export_import' => 'Export Import',
+//			'breeding' => 'Breeding',
+//			'id_fertilisation' => 'Id Fertilisation',
+//			'id_owner' => 'Id Owner',
+//			'id_old_owner' => 'Id Old Owner',
+//
+//			'id_kennel_owner' => 'Id Kennel Owner',
+//
+//			'created_at' => 'Created At',
+//			'updated_at' => 'Updated At',
+//			'state' => 'State',
+//			'dlk' => 'Dlk',
+//			'dbk' => 'Dbk',
+//			'dwarf' => 'Dwarf',
+//			'dm' => 'Dm',
+//			'dna' => 'Dna',
+//			'dlk_vet' => 'Dlk Vet',
+//			'dlk_date' => 'Dlk Date',
+//			'dbk_vet' => 'Dbk Vet',
+//			'dbk_date' => 'Dbk Date',
+//			'dwarf_vet' => 'Dwarf Vet',
+//			'dwarf_date' => 'Dwarf Date',
+//			'dm_vet' => 'Dm Vet',
+//			'dm_date' => 'Dm Date',
+//		);
+            return $this->generateAttributeLabels(array(
+                    'id',
+                    'name',
+                    'sex',
+                    'color',
+                    'birthday',
+                    'deathday',
+                    'death_cause',
+                    'breed',
+                    'old_regnumber',
+                    'new_regnumber' ,
+                    'tattoo',
+                    'chip',
+                    'export_import' ,
+                    'breeding',
+                    'id_health',
+                    'id_fertilisation',
+                    'id_owner' ,
+                    'id_old_owner',
+                    'id_kennel_owner',
+                    'created_at',
+                    'updated_at',
+                    'state' ,
+        ));
 	}
 
 	/**
@@ -192,11 +245,12 @@ class Dog extends BaseModel
 		$criteria->compare('chip',$this->chip,true);
 		$criteria->compare('export_import',$this->export_import,true);
 		$criteria->compare('breeding',$this->breeding,true);
-		$criteria->compare('id_health',$this->id_health);
 		$criteria->compare('id_fertilisation',$this->id_fertilisation);
 		$criteria->compare('id_owner',$this->id_owner);
 		$criteria->compare('id_old_owner',$this->id_old_owner);
+
 		$criteria->compare('id_kennel_owner',$this->id_kennel_owner);
+
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
 		$criteria->compare('state',$this->state);
@@ -252,14 +306,23 @@ class Dog extends BaseModel
     
         public function getTattooList(){
             return array(
-            self::YES=>"Yes",
-            self::NO=>"No",
+            self::YES=>"Áno",
+            self::NO=>"Nie",
             );
         }
         
+        public function getTattooSet(){
+           return $this->getTatooLabel($this->sex);
+        }
+        
+        private function getTatooLabel($numb){
+            if($numb===1) return "Áno";
+            return "Nie";
+        }
+        
         private function getSexLabel($numb){
-            if($numb===1) return "Male";
-            return "Female";
+            if($numb===1) return "Samec";
+            return "Samica";
         }
         
         public function getSexName(){
@@ -278,6 +341,8 @@ class Dog extends BaseModel
             return CHtml::listData($this->findAllByAttributes(array('sex'=>0)), 'id', 'name');
         }
         
-        
+        public function getOwnerName(){
+            return $this->idOwner->name;
+        }
         
 }

@@ -48,8 +48,8 @@ class BaseModel extends CActiveRecord{
     
     public function getStateList(){
         return array(
-            self::STATE_ACTIVE=>"Active",
-            self::STATE_INACTIVE=>"Inactive",
+            self::STATE_ACTIVE=>"Aktívny",
+            self::STATE_INACTIVE=>"Neaktívny",
         );
     }
     
@@ -129,4 +129,15 @@ class BaseModel extends CActiveRecord{
         );
     }
     
+    
+     
+    
+    public function getStateLabel($state=NULL){
+        if($state === NULL && isset($this->state)){
+            $state = $this->state;
+        }
+        return $this->getOneAttributeLabel("state".$state);
+    }
+    
+ 
 }

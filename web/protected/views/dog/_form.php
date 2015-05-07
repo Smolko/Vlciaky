@@ -1,6 +1,7 @@
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'id'=>'dog-form',
 	'enableAjaxValidation'=>false,
+
 )); ?>
 
 <p class="help-block">Fields with <span class="required">*</span> are required.</p>
@@ -70,6 +71,7 @@
 //	echo $form->textFieldRow($model,'state',array('class'=>'span5')); ?>
 <div class="form-actions">
 	<?php $this->widget('bootstrap.widgets.TbButton', array(
+
 			'buttonType'=>'submit',
 			'type'=>'primary',
 			'label'=>$model->isNewRecord ? 'Create' : 'Save',

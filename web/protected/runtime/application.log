@@ -13253,3 +13253,421 @@ REQUEST_URI=/pes/index.php?r=dog/create
 in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\_form.php (37)
 in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\create.php (15)
 in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php (78)
+2015/05/07 08:17:33 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/pes/index.php?r=dog
+HTTP_REFERER=http://localhost/pes/
+---
+2015/05/07 08:18:39 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/pes/index.php?r=dog
+HTTP_REFERER=http://localhost/pes/
+---
+2015/05/07 08:19:47 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/pes/index.php?r=dog
+HTTP_REFERER=http://localhost/pes/
+---
+2015/05/07 08:20:33 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/pes/index.php?r=dog
+HTTP_REFERER=http://localhost/pes/
+---
+2015/05/07 08:21:33 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Prístup zamietnutý' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/pes/index.php?r=dog
+HTTP_REFERER=http://localhost/pes/
+---
+2015/05/07 08:23:25 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Prístup zamietnutý' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/pes/index.php?r=dog
+HTTP_REFERER=http://localhost/pes/
+---
+2015/05/07 08:23:41 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Prístup zamietnutý' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/pes/index.php?r=dog
+HTTP_REFERER=http://localhost/pes/
+---
+2015/05/07 08:24:44 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Prístup zamietnutý' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/pes/index.php?r=dog
+HTTP_REFERER=http://localhost/pes/
+---
+2015/05/07 08:38:25 [error] [exception.CDbException] exception 'CDbException' with message 'Relácia "dogs" v aktívnom zázname "Kennel" je špecifikovaná pomocou neplatného kľúča (foreign key). Uvedený stĺpec v tabuľke "tbl_dog" neexistuje.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php:1096
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(1067): CJoinElement->joinOneMany(Object(CJoinElement), Array, Object(CJoinElement), Object(CJoinElement))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(1295): CJoinElement->getJoinCondition()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(790): CJoinQuery->join(Object(CJoinElement))
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(435): CJoinElement->buildQuery(Object(CJoinQuery))
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), false)
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(1486): CActiveRecord->query(Object(CDbCriteria))
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\KennelController.php(189): CActiveRecord->findByPk('1')
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\KennelController.php(57): KennelController->loadModel('1')
+#9 [internal function]: KennelController->actionView('1')
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(KennelController), Array)
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KennelController), Object(ReflectionMethod), Array)
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('kennel/view')
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/pes/index.php?r=kennel/view&id=1
+HTTP_REFERER=http://localhost/pes/index.php?r=kennel
+---
+2015/05/07 08:44:39 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Prístup zamietnutý' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/pes/index.php?r=dog
+HTTP_REFERER=http://localhost/pes/index.php?r=site/login
+---
+2015/05/07 12:26:24 [error] [exception.CException] exception 'CException' with message 'Vlastnosť "Dog.typeLabel" nie je definovaná.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(145): CComponent->__get('typeLabel')
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php(28): CActiveRecord->__get('typeLabel')
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(126): require('C:\Users\Michal...')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Michal...', Array, true)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Michal...', Array, true)
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php(57): CController->render('view', Array)
+#7 [internal function]: DogController->actionView('3')
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DogController), Array)
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DogController), Object(ReflectionMethod), Array)
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('view')
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/view')
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/pes/index.php?r=dog/view&id=3
+HTTP_REFERER=http://localhost/pes/index.php?r=dog
+---
+2015/05/07 12:29:17 [error] [exception.CException] exception 'CException' with message 'Vlastnosť "Dog.tatooSet" nie je definovaná.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(145): CComponent->__get('tatooSet')
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php(38): CActiveRecord->__get('tatooSet')
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(126): require('C:\Users\Michal...')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Michal...', Array, true)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Michal...', Array, true)
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php(57): CController->render('view', Array)
+#7 [internal function]: DogController->actionView('3')
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DogController), Array)
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DogController), Object(ReflectionMethod), Array)
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('view')
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/view')
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/pes/index.php?r=dog/view&id=3
+HTTP_REFERER=http://localhost/pes/index.php?r=dog
+---
+2015/05/07 13:00:52 [error] [php] include(Profiles.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(182): model()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct()
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(280): Dog->getActiveFinder()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(143): Dog->getRelated()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\models\Dog.php(321): Dog->__get()
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CComponent.php(111): Dog->getOwnerName()
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(145): Dog->__get()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php(47): Dog->__get()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(126): require()
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(95): DogController->renderInternal()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(869): DogController->renderFile()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(782): DogController->renderPartial()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php(57): DogController->render()
+#16 unknown(0): DogController->actionView()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams()
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): AuthFilter->filter()
+#23 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): DogController->runActionWithFilters()
+#25 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): DogController->run()
+#26 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#27 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/index.php?r=dog/view&id=3
+in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\models\Dog.php (321)
+in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php (47)
+in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php (57)
+2015/05/07 13:01:18 [error] [exception.CException] exception 'CException' with message 'Vlastnosť "Dog.ownerName" nie je definovaná.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(145): CComponent->__get('ownerName')
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php(47): CActiveRecord->__get('ownerName')
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(126): require('C:\Users\Michal...')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Michal...', Array, true)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Michal...', Array, true)
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php(57): CController->render('view', Array)
+#7 [internal function]: DogController->actionView('3')
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DogController), Array)
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DogController), Object(ReflectionMethod), Array)
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('view')
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/view')
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/pes/index.php?r=dog/view&id=3
+HTTP_REFERER=http://localhost/pes/index.php?r=dog
+---
+2015/05/07 13:34:58 [error] [exception.CException] exception 'CException' with message 'Vlastnosť "TbDetailView.0" nie je definovaná.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWidgetFactory.php(161): CComponent->__set('0', 'dlk')
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DogController), 'bootstrap.widge...', Array)
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php(83): CBaseController->widget('bootstrap.widge...', Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(126): require('C:\Users\Michal...')
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Michal...', Array, true)
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Michal...', Array, true)
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php(57): CController->render('view', Array)
+#9 [internal function]: DogController->actionView('3')
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DogController), Array)
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DogController), Object(ReflectionMethod), Array)
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/view')
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/pes/index.php?r=dog/view&id=3
+HTTP_REFERER=http://localhost/pes/index.php?r=dog
+---
+2015/05/07 13:38:16 [error] [php] include(Profiles.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(182): model()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct()
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(280): Dog->getActiveFinder()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(143): Dog->getRelated()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\models\Dog.php(321): Dog->__get()
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CComponent.php(111): Dog->getOwnerName()
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(145): Dog->__get()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php(47): Dog->__get()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(126): require()
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(95): DogController->renderInternal()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(869): DogController->renderFile()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(782): DogController->renderPartial()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php(57): DogController->render()
+#16 unknown(0): DogController->actionView()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams()
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): AuthFilter->filter()
+#23 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): DogController->runActionWithFilters()
+#25 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): DogController->run()
+#26 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#27 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/index.php?r=dog/view&id=3
+in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\models\Dog.php (321)
+in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php (47)
+in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php (57)
+2015/05/07 13:40:05 [error] [php] htmlspecialchars() expects parameter 1 to be string, object given (C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\utils\CFormatter.php(128): CFormatter->formatText()
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\zii\widgets\CDetailView.php(218): CFormatter->format()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(173): TbDetailView->run()
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php(60): DogController->widget()
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(126): require()
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(95): DogController->renderInternal()
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(869): DogController->renderFile()
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(782): DogController->renderPartial()
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php(57): DogController->render()
+#9 unknown(0): DogController->actionView()
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): DogController->runAction()
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): AuthFilter->filter()
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): DogController->runActionWithFilters()
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): DogController->run()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CWebApplication->run()
+REQUEST_URI=/pes/index.php?r=dog/view&id=3
+in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\view.php (60)
+in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php (57)
+in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php (13)
+2015/05/07 19:43:10 [error] [exception.CDbException] exception 'CDbException' with message 'Relácia "dogs" v aktívnom zázname "Kennel" je špecifikovaná pomocou neplatného kľúča (foreign key). Uvedený stĺpec v tabuľke "tbl_dog" neexistuje.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php:1096
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(1067): CJoinElement->joinOneMany(Object(CJoinElement), Array, Object(CJoinElement), Object(CJoinElement))
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(1295): CJoinElement->getJoinCondition()
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(790): CJoinQuery->join(Object(CJoinElement))
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(435): CJoinElement->buildQuery(Object(CJoinQuery))
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), false)
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(1486): CActiveRecord->query(Object(CDbCriteria))
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\KennelController.php(189): CActiveRecord->findByPk('1')
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\KennelController.php(57): KennelController->loadModel('1')
+#9 [internal function]: KennelController->actionView('1')
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(KennelController), Array)
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KennelController), Object(ReflectionMethod), Array)
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('kennel/view')
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/pes/index.php?r=kennel/view&id=1
+HTTP_REFERER=http://localhost/pes/index.php?r=kennel
+---
+2015/05/07 19:49:04 [error] [exception.CException] exception 'CException' with message 'Vlastnosť "Dog.id_kennel" nie je definovaná.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_kennel')
+#1 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('id_kennel')
+#2 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Dog), 'id_kennel')
+#3 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Dog), 'id_kennel', Array)
+#4 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Dog), 'id_kennel', Array)
+#5 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\_search.php(66): CActiveForm->textField(Object(Dog), 'id_kennel')
+#6 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(126): require('C:\Users\Michal...')
+#7 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Michal...', Array, true)
+#8 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Michal...', Array, true)
+#9 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\admin.php(38): CController->renderPartial('_search', Array)
+#10 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(126): require('C:\Users\Michal...')
+#11 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Michal...', Array, true)
+#12 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Michal...', Array, true)
+#13 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php(144): CController->render('admin', Array)
+#15 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\actions\CInlineAction.php(49): DogController->actionAdmin()
+#16 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#20 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(282): CController->run('admin')
+#23 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\CWebApplication.php(141): CWebApplication->runController('dog/admin')
+#24 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/pes/index.php?r=dog/admin
+HTTP_REFERER=http://localhost/pes/index.php?r=dog
+---

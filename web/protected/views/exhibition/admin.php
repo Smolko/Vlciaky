@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Exhibition', 'url'=>array('index'),'visible'=>RightsHelper::can("Exhibition.index")),
-	array('label'=>'Create Exhibition', 'url'=>array('create'),'visible'=>RightsHelper::can("Exhibition.create")),
+	array('label'=>Yii::t('model','exhibition.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("Exhibition.index")),
+	array('label'=>Yii::t('model','exhibition.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("Exhibition.create")),
 );
 
 Yii::app()->clientScript->registerScript('search', "

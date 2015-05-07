@@ -49,19 +49,20 @@ if (isset(Yii::app()->session['lang'])){
                 <?php
                 $this->widget('bootstrap.widgets.TbMenu', array(
                     'items' => array(
-                        array('label' => Yii::t("menu","Home"), 'url' => array('/site/index')), 
-                        array('label' => Yii::t("menu","Dogs"), 'url' => array('/dog')),
-                        array('label' => Yii::t("menu","Kennels"), 'url' => array('/kennel')),
+                       array('label' => Yii::t("menu","Home"), 'url' => array('/site/index')),
+                        array('label' => "Registrácia", 'url' => array('/user/admin/create'),'visible'=>Yii::app()->user->isGuest), 
+                        array('label' => Yii::t("menu","Dogs"), 'url' => array('/dog'),'visible'=>RightsHelper::can("Dog.index")),
+                        array('label' => Yii::t("menu","Kennels"), 'url' => array('/kennel'),'visible'=>RightsHelper::can("Kennel.index")),
                         array('label' => Yii::t("menu","Exhibitions"), 'url' => array('/exhibition')),                                           
                         array('label' => Yii::t("menu","Endurance runs"), 'url' => array('/endurancerun')),
                         array('label' => Yii::t("menu","Bonitations and Youth presentations"), 'url' => array('/bonitationAndYouthPresentation')), 
-                        array('label' => 'Fertilisation', 'url' => array('/fertilisation')),
+
+                        array('label' => 'Fertilisation', 'url' => array('/fertilisation'),'visible'=>RightsHelper::can("Fertilisation.*")),
+                        array('label' => "Správa užívateľov", 'url' => array('/user/admin'),'visible'=>RightsHelper::can("User.Admin.*")), 
                         //array('label' => '', 'url'=>'#', 'active'=> false),
-                        array('label' => Yii::t("menu","Other")),
+              //          array('label' => Yii::t("menu","Other")),
                         array('label' => Yii::t("menu","About"), 'url' => array('/site/page', 'view' => 'about')),
                         array('label' => Yii::t("menu","Contact"), 'url' => array('/site/contact')),
-                    //array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
-                    //array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
                     ),
                 ));
                 /*

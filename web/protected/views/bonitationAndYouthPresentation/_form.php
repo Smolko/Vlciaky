@@ -26,7 +26,8 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibiti
 		echo $form->textFieldRow($model,'youth_presentation_female_count'); 
 		echo $form->textFieldRow($model,'bonitation_male_count'); 
 		echo $form->textFieldRow($model,'bonitation_female_count'); 
-		echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5'));
+                if(!$model->isNewRecord)
+                    echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5'));
                 
                 echo $this->renderPartial('_form_BonitationDog', array('model'=>$model)); 
                 echo $this->renderPartial('_form_YouthPresentationDog', array('model'=>$model)); 

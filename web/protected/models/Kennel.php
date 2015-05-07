@@ -54,6 +54,8 @@ class Kennel extends BaseModel
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                        'dogs' => array(self::HAS_MANY, 'Dog', 'id_kennel'),
+			'exhibitionBestKennels' => array(self::HAS_MANY, 'ExhibitionBestKennel', 'id_kennel'),
 			'fertilisations' => array(self::HAS_MANY, 'Fertilisation', 'id_kennel'),
 		);
 	}
@@ -106,6 +108,29 @@ class Kennel extends BaseModel
 			'criteria'=>$criteria,
 		));
 	}
+        
+	public function searchIndex()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('state',$this->state);
+                
+                // YEAR
+                if (isset($_GET['year_min']) && !empty($_GET['year_min'])){
+                    $year_min = intval($_GET['year_min']);
+                    $criteria->addCondition('year(registered_at) >= '. $year_min);
+                }
+                if (isset($_GET['year_max']) && !empty($_GET['year_max'])){
+                    $year_max = intval($_GET['year_max']);
+                    $criteria->addCondition('year(registered_at) <= '. $year_max);
+                }
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -122,10 +147,84 @@ class Kennel extends BaseModel
             return count($this->findAll());
         }
         
+
         public function canUpdate(){
             $model=Kennel::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
             if($model===NULL)
                 return false;
             return true;
+        }
+        // FERTILISATION
+        public function setFertilisationParameters($fertilisationDates,$litterDates,$maleCounts,$femaleCounts,$fathers,$mothers,$comments){
+            $models = array();
+            foreach ($fathers as $key => $fatherID) {
+                if (is_numeric($key)) {
+                    $model = $this->_newFertilisation($fertilisationDates[$key],$litterDates[$key],$maleCounts[$key],$femaleCounts[$key],$fatherID, $mothers[$key],$comments[$key]);  
+                    $models[]=$model;
+                }
+            }
+            $this->fertilisations = $models;
+
+        }
+
+        private function _newFertilisation($fertilisationDate,$litterDate,$maleCount,$femaleCount,$father,$mother,$comment) {
+            $model = new Fertilisation();
+            $model->fertilisation_date = $fertilisationDate;
+            $model->litter_date = $litterDate;
+            $model->male_count = $maleCount;      
+            $model->female_count = $femaleCount;      
+            $model->id_dog_father = $father;      
+            $model->id_dog_mother = $mother;      
+            $model->comment = $comment;      
+            return $model;
+        }
+        
+        public function save($runValidation = true, $attributes = array()) {
+            if (!empty($attributes)) {
+                return parent::save($runValidation, $attributes);
+            }
+
+            // SAVE OLD
+            $fertilisations = array();
+            if (!$this->isNewRecord){
+                $fertilisations = Fertilisation::model()->findAllByAttributes(array('id_kennel'=>$this->id));
+            }
+
+            $result = $this->withRelated->save(
+                        $runValidation, CMap::mergeArray($attributes, array('fertilisations'))
+            );
+
+            // DELETE OLD IF SAVED NEW
+            if ($result){
+                foreach ($fertilisations as $fertilisation){
+                    Fertilisation::model()->deleteByPk($fertilisation->id);
+                }
+            }
+
+            return $result;
+        }
+        
+        public function getErrors($attribute = null) {
+            $errors = parent::getErrors($attribute);
+            if ($attribute === null) {
+                foreach($this->fertilisations as $param){
+                    $errors = CMap::mergeArray($errors, $param->errors);
+                }
+            }
+            return $errors;
+        }
+        
+        public function behaviors(){
+            return array(
+                /*'activerecord-relation'=>array(
+                    'class'=>'application.components.behaviors..EActiveRecordRelationBehavior',
+                ),*/
+                'withRelated'=>array(
+                    'class'=>'application.components.WithRelatedBehavior',
+                ),
+
+          //      'LoggableBehavior'=> 'application.components.behaviors.ExtLoggableBehavior',
+            ); 
+
         }
 }

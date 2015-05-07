@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-	'Access denied.' => '',
+	'Access denied.' => 'Nemáte oprávnenie na prístup k tejto stránke',
 	'Add' => '',
 	'Add child' => '',
 	'Add {type}' => '',

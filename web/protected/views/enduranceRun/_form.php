@@ -30,7 +30,8 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibiti
                 echo $form->textFieldRow($model,'count_female_svp2'); 
                 echo $form->textFieldRow($model,'count_male_svp3'); 
                 echo $form->textFieldRow($model,'count_female_svp3'); 
-                echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5')); 
+                if(!$model->isNewRecrod)
+                    echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5')); 
                 
                 echo $this->renderPartial('_form_EnduranceRunDog', array('model'=>$model));
             ?>

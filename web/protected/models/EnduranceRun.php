@@ -67,21 +67,24 @@ class EnduranceRun extends BaseModel
 	 */
 	public function attributeLabels()
 	{
-		return array(
-			'id' => 'ID',
-			'place' => 'Place',
-			'date' => 'Date',
-			'referee' => 'Referee',
-			'count_male_svp1' => 'Count Male Svp1',
-			'count_female_svp1' => 'Count Female Svp1',
-			'count_male_svp2' => 'Count Male Svp2',
-			'count_female_svp2' => 'Count Female Svp2',
-			'count_male_svp3' => 'Count Male Svp3',
-			'count_female_svp3' => 'Count Female Svp3',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'state' => 'State',
-		);
+//		return array(
+//			'id' => 'ID',
+//			'place' => 'Place',
+//			'date' => 'Date',
+//			'referee' => 'Referee',
+//			'count_male_svp1' => 'Count Male Svp1',
+//			'count_female_svp1' => 'Count Female Svp1',
+//			'count_male_svp2' => 'Count Male Svp2',
+//			'count_female_svp2' => 'Count Female Svp2',
+//			'count_male_svp3' => 'Count Male Svp3',
+//			'count_female_svp3' => 'Count Female Svp3',
+//			'created_at' => 'Created At',
+//			'updated_at' => 'Updated At',
+//			'state' => 'State',
+//		);
+                return $this->generateAttributeLabels(array(
+                    'id','place','date','referee','count_male_svp1','count_female_svp1','count_male_svp2','count_female_svp2','count_male_svp3','state',
+        ));    
 	}
 
 	/**

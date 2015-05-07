@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List EnduranceRun', 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),
-	array('label'=>'Create EnduranceRun', 'url'=>array('create'),'visible'=>RightsHelper::can("Endurancerun.create")),
-	array('label'=>'Update EnduranceRun', 'url'=>array('update', 'id'=>$model->id),'visible'=>RightsHelper::can("Endurancerun.update")),
-	array('label'=>'Delete EnduranceRun', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),'visible'=>RightsHelper::can("Endurancerun.delete")),
-	array('label'=>'Manage EnduranceRun', 'url'=>array('admin'),'visible'=>RightsHelper::can("Endurancerun.admin")),
+	array('label'=>Yii::t('model','endurancerun.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),
+	array('label'=>Yii::t('model','endurancerun.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("Endurancerun.create")),
+	array('label'=>Yii::t('model','endurancerun.update'), 'url'=>array('update', 'id'=>$model->id),'visible'=>RightsHelper::can("Endurancerun.update")),
+	array('label'=>Yii::t('model','endurancerun.delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),'visible'=>RightsHelper::can("Endurancerun.delete")),
+	array('label'=>Yii::t('model','endurancerun.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Endurancerun.admin")),
 );
 ?>
 

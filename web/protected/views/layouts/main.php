@@ -68,9 +68,9 @@ if (isset(Yii::app()->session['lang'])){
                         array('label' => Yii::t("menu","Bonitations and Youth presentations"), 'url' => array('/bonitationAndYouthPresentation')), 
 
                         array('label' => 'Fertilisation', 'url' => array('/fertilisation'),'visible'=>RightsHelper::can("Fertilisation.*")),
-                        array('label' => "Správa užívateľov", 'url' => array('/user/admin/create'),'visible'=>RightsHelper::can("User.Admin.*")), 
+                        array('label' => "Správa užívateľov", 'url' => array('/user/admin'),'visible'=>RightsHelper::can("User.Admin.*")), 
                         //array('label' => '', 'url'=>'#', 'active'=> false),
-                        array('label' => Yii::t("menu","Other")),
+              //          array('label' => Yii::t("menu","Other")),
                         array('label' => Yii::t("menu","About"), 'url' => array('/site/page', 'view' => 'about')),
                         array('label' => Yii::t("menu","Contact"), 'url' => array('/site/contact')),
                     //array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
