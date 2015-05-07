@@ -8,8 +8,8 @@
 //);
 
 $this->menu=array(
-	array('label'=>'List EnduranceRun', 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),
-	array('label'=>'Create EnduranceRun', 'url'=>array('create'),'visible'=>RightsHelper::can("Endurancerun.create")),
+	array('label'=>Yii::t('model','endurancerun.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),
+	array('label'=>Yii::t('model','endurancerun.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("Endurancerun.create")),
 );
 
 Yii::app()->clientScript->registerScript('search', "

@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List EnduranceRun', 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),
-	array('label'=>'Manage EnduranceRun', 'url'=>array('admin'),'visible'=>RightsHelper::can("Endurancerun.admin")),
+	array('label'=>Yii::t('model','endurancerun.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),
+	array('label'=>Yii::t('model','endurancerun.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Endurancerun.admin")),
 );
 ?>
 

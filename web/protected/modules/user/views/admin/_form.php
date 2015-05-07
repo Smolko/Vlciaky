@@ -45,7 +45,7 @@
 	<?php echo $form->textFieldRow($model,'chs_number',array('class'=>'span5','maxlength'=>50)); 
         echo $form->textFieldRow($model,'rank',array('class'=>'span5'));
         if(!$model->isNewRecord)
-            echo $form->dropDownListRow($model, 'status', array(0=>"No",1=>"Yes"), array('class' => 'span5')); 
+            echo $form->dropDownListRow($model, 'status', array(0=>"Neaktívny",1=>"Aktívny"), array('class' => 'span5')); 
         ?>
 
 

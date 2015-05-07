@@ -145,6 +145,11 @@ return array(
     'endurancerun.created_at' => 'Dátum vytvorenia',
     'endurancerun.updated_at' => 'Dátum upravenia',
     'endurancerun.state' => 'Stav',
+    'endurancerun.create' => 'Nová skúška vytrvalosti',
+    'endurancerun.update' => 'Uprav skúšku vytrvalosti',
+    'endurancerun.admin' => 'Správa skúšiek vytrvalosti',
+    'endurancerun.delete' => 'Vymaž skúšku vytrvalosti',
+    'endurancerun.list' => 'Zoznam skúšiek vytrvalosti',
     //endurancerundog.
     'endurancerundog.id' => 'IČ',
     'endurancerundog.id_endurance_run' => 'IČ Vytrvalostneho behu',

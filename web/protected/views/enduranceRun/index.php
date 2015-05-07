@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create EnduranceRun', 'url'=>array('create'),'visible'=>RightsHelper::can("Endurancerun.create")),
-    	array('label'=>'Manage EnduranceRun', 'url'=>array('admin'),'visible'=>RightsHelper::can("Endurancerun.admin")),
+	array('label'=>Yii::t('model','endurancerun.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("Endurancerun.create")),
+    	array('label'=>Yii::t('model','endurancerun.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Endurancerun.admin")),
 );
 
 Yii::app()->clientScript->registerScript('search', "
