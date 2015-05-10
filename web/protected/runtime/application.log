@@ -13253,3 +13253,21 @@ REQUEST_URI=/pes/index.php?r=dog/create
 in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\_form.php (37)
 in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\create.php (15)
 in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php (78)
+2015/05/06 21:20:16 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\Users\Hades\Documents\GitHub\Vlciaky\web\assets" je neplatná. Ubezpečte sa, že ukazuje ku existujúcemu adresáru a má zapisovacie práva pre webový server.' in C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CAssetManager.php:138
+Stack trace:
+#0 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('C:\\Users\\Hades\\...')
+#1 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\extensions\bootstrap\components\Bootstrap.php(407): CAssetManager->publish('C:\\Users\\Hades\\...', false, -1, false)
+#3 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\extensions\bootstrap\components\packages.php(14): Bootstrap->getAssetsUrl()
+#4 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\extensions\bootstrap\components\Bootstrap.php(252): require('C:\\Users\\Hades\\...')
+#5 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\extensions\bootstrap\components\Bootstrap.php(238): Bootstrap->appendUserSuppliedPackagesToOurs()
+#6 C:\Users\Hades\Documents\GitHub\Vlciaky\web\protected\extensions\bootstrap\components\Bootstrap.php(206): Bootstrap->includeAssets()
+#7 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\base\CModule.php(387): Bootstrap->init()
+#8 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#9 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\base\CApplication.php(163): CModule->preloadComponents()
+#10 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\YiiBase.php(125): CApplication->__construct('C:\\Users\\Hades\\...')
+#11 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\\Users\\Hades\\...')
+#12 C:\Users\Hades\Documents\GitHub\Vlciaky\web\index.php(13): YiiBase::createWebApplication('C:\\Users\\Hades\\...')
+#13 {main}
+REQUEST_URI=/
+---

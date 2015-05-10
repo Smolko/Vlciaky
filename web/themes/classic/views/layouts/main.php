@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 if (isset($_GET['lang'])){
     $lang = $_GET['lang'];
     Yii::app()->session['lang'] = $lang;
@@ -53,7 +53,7 @@ if (isset(Yii::app()->session['lang'])){
                         array('label' => Yii::t("menu","Dogs"), 'url' => array('/dog')),
                         array('label' => Yii::t("menu","Kennels"), 'url' => array('/kennel')),
                         array('label' => Yii::t("menu","Exhibitions"), 'url' => array('/exhibition')),                                           
-                        array('label' => Yii::t("menu","Endurance runs"), 'url' => array('/endurancerun')),
+                        array('label' => Yii::t("menu","Endurance runs"), 'url' => array('/enduranceRun')),
                         array('label' => Yii::t("menu","Bonitations and Youth presentations"), 'url' => array('/bonitationAndYouthPresentation')), 
                         array('label' => 'Fertilisation', 'url' => array('/fertilisation')),
                         //array('label' => '', 'url'=>'#', 'active'=> false),

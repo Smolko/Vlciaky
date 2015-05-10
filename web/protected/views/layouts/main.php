@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 if (isset($_GET['lang'])){
     $lang = $_GET['lang'];
     Yii::app()->session['lang'] = $lang;
@@ -57,14 +57,14 @@ if (isset(Yii::app()->session['lang'])){
 //                        array('label' => 'Kennel', 'url' => array('/kennel')),
 //                        array('label' => 'Bonitation', 'url' => array('/bonitation')),
 //                        array('label' => 'Dog', 'url' => array('/dog')),
-//                        array('label' => 'Endurance run', 'url' => array('/endurancerun')),
+//                        array('label' => 'Endurance run', 'url' => array('/enduranceRun')),
 
                         array('label' => Yii::t("menu","Home"), 'url' => array('/site/index')),
                         array('label' => "Registrácia", 'url' => array('/user/admin/create'),'visible'=>Yii::app()->user->isGuest), 
                         array('label' => Yii::t("menu","Dogs"), 'url' => array('/dog'),'visible'=>RightsHelper::can("Dog.index")),
                         array('label' => Yii::t("menu","Kennels"), 'url' => array('/kennel'),'visible'=>RightsHelper::can("Kennel.index")),
                         array('label' => Yii::t("menu","Exhibitions"), 'url' => array('/exhibition')),                                           
-                        array('label' => Yii::t("menu","Endurance runs"), 'url' => array('/endurancerun')),
+                        array('label' => Yii::t("menu","Endurance runs"), 'url' => array('/enduranceRun')),
                         array('label' => Yii::t("menu","Bonitations and Youth presentations"), 'url' => array('/bonitationAndYouthPresentation')), 
 
                         array('label' => 'Fertilisation', 'url' => array('/fertilisation'),'visible'=>RightsHelper::can("Fertilisation.*")),
