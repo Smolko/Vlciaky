@@ -43,7 +43,7 @@
 	 echo $form->datepickerRow($model,'chs_registred',array('options'=>array(),'htmlOptions'=>array('class'=>'span5')),array('prepend'=>'<i class="icon-calendar"></i>','append'=>'Click on Month/Year at top to select a different year or type in (mm/dd/yyyy).')); ?>
 
 	<?php echo $form->textFieldRow($model,'chs_number',array('class'=>'span5','maxlength'=>50)); 
-        echo $form->textFieldRow($model,'rank',array('class'=>'span5'));
+      //  echo $form->textFieldRow($model,'rank',array('class'=>'span5'));
         if(!$model->isNewRecord)
             echo $form->dropDownListRow($model, 'status', array(0=>"Neaktívny",1=>"Aktívny"), array('class' => 'span5')); 
         ?>

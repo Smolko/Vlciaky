@@ -1,9 +1,9 @@
 <?php
-$this->breadcrumbs=array(
-	'Dogs'=>array('index'),
-	$model->name=>array('view','id'=>$model->id),
-	'Update',
-);
+//$this->breadcrumbs=array(
+//	'Dogs'=>array('index'),
+//	$model->name=>array('view','id'=>$model->id),
+//	'Update',
+//);
 
 	$this->menu=array(
 	array('label'=>Yii::t('model','dog.list'),'url'=>array('index'),'visible'=>RightsHelper::can("Dog.index")),

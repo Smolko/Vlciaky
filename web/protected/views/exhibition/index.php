@@ -2,10 +2,10 @@
 /* @var $this ExhibitionController */
 /* @var $model Exhibition */
 
-$this->breadcrumbs=array(
-	'Exhibitions'=>array('index'),
-	'Manage',
-);
+//$this->breadcrumbs=array(
+//	'Exhibitions'=>array('index'),
+//	'Manage',
+//);
 
 $this->menu=array(
 	 

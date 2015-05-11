@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	
-	array('label'=>'Create BonitationAndYouthPresentation', 'url'=>array('create'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.create")),
-	array('label'=>'Manage BonitationAndYouthPresentation', 'url'=>array('admin'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.admin")),
+	array('label'=>Yii::t('model','bonitationandyouthpresentation.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.create")),
+	array('label'=>Yii::t('model','bonitationandyouthpresentation.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.admin")),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -45,7 +45,7 @@ $('.search-form form').submit(function(){
             'columns'=>array(
                     array(
                         'type'=>'raw',
-                        'name'=>'Name',
+                        'name'=>Yii::t('model','bonitationandyouthpresentation.name'),
                         'value'=>'CHtml::link($data->place.",".$data->date,array("bonitationAndYouthPresentation/view&id=$data->id"))'
                     ),
                     'place',

@@ -1,7 +1,7 @@
 <?php
-$this->breadcrumbs=array(
-	'Dogs',
-);
+//$this->breadcrumbs=array(
+//	'Dogs',
+//);
 
 $this->menu=array(
     array('label'=>Yii::t('model','dog.create'),'url'=>array('create'),'visible'=>RightsHelper::can("Dog.create")),

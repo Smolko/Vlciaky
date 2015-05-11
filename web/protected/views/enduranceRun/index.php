@@ -2,10 +2,10 @@
 /* @var $this ExhibitionController */
 /* @var $model Exhibition */
 
-$this->breadcrumbs=array(
-	'EnduranceRuns'=>array('index'),
-	'index',
-);
+//$this->breadcrumbs=array(
+//	'EnduranceRuns'=>array('index'),
+//	'index',
+//);
 
 $this->menu=array(
 	array('label'=>Yii::t('model','endurancerun.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("Endurancerun.create")),

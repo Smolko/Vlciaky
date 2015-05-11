@@ -2,15 +2,15 @@
 /* @var $this BonitationAndYouthPresentationController */
 /* @var $model BonitationAndYouthPresentation */
 
-$this->breadcrumbs=array(
-	'Bonitation And Youth Presentations'=>array('index'),
-	'Create',
-);
+//$this->breadcrumbs=array(
+//	'Bonitation And Youth Presentations'=>array('index'),
+//	'Create',
+//);
 
 $this->menu=array(
 
-        array('label'=>'List BonitationAndYouthPresentation', 'url'=>array('index'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.index")),
-	array('label'=>'Manage BonitationAndYouthPresentation', 'url'=>array('admin'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.admin")),
+        array('label'=>Yii::t('model','bonitationandyouthpresentation.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.index")),
+	array('label'=>Yii::t('model','bonitationandyouthpresentation.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.admin")),
 );
 ?>
 
