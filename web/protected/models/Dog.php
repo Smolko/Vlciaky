@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /**
  * This is the model class for table "{{dog}}".
@@ -18,10 +18,6 @@
  * @property string $chip
  * @property string $export_import
  * @property string $breeding
-<<<<<<< HEAD
- * @property integer $id_health
-=======
->>>>>>> 7ea905f843ff9914d2f8ea27231a5d2ab4461b2c
  * @property integer $id_fertilisation
  * @property integer $id_owner
  * @property integer $id_old_owner
@@ -58,10 +54,6 @@
  *
  * The followings are the available model relations:
  * @property BonitationDog[] $bonitationDogs
-<<<<<<< HEAD
- * @property Health $idHealth
-=======
->>>>>>> 7ea905f843ff9914d2f8ea27231a5d2ab4461b2c
  * @property Fertilisation $idFertilisation
  * @property Profiles $idOwner
  * @property Dog $idOldOwner
@@ -129,9 +121,7 @@ class Dog extends BaseModel
 			'idOwner' => array(self::BELONGS_TO, 'Users', 'id_owner'),
 			'idOldOwner' => array(self::BELONGS_TO, 'Dog', 'id_old_owner'),
 			'dogs' => array(self::HAS_MANY, 'Dog', 'id_old_owner'),
-
 			'idKennel' => array(self::BELONGS_TO, 'Kennel', 'id_kennel'),
-
 			'enduranceRunDogs' => array(self::HAS_MANY, 'EnduranceRunDog', 'id_dog'),
 			'exhibitionChildDogs' => array(self::HAS_MANY, 'ExhibitionChildDog', 'id_dog'),
 			'exhibitionClasses' => array(self::HAS_MANY, 'ExhibitionClass', 'id_dog'),
@@ -248,9 +238,7 @@ class Dog extends BaseModel
 		$criteria->compare('id_fertilisation',$this->id_fertilisation);
 		$criteria->compare('id_owner',$this->id_owner);
 		$criteria->compare('id_old_owner',$this->id_old_owner);
-
 		$criteria->compare('id_kennel',$this->id_kennel);
-
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
 		$criteria->compare('state',$this->state);

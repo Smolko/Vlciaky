@@ -13254,6 +13254,7 @@ in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\_f
 in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\views\dog\create.php (15)
 in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\controllers\DogController.php (78)
 <<<<<<< HEAD
+<<<<<<< HEAD
 2015/05/06 21:20:16 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\Users\Hades\Documents\GitHub\Vlciaky\web\assets" je neplatná. Ubezpečte sa, že ukazuje ku existujúcemu adresáru a má zapisovacie práva pre webový server.' in C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CAssetManager.php:138
 Stack trace:
 #0 C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('C:\\Users\\Hades\\...')
@@ -13272,6 +13273,8 @@ Stack trace:
 #13 {main}
 REQUEST_URI=/
 =======
+=======
+>>>>>>> origin/master
 2015/05/07 08:17:33 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Access denied.' in C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\web\protected\modules\auth\components\AuthFilter.php:36
 Stack trace:
 #0 C:\Users\Michal\Documents\PHP-projekty\pes\Vlciaky\framework\web\filters\CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
@@ -13689,6 +13692,7 @@ Stack trace:
 #26 {main}
 REQUEST_URI=/pes/index.php?r=dog/admin
 HTTP_REFERER=http://localhost/pes/index.php?r=dog
+<<<<<<< HEAD
 >>>>>>> origin/master
 ---
 2015/05/10 19:39:31 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\Users\Hades\Documents\GitHub\Vlciaky\web\assets" je neplatná. Ubezpečte sa, že ukazuje ku existujúcemu adresáru a má zapisovacie práva pre webový server.' in C:\Users\Hades\Documents\GitHub\Vlciaky\framework\web\CAssetManager.php:138
@@ -13990,4 +13994,6 @@ Stack trace:
 #30 {main}
 REQUEST_URI=/index.php?r=user/admin/create
 HTTP_REFERER=http://vlciaky.xampp.com/index.php?r=exhibition
+=======
+>>>>>>> origin/master
 ---
