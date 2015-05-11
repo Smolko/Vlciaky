@@ -2,7 +2,6 @@
 
 class DogController extends Controller
 {
-
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -153,7 +152,7 @@ class DogController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Dog::model()->findByPk($id);
+		$model=Dog::model()->with("idOwner")->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

@@ -120,7 +120,7 @@ return array(
     'dog.id_fertilisation' => 'IČ párenie',
     'dog.id_owner' => 'Majiteľ',
     'dog.id_old_owner' => 'Majiteľ',
-    'dog.id_kennel_owner' => 'IČ Chovnej stanice',
+    'dog.id_kennel' => 'IČ Chovnej stanice',
     'dog.created_at' => 'Dátum vytvorenia',
     'dog.updated_at' => 'Dátum zmeny',
     'dog.state' => 'Stav',

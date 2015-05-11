@@ -74,7 +74,7 @@
 	<?php echo CHtml::encode($data->id_old_owner); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id_kennel_owner')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('id_kennel')); ?>:</b>
 	<?php echo CHtml::encode($data->id_kennel_owner); ?>
 	<br />
 
