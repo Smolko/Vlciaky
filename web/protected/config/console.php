@@ -10,9 +10,9 @@ return array(
     // application components
     'components' => array(
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=vlciaky',
+            'connectionString' => 'mysql:host=localhost;dbname=dog_test',
             'username' => 'root',
-            'password' => 'vertrigo',
+            'password' => '',
             'emulatePrepare' => true,
             'charset' => 'utf8',
             'tablePrefix' => 'tbl_',

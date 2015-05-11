@@ -1,12 +1,10 @@
 <div class="view">
 
-		<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id),array('view','id'=>$data->id)); ?>
+		<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->name),array('view','id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::encode($data->name); ?>
-	<br />
+	
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('sex')); ?>:</b>
 	<?php echo CHtml::encode($data->sex); ?>
@@ -57,10 +55,13 @@
 	<?php echo CHtml::encode($data->breeding); ?>
 	<br />
 
+<<<<<<< HEAD
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id_health')); ?>:</b>
 	<?php echo CHtml::encode($data->id_health); ?>
 	<br />
 
+=======
+>>>>>>> 7ea905f843ff9914d2f8ea27231a5d2ab4461b2c
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id_fertilisation')); ?>:</b>
 	<?php echo CHtml::encode($data->id_fertilisation); ?>
 	<br />
@@ -77,6 +78,61 @@
 	<?php echo CHtml::encode($data->id_kennel_owner); ?>
 	<br />
 
+<<<<<<< HEAD
+=======
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dlk')); ?>:</b>
+	<?php echo CHtml::encode($data->dlk); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dbk')); ?>:</b>
+	<?php echo CHtml::encode($data->dbk); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dwarf')); ?>:</b>
+	<?php echo CHtml::encode($data->dwarf); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dm')); ?>:</b>
+	<?php echo CHtml::encode($data->dm); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dna')); ?>:</b>
+	<?php echo CHtml::encode($data->dna); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dlk_vet')); ?>:</b>
+	<?php echo CHtml::encode($data->dlk_vet); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dlk_date')); ?>:</b>
+	<?php echo CHtml::encode($data->dlk_date); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dbk_vet')); ?>:</b>
+	<?php echo CHtml::encode($data->dbk_vet); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dbk_date')); ?>:</b>
+	<?php echo CHtml::encode($data->dbk_date); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dwarf_vet')); ?>:</b>
+	<?php echo CHtml::encode($data->dwarf_vet); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dwarf_date')); ?>:</b>
+	<?php echo CHtml::encode($data->dwarf_date); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dm_vet')); ?>:</b>
+	<?php echo CHtml::encode($data->dm_vet); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('dm_date')); ?>:</b>
+	<?php echo CHtml::encode($data->dm_date); ?>
+	<br />
+
+>>>>>>> 7ea905f843ff9914d2f8ea27231a5d2ab4461b2c
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_at')); ?>:</b>
 	<?php echo CHtml::encode($data->created_at); ?>
 	<br />

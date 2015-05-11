@@ -10,4 +10,7 @@ return array(
     'Other'=>'Iné',
     'About'=>'O nás',
     'Contact'=>'Kontakty',
+    
+    
+    'Access denied.'=>'Prístup zamietnutý',
 );

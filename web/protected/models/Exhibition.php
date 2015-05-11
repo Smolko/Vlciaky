@@ -85,7 +85,7 @@ class Exhibition extends BaseModel {
     
      public function attributeLabels(){
         return $this->generateAttributeLabels(array(
-            'id','name','state','created_at','updated_at','products','reps'
+            'id','name','state','place','date','referee','count_male','count_female','created_at','updated_at','products','reps'
         ));    
     }
 

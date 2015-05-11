@@ -1,26 +1,29 @@
 <?php
-$this->breadcrumbs=array(
-	'Dogs'=>array('index'),
-	$model->name,
-);
+//$this->breadcrumbs=array(
+//	'Dogs'=>array('index'),
+//	$model->name,
+//);
 
 $this->menu=array(
-array('label'=>'List Dog','url'=>array('index')),
-array('label'=>'Create Dog','url'=>array('create')),
-array('label'=>'Update Dog','url'=>array('update','id'=>$model->id)),
-array('label'=>'Delete Dog','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-array('label'=>'Manage Dog','url'=>array('admin')),
+array('label'=>Yii::t('model','dog.list'),'url'=>array('index'),'visible'=>RightsHelper::can("Dog.index")),
+array('label'=>Yii::t('model','dog.create'),'url'=>array('create'),'visible'=>RightsHelper::can("Dog.create")),
+array('label'=>Yii::t('model','dog.update'),'url'=>array('update','id'=>$model->id),'visible'=>RightsHelper::can("Dog.update")),
+array('label'=>Yii::t('model','dog.delete'),'url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),'visible'=>RightsHelper::can("Dog.delete")),
+array('label'=>Yii::t('model','dog.admin'),'url'=>array('admin'),'visible'=>RightsHelper::can("Dog.admin")),
 );
 ?>
 
-<h1>View Dog #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->name; ?></h1>
+
 
 <?php $this->widget('bootstrap.widgets.TbDetailView',array(
 'data'=>$model,
 'attributes'=>array(
-		'id',
 		'name',
-		'sex',
+		array(
+                    'name' => 'sex',
+                    'value' => $model->sexName
+                ),
 		'color',
 		'birthday',
 		'deathday',
@@ -28,18 +31,41 @@ array('label'=>'Manage Dog','url'=>array('admin')),
 		'breed',
 		'old_regnumber',
 		'new_regnumber',
-		'tattoo',
+		array(
+                    'name' => 'tatoo',
+                    'value' => $model->tattooSet
+                ),
 		'chip',
 		'export_import',
 		'breeding',
-		'id_health',
-		'id_fertilisation',
-		'id_owner',
+
+		
+		array(
+                    'name' => 'id_owner',
+                    'value' => $model->ownerName
+                ),
+		
 		'id_old_owner',
-		'id_kennel_owner',
-		'created_at',
-		'updated_at',
-		'state',
+//		array(
+//                    'name' => 'id_kennel_owner',
+//                    'value' => $model->kennelName
+//                ),
+
+	
+		array(
+                    'name' => 'state',
+                    'value' => $model->stateLabel
+                ),
+	
+),
+)); 
+echo '<h2>Zdravie</h2>';
+$this->widget('bootstrap.widgets.TbDetailView',array(
+'data'=>$model,
+'attributes'=>array(
+
+		
+
 		'dlk',
 		'dbk',
 		'dwarf',
@@ -54,4 +80,4 @@ array('label'=>'Manage Dog','url'=>array('admin')),
 		'dm_vet',
 		'dm_date',
 ),
-)); ?>
+));?>

@@ -2,7 +2,7 @@
 $classes = Dog::model()->getExhibitionClasses();
 
 // MALE
-echo "<h3>Male</h3>";
+echo "<h3>Samec</h3>";
 foreach($classes as $key=>$class){
 
     $this->beginWidget('bootstrap.widgets.TbBox', array(
@@ -24,8 +24,8 @@ foreach($classes as $key=>$class){
         ));?>
         <table>
             <tr>
-                <th>Place</th>
-                <th>Dog</th>
+                <th>Umiestnenie</th>
+                <th>Pes</th>
                 <th>Ranking</th>
                 <th>Titul</th>
                 <th></th>

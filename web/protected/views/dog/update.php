@@ -6,10 +6,12 @@ $this->breadcrumbs=array(
 );
 
 	$this->menu=array(
-	array('label'=>'List Dog','url'=>array('index')),
-	array('label'=>'Create Dog','url'=>array('create')),
-	array('label'=>'View Dog','url'=>array('view','id'=>$model->id)),
-	array('label'=>'Manage Dog','url'=>array('admin')),
+	array('label'=>Yii::t('model','dog.list'),'url'=>array('index'),'visible'=>RightsHelper::can("Dog.index")),
+	array('label'=>Yii::t('model','dog.create'),'url'=>array('create'),'visible'=>RightsHelper::can("Dog.create")),
+	array('label'=>Yii::t('model','dog.view'),'url'=>array('view','id'=>$model->id),'visible'=>RightsHelper::can("Dog.update"),'visible'=>RightsHelper::can("Dog.delete")),
+	array('label'=>Yii::t('model','dog.admin'),'url'=>array('admin'),'visible'=>RightsHelper::can("Dog.admin")),
+            
+
 	);
 	?>
 

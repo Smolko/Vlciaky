@@ -19,9 +19,9 @@
         ));?>
         <table>
             <tr>
-                <th>Place</th>
-                <th>Dog1</th>
-                <th>Dog2</th>
+                <th>Umiestnenie</th>
+                <th>Pes1</th>
+                <th>Pes2</th>
             </tr>
             <?php 
                 foreach ($model->exhibitionDogCouples as $key=>$m){

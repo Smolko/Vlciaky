@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Exhibition', 'url'=>array('index'),'visible'=>RightsHelper::can("Exhibition.index")),
-	array('label'=>'Manage Exhibition', 'url'=>array('admin'),'visible'=>RightsHelper::can("Exhibition.admin")),
+	array('label'=>Yii::t('model','exhibition.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("Exhibition.index")),
+	array('label'=>Yii::t('model','exhibition.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Exhibition.admin")),
 );
 ?>
 

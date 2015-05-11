@@ -5,8 +5,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-array('label'=>'List Dog','url'=>array('index')),
-array('label'=>'Create Dog','url'=>array('create')),
+    array('label'=>Yii::t('model','dog.admin'),'url'=>array('index'),'visible'=>RightsHelper::can("Dog.index")),
+    array('label'=>Yii::t('model','dog.create'),'url'=>array('create'),'visible'=>RightsHelper::can("Dog.create")),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -38,11 +38,13 @@ return false;
 )); ?>
 </div><!-- search-form -->
 
+
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 'id'=>'dog-grid',
 'dataProvider'=>$model->search(),
 'filter'=>$model,
 'columns'=>array(
+
 		'id',
 		'name',
 		'sex',
@@ -58,11 +60,15 @@ return false;
 		'chip',
 		'export_import',
 		'breeding',
+
 		'id_health',
+
 		'id_fertilisation',
 		'id_owner',
 		'id_old_owner',
 		'id_kennel_owner',
+
+
 		'created_at',
 		'updated_at',
 		'state',
