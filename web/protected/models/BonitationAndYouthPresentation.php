@@ -67,19 +67,9 @@ class BonitationAndYouthPresentation extends BaseModel
 	 */
 	public function attributeLabels()
 	{
-		return array(
-			'id' => 'ID',
-			'place' => 'Place',
-			'date' => 'Date',
-			'referee' => 'Referee',
-			'youth_presentation_male_count' => 'Youth Presentation Male Count',
-			'youth_presentation_female_count' => 'Youth Presentation Female Count',
-			'bonitation_male_count' => 'Bonitation Male Count',
-			'bonitation_female_count' => 'Bonitation Female Count',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'state' => 'State',
-		);
+            return $this->generateAttributeLabels(array(
+                'id','place','evaluation','date','referee','youth_presentation_male_count','youth_presentation_female_count','bonitation_male_count','bonitation_female_count','created_at','updated_at','state'
+            )); 
 	}
 
 	/**

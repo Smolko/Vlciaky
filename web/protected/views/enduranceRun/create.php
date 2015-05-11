@@ -2,10 +2,10 @@
 /* @var $this EnduranceRunController */
 /* @var $model EnduranceRun */
 
-$this->breadcrumbs=array(
-	'Endurance Runs'=>array('index'),
-	'Create',
-);
+//$this->breadcrumbs=array(
+//	'Endurance Runs'=>array('index'),
+//	'Create',
+//);
 
 $this->menu=array(
 	array('label'=>Yii::t('model','endurancerun.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("Endurancerun.index")),

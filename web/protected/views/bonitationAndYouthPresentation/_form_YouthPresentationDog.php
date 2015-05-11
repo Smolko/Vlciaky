@@ -1,6 +1,6 @@
 <?php
     $this->beginWidget('bootstrap.widgets.TbBox', array(
-        'title' =>'Youth Presnetation Dog',
+        'title' =>'Prezentácia mladých psov',
         'headerIcon' => 'icon-dog',
         'htmlOptions' => array('class'=>'bootstrap-widget-table'),
         'id'=>'youth-presentation-dog-section',
@@ -18,9 +18,9 @@
         ));?>
         <table class="tabb" style="vertical-align: top">
             <tr>
-                <th>Dog</th>
-                <th>Evaluation</th>
-                <th>Assessment</th>
+                <th>Pes</th>
+                <th>Výsledky</th>
+                <th>Posúdenie</th>
                 <th>X</th>
             </tr>
             <?php 

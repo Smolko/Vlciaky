@@ -2,17 +2,17 @@
 /* @var $this BonitationAndYouthPresentationController */
 /* @var $model BonitationAndYouthPresentation */
 
-$this->breadcrumbs=array(
-	'Bonitation And Youth Presentations'=>array('index'),
-	$model->id,
-);
+//$this->breadcrumbs=array(
+//	'Bonitation And Youth Presentations'=>array('index'),
+//	$model->id,
+//);
 
 $this->menu=array(
-	array('label'=>'List BonitationAndYouthPresentation', 'url'=>array('index'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.index")),
-	array('label'=>'Create BonitationAndYouthPresentation', 'url'=>array('create'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.create")),
-	array('label'=>'Update BonitationAndYouthPresentation', 'url'=>array('update', 'id'=>$model->id),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.update")),
-	array('label'=>'Delete BonitationAndYouthPresentation', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.delete")),
-	array('label'=>'Manage BonitationAndYouthPresentation', 'url'=>array('admin'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.admin")),
+	array('label'=>Yii::t('model','bonitationandyouthpresentation.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.index")),
+	array('label'=>Yii::t('model','bonitationandyouthpresentation.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.create")),
+	array('label'=>Yii::t('model','bonitationandyouthpresentation.update'), 'url'=>array('update', 'id'=>$model->id),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.update")),
+	array('label'=>Yii::t('model','bonitationandyouthpresentation.delete'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.delete")),
+	array('label'=>Yii::t('model','bonitationandyouthpresentation.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("BonitationAndYouthPresentation.admin")),
 );
 ?>
 
@@ -22,7 +22,7 @@ $this->menu=array(
     $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
+	//	'id',
 		'place',
 		'date',
 		'referee',
@@ -40,7 +40,7 @@ $this->menu=array(
 $dataprovider = new CActiveDataProvider('BonitationDog');
 $dataprovider->setData($model->bonitationDogs);
 
-echo "<br><h4>Bonitations</h4>";
+echo "<br><h4>".Yii::t('model','bonitationandyouthpresentation.bonitations')."</h4>";
 Yii::import('bootstrap.helpers.TbHtml');
 $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'dog-class-grid',
@@ -50,7 +50,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         'template'=>"{items}",
         'columns'=>array(
                 array(
-                    'name'=>'Dog',
+                    'name'=>Yii::t('model','dog.dog'),
                     'value'=>'Dog::model()->findByPk($data->id_dog)->name'
                 ),
                 /*array(
@@ -64,7 +64,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 $dataprovider = new CActiveDataProvider('YouthPresentationDog');
 $dataprovider->setData($model->youthPresentationDogs);
 
-echo "<br><h4>Youth Presentations</h4>";
+echo "<br><h4>".Yii::t('model','bonitationandyouthpresentation.youtpresentation')."</h4>";
 Yii::import('bootstrap.helpers.TbHtml');
 $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'youth-presentation-dog-grid',
@@ -74,7 +74,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         'template'=>"{items}",
         'columns'=>array(
                 array(
-                    'name'=>'Dog',
+                    'name'=>Yii::t('model','dog.dog'),
                     'value'=>'Dog::model()->findByPk($data->id_dog)->name'
                 ),
                 /*array(

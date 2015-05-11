@@ -16,12 +16,12 @@
 	</div>
     
         <div class="row">
-		<?php  echo CHtml::label("count_min", "count_min", array ());
+		<?php  echo CHtml::label(Yii::t('model','bonitationandyouthpresentation.count_min'), "count_min", array ());
 		 echo CHtml::textField("count_min", NULL, array ('id'=>'count_min' )); ?>		
 	</div>
     
         <div class="row">
-		<?php  echo CHtml::label("count_max", "count_max", array ());
+		<?php  echo CHtml::label(Yii::t('model','bonitationandyouthpresentation.count_max'), "count_max", array ());
 		 echo CHtml::textField("count_max", NULL, array ('id'=>'count_max' )); ?>		
 	</div>
     
@@ -31,12 +31,12 @@
 	</div>
     
         <div class="row">
-		<?php  echo CHtml::label("year_min", "year_min", array ());
+		<?php  echo CHtml::label(Yii::t('model','bonitationandyouthpresentation.year_min'), "year_min", array ());
 		 echo CHtml::textField("year_min", NULL, array ('id'=>'year_min' )); ?>		
 	</div>
     
         <div class="row">
-		<?php  echo CHtml::label("year_max", "year_max", array ());
+		<?php  echo CHtml::label(Yii::t('model','bonitationandyouthpresentation.year_max'), "year_max", array ());
 		 echo CHtml::textField("year_max", NULL, array ('id'=>'year_max' )); ?>		
 	</div>
     
