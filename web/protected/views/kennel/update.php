@@ -10,10 +10,10 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	   
-        array('label'=>'List Kennel', 'url'=>array('index'),'visible'=>RightsHelper::can("Kennel.index")),
-	array('label'=>'Create Kennel', 'url'=>array('create'),'visible'=>RightsHelper::can("Kennel.create")),
-	array('label'=>'View Kennel', 'url'=>array('view', 'id'=>$model->id),'visible'=>RightsHelper::can("Kennel.view")),
-        array('label'=>'Manage Kennel', 'url'=>array('admin'),'visible'=>RightsHelper::can("Kennel.admin")),
+        array('label'=>Yii::t('model','kennel.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("Kennel.index")),
+	array('label'=>Yii::t('model','kennel.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("Kennel.create")),
+	array('label'=>Yii::t('model','kennel.view'), 'url'=>array('view', 'id'=>$model->id),'visible'=>RightsHelper::can("Kennel.view")),
+        array('label'=>Yii::t('model','kennel.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Kennel.admin")),
 );
 ?>
 

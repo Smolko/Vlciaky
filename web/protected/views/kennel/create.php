@@ -9,8 +9,8 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	
-        array('label'=>'List Kennel', 'url'=>array('index'),'visible'=>RightsHelper::can("Kennel.index")),
-	array('label'=>'Manage Kennel', 'url'=>array('admin'),'visible'=>RightsHelper::can("Kennel.admin")),
+        array('label'=>Yii::t('model','kennel.list'), 'url'=>array('index'),'visible'=>RightsHelper::can("Kennel.index")),
+	array('label'=>Yii::t('model','kennel.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Kennel.admin")),
 );
 ?>
 

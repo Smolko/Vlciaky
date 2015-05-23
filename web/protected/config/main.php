@@ -102,10 +102,19 @@ return array(
           ),
           ),
          */
+//        'db' => array(
+//            'connectionString' => 'mysql:host=localhost;dbname=dog_test',
+//            'username' => 'root',
+//            'password' => '',
+//            'emulatePrepare' => true,
+//            'charset' => 'utf8',
+//            'tablePrefix' => 'tbl_',
+//        ),
+//        
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=dog_test',
+            'connectionString' => 'mysql:host=localhost;dbname=vlciaky',
             'username' => 'root',
-            'password' => '',
+            'password' => 'vertrigo',
             'emulatePrepare' => true,
             'charset' => 'utf8',
             'tablePrefix' => 'tbl_',

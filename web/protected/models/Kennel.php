@@ -57,6 +57,7 @@ class Kennel extends BaseModel
                         'dogs' => array(self::HAS_MANY, 'Dog', 'id_kennel'),
 			'exhibitionBestKennels' => array(self::HAS_MANY, 'ExhibitionBestKennel', 'id_kennel'),
 			'fertilisations' => array(self::HAS_MANY, 'Fertilisation', 'id_kennel'),
+                        'user' => array(self::BELONGS_TO, 'Users', 'id_user'),
 		);
 	}
 
@@ -65,16 +66,10 @@ class Kennel extends BaseModel
 	 */
 	public function attributeLabels()
 	{
-		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'reg_number' => 'Reg Number',
-			'registered_at' => 'Registered At',
-			'id_user' => 'Id User',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'state' => 'State',
-		);
+               
+                return $this->generateAttributeLabels(array(
+                    'id','name','reg_number','registered_at','id_user','created_at','updated_at','state'
+                ));    
 	}
 
 	/**
@@ -226,5 +221,10 @@ class Kennel extends BaseModel
           //      'LoggableBehavior'=> 'application.components.behaviors.ExtLoggableBehavior',
             ); 
 
+        }
+        
+        
+        public function getUserName(){
+            return $this->user->name;
         }
 }

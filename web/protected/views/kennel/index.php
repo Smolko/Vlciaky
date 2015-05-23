@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	       
-	array('label'=>'Create Kennel', 'url'=>array('create'),'visible'=>RightsHelper::can("Kennel.create")),
-	array('label'=>'Manage Kennel', 'url'=>array('admin'),'visible'=>RightsHelper::can("Kennel.admin")),
+	array('label'=>Yii::t('model','kennel.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("Kennel.create")),
+	array('label'=>Yii::t('model','kennel.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Kennel.admin")),
 );
 ?>
 
@@ -50,7 +50,7 @@ $('.search-form form').submit(function(){
             'columns'=>array(
                     array(
                         'type'=>'raw',
-                        'name'=>'Name',
+                        'name'=>'Meno',
                         'value'=>'CHtml::link($data->name,array("kennel/view&id=$data->id"))'
                     ),
                     'id_user',

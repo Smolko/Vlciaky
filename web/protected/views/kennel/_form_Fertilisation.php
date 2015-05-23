@@ -1,7 +1,7 @@
 <?php
 
     $this->beginWidget('bootstrap.widgets.TbBox', array(
-        'title' =>"Fertilisation",
+        'title' =>Yii::t("model",'fertilisation.fertilisations'),
         'headerIcon' => 'icon-dog',
         'htmlOptions' => array('class'=>'bootstrap-widget-table'),
         'id'=>'fertilisation-section',
@@ -19,13 +19,15 @@
         ));?>
         <table>
             <tr>
-                <th>Fertilisation date</th>
-                <th>Litter date</th>
-                <th>Count male</th>
-                <th>Count female</th>
-                <th>Dog1</th>
-                <th>Dog2</th>
-                <th>comment</th>
+                 <?php 
+                    echo "<th>".Yii::t("model",'fertilisation.fertilisation_date')."</th>";
+                    echo "<th>".Yii::t("model",'fertilisation.litter_date')."</th>";
+                    echo "<th>".Yii::t("model",'fertilisation.male_count')."</th>"; 
+                    echo "<th>".Yii::t("model",'fertilisation.female_count')."Count female</th>";
+                    echo "<th>".Yii::t("model",'fertilisation.male')."</th>";
+                    echo "<th>".Yii::t("model",'fertilisation.female')."</th>";
+                    echo "<th>".Yii::t("model",'fertilisation.comment')."</th>";
+                 ?>
             </tr>
             <?php 
                 foreach ($model->fertilisations as $key=>$m){
