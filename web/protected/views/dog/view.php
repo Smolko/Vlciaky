@@ -47,7 +47,7 @@ array('label'=>Yii::t('model','dog.admin'),'url'=>array('admin'),'visible'=>Righ
 		
 		'id_old_owner',
 //		array(
-//                    'name' => 'id_kennel_owner',
+//                    'name' => 'id_kennel',
 //                    'value' => $model->kennelName
 //                ),
 
@@ -63,9 +63,6 @@ echo '<h2>Zdravie</h2>';
 $this->widget('bootstrap.widgets.TbDetailView',array(
 'data'=>$model,
 'attributes'=>array(
-
-		
-
 		'dlk',
 		'dbk',
 		'dwarf',

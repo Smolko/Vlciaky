@@ -12,11 +12,8 @@
 	<?php echo CHtml::encode($data->new_regnumber); ?>
 	<br />
 
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('sex')); ?>:</b>
 	<?php echo CHtml::encode($data->sexName); ?>
-	<br />
-
-	 
+	<br /> 
 
 </div>

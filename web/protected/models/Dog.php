@@ -99,7 +99,7 @@ class Dog extends BaseModel
 			array('birthday, deathday, export_import, created_at, updated_at, dlk_date, dbk_date, dwarf_date, dm_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, sex, color, birthday, deathday, death_cause, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, id_health, id_fertilisation, id_owner, id_old_owner, id_kennel_owner, created_at, updated_at, state, dlk, dbk, dwarf, dm, dna, dlk_vet, dlk_date, dbk_vet, dbk_date, dwarf_vet, dwarf_date, dm_vet, dm_date', 'safe', 'on'=>'search'),
+			array('id, name, sex, color, birthday, deathday, death_cause, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, id_health, id_fertilisation, id_owner, id_old_owner, id_kennel, created_at, updated_at, state, dlk, dbk, dwarf, dm, dna, dlk_vet, dlk_date, dbk_vet, dbk_date, dwarf_vet, dwarf_date, dm_vet, dm_date', 'safe', 'on'=>'search'),
 
                         );
                         
@@ -119,7 +119,7 @@ class Dog extends BaseModel
 
 			'idFertilisation' => array(self::BELONGS_TO, 'Fertilisation', 'id_fertilisation'),
 			'idOwner' => array(self::BELONGS_TO, 'Users', 'id_owner'),
-			'idOldOwner' => array(self::BELONGS_TO, 'Dog', 'id_old_owner'),
+			'idOldOwner' => array(self::BELONGS_TO, 'Users', 'id_old_owner'),
 			'dogs' => array(self::HAS_MANY, 'Dog', 'id_old_owner'),
 			'idKennel' => array(self::BELONGS_TO, 'Kennel', 'id_kennel'),
 			'enduranceRunDogs' => array(self::HAS_MANY, 'EnduranceRunDog', 'id_dog'),

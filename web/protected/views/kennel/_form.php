@@ -24,7 +24,9 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibiti
                 echo $form->textFieldRow($model,'name',array('size'=>60,'maxlength'=>200)); 
 		echo $form->textFieldRow($model,'reg_number',array('size'=>50,'maxlength'=>50)); 
 		echo $form->datepickerRow($model,'registered_at', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>'));
+
 		echo $form->dropDownListRow($model,'id_user', User::model()->userList,array('class'=>'span5')); 
+
 		echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5')); 
                 
                 echo $this->renderPartial('_form_Fertilisation', array('model'=>$model));

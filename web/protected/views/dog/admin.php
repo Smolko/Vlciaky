@@ -66,7 +66,7 @@ return false;
 		'id_fertilisation',
 		'id_owner',
 		'id_old_owner',
-		'id_kennel_owner',
+		'id_kennel',
 
 
 		'created_at',

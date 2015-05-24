@@ -10,7 +10,7 @@
 $this->menu=array(
 	 
 	array('label'=>Yii::t('model','exhibition.create'), 'url'=>array('create'),'visible'=>RightsHelper::can("Exhibition.create")),
-      	array('label'=>Yii::t('model','exhibition.adin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Exhibition.admin")),
+      	array('label'=>Yii::t('model','exhibition.admin'), 'url'=>array('admin'),'visible'=>RightsHelper::can("Exhibition.admin")),
 );
 
 Yii::app()->clientScript->registerScript('search', "
