@@ -10,7 +10,7 @@ $this->menu=array(
     array('label'=>Yii::t('model','user.list'), 'url'=>array('/user'),'visible'=>RightsHelper::can("User.Admin.*")),
 );
 ?>
-<h1><?php echo UserModule::t("Create User"); ?></h1>
+<h1><?php echo Yii::t("model","user.create"); ?></h1>
 
 <?php
 	echo $this->renderPartial('_form', array('model'=>$model,'profile'=>$profile));

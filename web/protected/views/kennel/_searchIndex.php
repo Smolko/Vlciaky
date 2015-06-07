@@ -26,7 +26,7 @@
 	</div>
     
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('searchKennels', array(
+		<?php echo CHtml::submitButton('Hľadať', array(
                             'name'=>'searchKennels')
                         ); ?>
 	</div>

@@ -69,10 +69,25 @@ class DogController extends Controller
 
 		if(isset($_POST['Dog']))
 		{
-			$model->attributes=$_POST['Dog'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+                    $uploadedFile = CUploadedFile::getInstance($model, 'imageFile');
+                 //   var_dump($uploadedFile);
+                    $model->attributes=$_POST['Dog'];
+                    $row = $model->getDbConnection()->createCommand('SHOW TABLE STATUS LIKE "' . Dog::model()->tableSchema->name . '"')->queryRow();
+               //     var_dump($row);
+                    $name = intval($row["Auto_increment"]) . "-";
+                    $name.= $uploadedFile;
+             //       var_dump($name);
+                 //   exit;
+                    if (!is_null($uploadedFile)) {
+                        $model->path = $model->getDogImage($name);
+                    }
+                    if ($model->save()) {
+                        if (!is_null($uploadedFile)) {
+                            $uploadedFile->saveAs($model->path);
+                         }
+                        $this->redirect(array('view','id'=>$model->id));
+                    }
+                }
 
 		$this->render('create',array(
 			'model'=>$model,
@@ -94,9 +109,18 @@ class DogController extends Controller
 		if(isset($_POST['Dog']))
 		{
 			$model->attributes=$_POST['Dog'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+			$uploadedFile = CUploadedFile::getInstance($model, 'imageFile');
+                        if (!empty($uploadedFile)) {
+                            $model->path = $model->getDogImage($model->id . "-" . $uploadedFile);
+                        }
+                        if ($model->save()) {
+                            if (!empty($uploadedFile)) {
+                                $uploadedFile->saveAs($model->path);
+                            }
+                            $this->redirect(array('view','id'=>$model->id));
+                        }
+                
+                }
 
 		$this->render('update',array(
 			'model'=>$model,

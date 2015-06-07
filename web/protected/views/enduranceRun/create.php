@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create EnduranceRun</h1>
+<h1>Nová Skúška vytrvalosti</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

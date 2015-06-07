@@ -46,7 +46,7 @@ $('.search-form form').submit(function(){
             'columns'=>array(
                     array(
                         'type'=>'raw',
-                        'name'=>'Name',
+                        'name'=>'Meno',
                         'value'=>'CHtml::link($data->name,array("exhibition/view&id=$data->id"))'
                     ),
                     'place',

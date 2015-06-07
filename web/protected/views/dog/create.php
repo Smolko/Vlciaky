@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Dog</h1>
+<h1><?php echo Yii::t('model','dog.create');?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

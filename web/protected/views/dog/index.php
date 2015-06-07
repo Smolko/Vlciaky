@@ -10,7 +10,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Dogs</h1>
+<h1><?phpecho Yii::t('model','dog.dogs');?></h1>
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 'dataProvider'=>$dataProvider,

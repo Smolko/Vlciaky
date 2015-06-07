@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update EnduranceRun <?php echo $model->id; ?></h1>
+<h1>Uprav záznam</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

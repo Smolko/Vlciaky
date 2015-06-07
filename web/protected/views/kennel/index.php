@@ -2,9 +2,9 @@
 /* @var $this KennelController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Kennels',
-);
+//$this->breadcrumbs=array(
+//	'Kennels',
+//);
 
 $this->menu=array(
 	       
@@ -13,7 +13,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Kennels</h1>
+<h1><?php echo Yii::t('model','kennel.kennels');?></h1>
 
 <?php
 Yii::app()->clientScript->registerScript('search', "

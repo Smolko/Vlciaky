@@ -44,7 +44,7 @@ $('.search-form form').submit(function(){
             'columns'=>array(
                     array(
                         'type'=>'raw',
-                        'name'=>'Name',
+                        'name'=>'Meno',
                         'value'=>'CHtml::link($data->place.", ".$data->date, array("enduranceRun/view&id=$data->id"))'
                     ),
                     'referee',

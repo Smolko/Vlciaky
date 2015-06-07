@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View BonitationAndYouthPresentation #<?php echo $model->id; ?></h1>
+<h1>Detail bonitácie</h1>
 
 <?php 
     $this->widget('zii.widgets.CDetailView', array(

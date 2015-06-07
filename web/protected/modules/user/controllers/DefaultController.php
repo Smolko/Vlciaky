@@ -3,9 +3,21 @@
 class DefaultController extends Controller
 {
 	
-	/**
-	 * Lists all models.
-	 */
+	 public function actions(){
+                return array(
+                    'suggest'=>array(
+                        'class'=>'application.extensions.custom.EAutoCompleteAction',
+                        'model'=>'Institution',
+                        'attribute'=>'CONCAT(city," ",street," ",name)',
+                        'scopes' => array(),
+                        'response' => array(
+                            'id' => 'id',
+                            'label' => 'fullDisplay',
+                        ),
+                    ),
+                );
+        }
+        
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('User', array(

@@ -21,12 +21,12 @@ foreach ($svpList as $key => $svp){
         ));?>
         <table>
             <tr>
-                <th>Place</th>
-                <th>Order</th>
-                <th>Dog</th>
-                <th>Handler</th>
-                <th>Time</th>
-                <th>Evaluation</th>
+                <th>Miesto</th>
+                <th>Poradie</th>
+                <th>Pes</th>
+                <th>Majiteľ</th>
+                <th>Čas</th>
+                <th>Hodnotenie</th>
             </tr>
             <?php 
                 foreach ($model->enduranceRunDogs as $key2=>$m){

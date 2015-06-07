@@ -36,6 +36,9 @@ class AdminController extends Controller
 	/**
 	 * Manages all models.
 	 */
+        
+        
+       
 	public function actionAdmin()
 	{
 		$model=new User('search');
@@ -89,7 +92,7 @@ class AdminController extends Controller
                         $model->street=$_POST['User']['street'];
                         $model->address_number=$_POST['User']['address_number'];
                         $model->city=$_POST['User']['city'];
-                        $model->born_date=$_POST['User']['born_date'];
+                   //     $model->born_date=$_POST['User']['born_date'];
                     //    $model->user_type=$_POST['User']['user_type'];
                         $model->title=$_POST['User']['title'];
                         $model->psc=$_POST['User']['psc'];
@@ -98,7 +101,7 @@ class AdminController extends Controller
                         $model->chs_owner=$_POST['User']['chs_owner'];
                         $model->chs_registred=$_POST['User']['chs_registred'];
                         $model->chs_number=$_POST['User']['chs_number'];
-                        $model->rank=$_POST['User']['rank'];
+                  //      $model->rank=$_POST['User']['rank'];
                         $model->club_member=$_POST['User']['club_member'];
                //         var_dump($model->attributes);
                    
@@ -114,14 +117,17 @@ class AdminController extends Controller
 					$profile->user_id=$model->id;
 					$profile->save();
 				}
-				$this->redirect(array('create'));
+				$this->render('success');
+                                return true;
 			} else $profile->validate();
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-			'profile'=>$profile,
-		));
+                    $this->render('create',array(
+                            'model'=>$model,
+                            'profile'=>$profile,
+                    ));
+                
+                
 	}
 
 	/**
@@ -144,7 +150,7 @@ class AdminController extends Controller
                         $model->street=$_POST['User']['street'];
                         $model->address_number=$_POST['User']['address_number'];
                         $model->city=$_POST['User']['city'];
-                        $model->born_date=$_POST['User']['born_date'];
+             //           $model->born_date=$_POST['User']['born_date'];
                     //    $model->user_type=$_POST['User']['user_type'];
                         $model->title=$_POST['User']['title'];
                         $model->psc=$_POST['User']['psc'];
@@ -153,7 +159,7 @@ class AdminController extends Controller
                         $model->chs_owner=$_POST['User']['chs_owner'];
                         $model->chs_registred=$_POST['User']['chs_registred'];
                         $model->chs_number=$_POST['User']['chs_number'];
-                        $model->rank=$_POST['User']['rank'];
+                    //    $model->rank=$_POST['User']['rank'];
                         $model->club_member=$_POST['User']['club_member'];
 			//$profile->attributes=$_POST['Profile'];
                         $profile->first_name=$model->name;

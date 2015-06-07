@@ -62,8 +62,8 @@ class BaseModel extends CActiveRecord{
     
     public function getSexList(){
         return array(
-            self::MALE=>"Male",
-            self::FEMALE=>"Female",
+            self::MALE=>"Pes",
+            self::FEMALE=>"Suka",
         );
     }
     

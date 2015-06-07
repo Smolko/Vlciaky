@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Exhibition</h1>
+<h1>Nová výstava</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

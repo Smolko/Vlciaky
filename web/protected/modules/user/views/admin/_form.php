@@ -3,7 +3,6 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-<p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
 <?php echo $form->errorSummary($model); 
         if($model->isNewRecord){
@@ -18,11 +17,11 @@
 
 	<?php echo $form->textFieldRow($model,'surname',array('class'=>'span5','maxlength'=>100)); ?>
 
-	<?php echo $form->textFieldRow($model,'title',array('class'=>'span5','maxlength'=>20)); ?>
+	<?php echo $form->textFieldRow($model,'title',array('class'=>'span5','maxlength'=>20)); 
 
-	<?php echo $form->datepickerRow($model,'born_date',array('options'=>array(),'htmlOptions'=>array('class'=>'span5')),array('prepend'=>'<i class="icon-calendar"></i>','append'=>'Click on Month/Year at top to select a different year or type in (mm/dd/yyyy).')); ?>
+	
 
-	<?php echo $form->textFieldRow($model,'street',array('class'=>'span5','maxlength'=>100)); ?>
+         echo $form->textFieldRow($model,'street',array('class'=>'span5','maxlength'=>100)); ?>
 
 	<?php echo $form->textFieldRow($model,'address_number',array('class'=>'span5','maxlength'=>50)); ?>
 

@@ -14,6 +14,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create BonitationAndYouthPresentation</h1>
+<h1>Nový záznam</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

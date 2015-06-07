@@ -16,8 +16,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibiti
         'type'=>'horizontal',
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
+	
 	<?php echo $form->errorSummary($model); ?>
 
             <?php 
@@ -26,8 +25,8 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/Exhibiti
 		echo $form->datepickerRow($model,'registered_at', array('options'=> array('viewformat' => 'yyyy-mm-dd', 'format' => 'yyyy-mm-dd')), array('prepend'=>'<i class="icon-calendar"></i>'));
 
 		echo $form->dropDownListRow($model,'id_user', User::model()->userList,array('class'=>'span5')); 
-
-		echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5')); 
+                if(!$model->isNewRecord)
+                    echo $form->dropDownListRow($model, 'state', $model->stateList, array('class' => 'span5')); 
                 
                 echo $this->renderPartial('_form_Fertilisation', array('model'=>$model));
             ?>

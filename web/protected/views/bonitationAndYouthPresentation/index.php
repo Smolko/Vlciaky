@@ -2,9 +2,9 @@
 /* @var $this ExhibitionController */
 /* @var $model Exhibition */
 
-$this->breadcrumbs=array(
-	'BonitationAndYouthPresentation'=>array('index')
-);
+//$this->breadcrumbs=array(
+//	'BonitationAndYouthPresentation'=>array('index')
+//);
 
 $this->menu=array(
 	

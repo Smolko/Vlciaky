@@ -14,13 +14,12 @@ array('label'=>Yii::t('model','dog.admin'),'url'=>array('admin'),'visible'=>Righ
 ?>
 
 <h1><?php echo $model->name; ?></h1>
-
-
-<?php $this->widget('bootstrap.widgets.TbDetailView',array(
+<?php 
+ echo CHtml::image($model->path, 'DORE',array('width'=>100,'height'=>100)); 
+$this->widget('bootstrap.widgets.TbDetailView',array(
 'data'=>$model,
 'attributes'=>array(
-		'name',
-		array(
+	        array(
                     'name' => 'sex',
                     'value' => $model->sexName
                 ),

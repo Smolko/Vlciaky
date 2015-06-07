@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * This is the model class for table "{{dog}}".
@@ -71,9 +71,17 @@
  */
 class Dog extends BaseModel
 {
-	/**
-	 * @return string the associated database table name
-	 */
+          const IMAGES_FOLDER = "images/dog/";
+           public $imageFile;
+	  const DBK_A = 0;
+          const DBK_B = 1;
+          const DBK_C = 2;
+          const DBK_D = 3;
+          const DBK_E = 4;
+          const DBK_F = 5;
+          const DOG_SVK = 0;
+          const DOG_EXPORT = 1;
+          const DOG_IMPORT = 2;
 	public function tableName()
 	{
 		return '{{dog}}';
@@ -88,18 +96,19 @@ class Dog extends BaseModel
 		// will receive user inputs.
 		return array(
 
-			array('sex, tattoo, id_health, id_fertilisation, id_owner, id_old_owner, id_kennel, state, dlk, dbk, dwarf, dm', 'numerical', 'integerOnly'=>true),
-
+			array('sex, tattoo, id_fertilisation, id_owner, id_old_owner, id_kennel, state, dlk, dbk, dwarf, dm', 'numerical', 'integerOnly'=>true),
+                        array('path', 'length', 'max'=>100),
 			array('name, dna, dlk_vet, dbk_vet, dwarf_vet, dm_vet', 'length', 'max'=>200),
 			array('color, old_regnumber, new_regnumber', 'length', 'max'=>50),
 			array('death_cause', 'length', 'max'=>300),
 			array('breed', 'length', 'max'=>100),
 			array('chip, breeding', 'length', 'max'=>30),
-
+                        array('imageFile', 'file', 'types' => 'jpg, gif, png', 'allowEmpty' => true, 'on' => 'update'),
+                        array('imageFile', 'file', 'types' => 'jpg, gif, png', 'allowEmpty' => true, 'on' => 'insert'),
 			array('birthday, deathday, export_import, created_at, updated_at, dlk_date, dbk_date, dwarf_date, dm_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, sex, color, birthday, deathday, death_cause, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, id_health, id_fertilisation, id_owner, id_old_owner, id_kennel, created_at, updated_at, state, dlk, dbk, dwarf, dm, dna, dlk_vet, dlk_date, dbk_vet, dbk_date, dwarf_vet, dwarf_date, dm_vet, dm_date', 'safe', 'on'=>'search'),
+			array('id, name, path, sex, color, birthday, deathday, death_cause, breed, old_regnumber, new_regnumber, tattoo, chip, export_import, breeding, id_fertilisation, id_owner, id_old_owner, id_kennel, created_at, updated_at, state, dlk, dbk, dwarf, dm, dna, dlk_vet, dlk_date, dbk_vet, dbk_date, dwarf_vet, dwarf_date, dm_vet, dm_date', 'safe', 'on'=>'search'),
 
                         );
                         
@@ -114,9 +123,7 @@ class Dog extends BaseModel
 		// class name for the relations automatically generated below.
 		return array(
 			'bonitationDogs' => array(self::HAS_MANY, 'BonitationDog', 'id_dog'),
-
-			'idHealth' => array(self::BELONGS_TO, 'Health', 'id_health'),
-
+			//'idHealth' => array(self::BELONGS_TO, 'Health', 'id_health'),
 			'idFertilisation' => array(self::BELONGS_TO, 'Fertilisation', 'id_fertilisation'),
 			'idOwner' => array(self::BELONGS_TO, 'Users', 'id_owner'),
 			'idOldOwner' => array(self::BELONGS_TO, 'Users', 'id_old_owner'),
@@ -139,47 +146,11 @@ class Dog extends BaseModel
 	 */
 	public function attributeLabels()
 	{
-//		return array(
-//			'id' => 'ID',
-//			'name' => 'Name',
-//			'sex' => 'Sex',
-//			'color' => 'Color',
-//			'birthday' => 'Birthday',
-//			'deathday' => 'Deathday',
-//			'death_cause' => 'Death Cause',
-//			'breed' => 'Breed',
-//			'old_regnumber' => 'Old Regnumber',
-//			'new_regnumber' => 'New Regnumber',
-//			'tattoo' => 'Tattoo',
-//			'chip' => 'Chip',
-//			'export_import' => 'Export Import',
-//			'breeding' => 'Breeding',
-//			'id_fertilisation' => 'Id Fertilisation',
-//			'id_owner' => 'Id Owner',
-//			'id_old_owner' => 'Id Old Owner',
-//
-//			'id_kennel_owner' => 'Id Kennel Owner',
-//
-//			'created_at' => 'Created At',
-//			'updated_at' => 'Updated At',
-//			'state' => 'State',
-//			'dlk' => 'Dlk',
-//			'dbk' => 'Dbk',
-//			'dwarf' => 'Dwarf',
-//			'dm' => 'Dm',
-//			'dna' => 'Dna',
-//			'dlk_vet' => 'Dlk Vet',
-//			'dlk_date' => 'Dlk Date',
-//			'dbk_vet' => 'Dbk Vet',
-//			'dbk_date' => 'Dbk Date',
-//			'dwarf_vet' => 'Dwarf Vet',
-//			'dwarf_date' => 'Dwarf Date',
-//			'dm_vet' => 'Dm Vet',
-//			'dm_date' => 'Dm Date',
-//		);
+
             return $this->generateAttributeLabels(array(
                     'id',
                     'name',
+                    'path',
                     'sex',
                     'color',
                     'birthday',
@@ -223,6 +194,7 @@ class Dog extends BaseModel
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
+                $criteria->compare('path', $this->path, true);
 		$criteria->compare('sex',$this->sex);
 		$criteria->compare('color',$this->color,true);
 		$criteria->compare('birthday',$this->birthday,true);
@@ -333,4 +305,29 @@ class Dog extends BaseModel
             return $this->idOwner->name;
         }
         
+        
+        public function getDBKList() {
+            return array(
+                self::DBK_A => 'A 0/0',
+                self::DBK_B => 'B 0/1',
+                self::DBK_C => 'C 1/0',
+                self::DBK_D => 'D 2/2',
+                self::DBK_E => 'E 2/3'
+            );
+        }
+
+        public function getExportImportTypeList() {
+            return array(
+                self::DOG_SVK => 'Slovensko',
+                self::DOG_EXPORT => 'Exportovany',
+                self::DOG_IMPORT => 'Importovany'
+            );
+        }
+        
+        public function getDogImage($name) {
+            return self::IMAGES_FOLDER . $name;
+        }
+        
+      
+    
 }

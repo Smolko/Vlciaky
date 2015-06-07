@@ -109,7 +109,7 @@ class User extends BaseModel
         public function attributeLabels(){
             return $this->generateAttributeLabels(array(
                 'username', 'password', 'email', 'name', 'surname','street','address_number','city','born_date','title','psc','web_site','phone_number',
-                'chs_owner','chs_registred','chs_number','club_member'
+                'chs_owner','chs_registred','chs_number','club_member','create_at','lastvisit_at'
             ));    
         
         }

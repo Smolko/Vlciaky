@@ -18,6 +18,10 @@ return array(
     'exhibition.delete' => 'Vymaž výstavu',
     
     /*USER*/
+    'user.create'=>'Vytvor užívateľa',
+    'user.index'=>'Správa užívateľov',
+    'user.create_at'=>'Správa užívateľov',
+    'user.lastvisit_at'=>'Správa užívateľov',
     'user.name'=>'Meno',
     'user.surname'=>'Priezvisko',
     'user.username'=>'Prihlasovacie meno',
@@ -85,7 +89,7 @@ return array(
     'bonitationandyouthpresentation.count_min'=>'Minimálny počet',
     'bonitationandyouthpresentation.count_max'=>'Maximálny počet',
     'bonitationandyouthpresentation.name'=>'Meno',
-    
+    'bonitationandyouthpresentation.view'=>'Detail bonitácie',
     'bonitationandyouthpresentation.list' => 'Zoznam bonitácii',
     'bonitationandyouthpresentation.create' => 'Nová bonitácia',
     'bonitationandyouthpresentation.update' => 'Uprav bonitáciu',
@@ -123,6 +127,7 @@ return array(
     'contactform.verifyCode' => 'Verifičný kód',
     //dog.
     'dog.dog'=>'Pes',
+    'dog.dogs'=>'Psy',
     'dog.id' => 'IČ',
     'dog.name' => 'Meno',
     'dog.sex' => 'Pohlavie',
@@ -133,14 +138,14 @@ return array(
     'dog.breed' => 'Plemeno',
     'dog.old_regnumber' => 'Stará registračné číslo',
     'dog.new_regnumber' => 'Nové registračné číslo',
-    'dog.tatoo' => 'Tetovanie',
+    'dog.tattoo' => 'Tetovanie',
     'dog.chip' => 'Čip',
     'dog.export_import' => 'Export Import',
     'dog.breeding' => 'Chov',
     'dog.id_health' => 'IČ Zdravia',
     'dog.id_fertilisation' => 'IČ párenie',
     'dog.id_owner' => 'Majiteľ',
-    'dog.id_old_owner' => 'Majiteľ',
+    'dog.id_old_owner' => 'Bývalí majiteľ',
     'dog.id_kennel' => 'IČ Chovnej stanice',
     'dog.created_at' => 'Dátum vytvorenia',
     'dog.updated_at' => 'Dátum zmeny',
@@ -152,6 +157,7 @@ return array(
     'dog.update' => 'Uprav psa',
     'dog.admin' => 'Správa psov',
     'dog.delete' => 'Vymaž psa',
+    'dog.imageFile'=>'Obrázok',
     //endurancerun.
     'endurancerun.id' => 'IČ',
     'endurancerun.place' => 'Miesto',
@@ -171,6 +177,7 @@ return array(
     'endurancerun.admin' => 'Správa skúšiek vytrvalosti',
     'endurancerun.delete' => 'Vymaž skúšku vytrvalosti',
     'endurancerun.list' => 'Zoznam skúšiek vytrvalosti',
+    'endurancerun.view'=>'Detail záznamu',
     //endurancerundog.
     'endurancerundog.id' => 'IČ',
     'endurancerundog.id_endurance_run' => 'IČ Vytrvalostneho behu',
@@ -237,7 +244,7 @@ return array(
     'fertilisation.updated_at' => 'Dátum zmeny',
     'fertilisation.state' => 'Stav',
     // health je v psovy a to bude az po merge = zatial neprekladam 
-    //kennel.
+    'kennel.kennels'=>'Chovateľské stanice',
     'kennel.id' => 'IČ',
     'kennel.name' => 'Meno',
     'kennel.reg_number' => 'Registračné číslo',
